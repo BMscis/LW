@@ -1,0 +1,59 @@
+la-carousel{
+    display: grid;
+    grid-area: la-carousel;
+    width: 100%;
+    height:100% ;
+    grid-template-areas:"... photo ... " "prev photo next";
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 9% 1fr;
+    background: transparent;
+    margin: 0;
+    border-radius: 10px;
+}
+caption{
+    display: grid;
+    color: #0000008a;
+    text-align: center;
+    height: 24px;
+    font-family: system-ui;
+    font-weight: 350;
+}
+.centralcarousel{
+    grid-area: photo;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.imagecontainer{
+    width: 90%;
+    height: 70%;
+    display: grid;
+    grid-auto-flow: column;
+    position: relative;
+    padding: 0;
+    grid-template-columns: repeat(7,100%);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    margin:30px auto;
+    background: transparent;
+    color: #000000a1;
+    border-radius: 20px;
+    filter: drop-shadow(1px 1px 3px #000000a1);
+}
+la-imageroll{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+}
+la-imageroll > div{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    outline: none;
+    border-radius: 20px;
+}

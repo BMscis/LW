@@ -1,0 +1,55 @@
+es-toggle{
+    cursor: pointer;
+    transform: scale(var(--ggs,1));
+    border-image-slice: 8;
+    border-image-width: 7px;
+    transition: 0.5s ease;
+    z-index:2;
+    width: 24px;
+    height: 24px;
+    justify-self: center;
+    align-self: center;
+    opacity: 0.5;
+}
+es-toggle::before{
+    content: "";
+    position: absolute;
+    transform: scale(var(--ggs,1)) rotate(45deg);
+    width: calc(78vh * 0.05);
+    height: calc(78vh * 0.05);
+    border-radius: 100px;
+    border-image-width: 2px;
+}
+es-toggle::after{
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    width: calc(78vh * 0.05);
+    height: calc(78vh * 0.05);
+    border-radius:25%;
+}
+es-toggle[prev]{
+    grid-area: prev;
+    justify-self: end;
+}
+es-toggle[next]{
+    grid-area: next;
+    justify-self: start;
+}
+es-toggle[prev]::after{
+    border-bottom: 7px inset black;
+    border-left: 7px solid   black;
+    transform: rotate(45deg);
+}
+es-toggle[next]::after{
+    border-bottom: 7px inset black;
+    border-right: 7px solid  black;
+    transform: rotate(-45deg);
+}
+es-toggle[hide]{
+    display:none;
+}
+es-toggle:hover{
+    opacity: 0.7;
+    transform: scaleY(1.25) scaleX(1.5);
+}

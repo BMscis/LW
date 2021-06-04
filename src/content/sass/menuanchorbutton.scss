@@ -1,0 +1,62 @@
+$global-color-primary: #6EC1E4;
+$global-color-secondary: #fdf6ed;
+$global-color-text: #7A7A7A;
+$global-color-accent: #61CE70;
+$global-typography-primary-font-family: "Roboto";
+$global-typography-primary-font-weight: 600;
+$global-typography-secondary-font-family: "Roboto Slab";
+$global-typography-secondary-font-weight: 400;
+$global-typography-text-font-family: "Roboto";
+$global-typography-text-font-weight: 400;
+$global-typography-accent-font-family: "Roboto";
+$global-typography-accent-font-weight:500;
+la-menuanchorbutton{
+    display: inline-grid;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    margin:auto;
+    opacity: 0.5;
+}
+la-menuanchorbutton[active]{
+opacity: 1;
+}
+la-menuanchorbutton:hover::after{
+    content: "";
+    background-image: linear-gradient(to right, $global-color-secondary, transparent);
+    height:2px;
+    opacity: 0.5;
+}
+la-menuanchorbutton[active]::after{
+    content: "";
+    background-image: linear-gradient(to right, $global-color-primary, transparent);
+    height:2px;
+}
+button {
+    position: relative;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1vw;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: $global-typography-primary-font-weight;
+    color: #04354a;
+}
+
+@media only screen and (max-width: 750px){
+    la-menuanchorbutton{
+        margin:auto
+    }
+    img{
+        max-width: 50%;
+        margin:auto
+    }
+    button{
+        font-size: 1.3vh;
+    }
+}

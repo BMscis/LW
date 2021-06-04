@@ -1,0 +1,33 @@
+$global-color-primary: #6EC1E4;
+$global-color-secondary: #fdf6ed;
+$global-color-text: #7A7A7A;
+$global-color-accent: #61CE70;
+$global-typography-primary-font-family: "Roboto";
+$global-typography-primary-font-weight: 600;
+$global-typography-secondary-font-family: "Roboto Slab";
+$global-typography-secondary-font-weight: 400;
+$global-typography-text-font-family: "Roboto";
+$global-typography-text-font-weight: 400;
+$global-typography-accent-font-family: "Roboto";
+$global-typography-accent-font-weight:500;
+la-menuanchorbuttondropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -1000px;
+    justify-items: baseline;
+    margin:10px;
+}
+la-menuanchorbutton[dropdown] > la-menuanchorbuttondropdown{
+    transform: translateY(1045px);
+    backdrop-filter: opacity(0.1) invert(1);
+}
+la-menuanchorbuttondropdown > la-menuanchorbutton{
+        width: 100%;
+        margin:10px;
+        opacity: 1;
+
+}
+la-menuanchorbutton > button{
+    font-weight: $global-typography-secondary-font-weight;
+}

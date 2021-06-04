@@ -1,0 +1,49 @@
+
+$global-color-primary: #6EC1E4;
+$global-color-secondary: #fdf6ed;
+$global-color-text: #7A7A7A;
+$global-color-accent: #61CE70;
+$global-typography-primary-font-family: "Roboto";
+$global-typography-primary-font-weight: 600;
+$global-typography-secondary-font-family: "Roboto Slab";
+$global-typography-secondary-font-weight: 400;
+$global-typography-text-font-family: "Roboto";
+$global-typography-text-font-weight: 400;
+$global-typography-accent-font-family: "Roboto";
+$global-typography-accent-font-weight:500;
+
+*{
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+body{
+    margin: 0;
+}
+la-componenthandler {
+    display: grid;
+    grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" "la-news la-carousel la-calendar" "la-news la-carousel la-next";
+    grid-template-columns: 20vw 1fr 28vw;
+    grid-template-rows:9vh 100vh auto;
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    padding: 0;
+    margin:0;
+    color: black;
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 16px;
+    word-wrap: break-word;
+    position: relative;
+    background: #f0f2f5;
+    height: 100vh;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 750px){
+    la-componenthandler{
+        grid-template-areas: "la-mainmenu" "la-mainmenu" "la-carousel " "la-calendar" "la-news" "la-contact";
+        grid-template-columns:  auto ;
+        grid-template-rows: 8vh 5.5vh 95vh 50vh auto;        }
+}
