@@ -51,7 +51,8 @@ export class AlumniStore extends HTMLElement{
     }
     render(){
         this.innerHTML = `
-        <div class="cards">
+        <a href=/alumnistore/></a>
+        <div id="alumnistore" class="cards">
         <h3>Alumni Stores</h3>
         <h1>Get The Alumni Discount</h1>
         <div class="card card__one">

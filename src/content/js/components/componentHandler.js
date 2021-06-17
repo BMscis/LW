@@ -13,10 +13,11 @@ import ag7 from "../../../assets/SATURDAYFOOTBALLMATCHES.jpg"
 import { ScrollLedger } from "../Classes/scrolledger";
 import { Calendar } from "./calendar";
 export class ComponentHandler extends HTMLElement{
-    constructor(){
+    constructor(renderCarousel = ''){
         super()
         console.log(`${this.nodeName} has been constructed`)
         //this.shadow = this.attachShadow({mode:'open'})
+        this.renderCarousel = renderCarousel
         this.components = {}
         this.setup()
 
@@ -59,7 +60,8 @@ export class ComponentHandler extends HTMLElement{
             [ag4,"Football Tournament 2020"],
             [ag5,"Iftar 2018"],
             [ag6,"IGCSE Reunion"],
-            [ag7,"Saturday Football Matches"]]
+            [ag7,"Saturday Football Matches"]],
+            this.renderCarousel
         )
         this.components["sidebar"] = new SideBar(this.components.mainmenu.components.menuanchor)
         return

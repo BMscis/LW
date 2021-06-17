@@ -5,8 +5,10 @@ const webpack = require('webpack');
 const glob = require('glob')
 
 module.exports = {
+    target:"web",
     entry:{
         home:glob.sync("./src/content/js/index.js"),
+        store:glob.sync("./src/content/js/alumnistorentry.js"),
         style:glob.sync('./src/content/sass/*.scss'),
         //components:glob.sync("./src/content/js/components/*.js"),
     },
@@ -48,11 +50,22 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "Home",
-            filename:"index.html"
+            filename:"index.html",
+            excludeChunks:["store"]
+        }),
+        new HtmlWebpackPlugin({
+            title: "Alumni Store",
+            filename:"alumnistore.html",
+            excludeChunks:["home"]
         })
     ],
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'docs'),
     },
+    performance:{
+        hints:'warning',
+        maxEntrypointSize:250000,
+        maxAssetSize:250000,
+    }
 }

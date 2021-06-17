@@ -3,11 +3,12 @@ import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
 
 export class Carousel extends HTMLElement{
-    constructor(imageSet=[]){
+    constructor(imageSet=[],render = ''){
         super()
         console.log(`${this.nodeName} has been constructed`)
         //this.shadow = this.attachShadow({mode:'open'})
         this.components = {}
+        this.renderer = render
         this.imageSet = imageSet
         this.setup()
 
@@ -39,7 +40,7 @@ export class Carousel extends HTMLElement{
     }
     connectedCallback(){
         console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
-        this.render()
+        this.render(this.renderer)
     }
     attributeChangedCallback(prop, oldVal, newVal) {
     }
