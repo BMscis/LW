@@ -16,14 +16,14 @@ export class MenuAnchor extends HTMLElement{
         var buttonHome = new MenuAnchorButton("HOME",true,[])
         var buttonAbout = new MenuAnchorButton("ABOUT LAAA",false,["MISSION AND VISION","CONSTITUTION","PARTNERSHIP","ABOUT US","CLUBS"])
         var buttonActivities = new MenuAnchorButton("ACTIVITIES",false,["EVENTS", "PROJECTS"])
-        var buttonAlumniStories = new MenuAnchorButton("ALUMNI STORES",false,[])
+        var buttonAlumniStore = new MenuAnchorButton("ALUMNI STORES",false,[])
         var buttonGallery = new MenuAnchorButton("GALLERY",false,[])
         var buttonContact = new MenuAnchorButton("CONTACT US",false,[])
 
         this.components["home"] = buttonHome
         this.components["aboutlaa"] = buttonAbout
         this.components["activities"] = buttonActivities
-        this.components["alumnistories"] = buttonAlumniStories
+        this.components["alumnistories"] = buttonAlumniStore
         this.components["buttongallery"] = buttonGallery
         this.components["buttoncontact"] = buttonContact
         return
