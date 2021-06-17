@@ -3,20 +3,19 @@ la-carousel{
     grid-area: la-carousel;
     width: 100%;
     height:100% ;
-    grid-template-areas:"... photo ... " "prev photo next";
+    grid-template-areas:"... ... ... " "prev photo next";
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 9% 1fr;
     background: transparent;
     margin: 0;
     border-radius: 10px;
+    scroll-snap-align: end;
+    overflow: auto;
 }
-la-carousel[alumnistore]{
-    grid-template-areas:"photo";
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    background: transparent;
-    margin: 0;
-    border-radius: 10px;
+.cal-button{
+    .fa{
+        display: flex;
+    }
 }
 caption{
     display: grid;
@@ -48,6 +47,7 @@ caption{
     color: #000000a1;
     border-radius: 20px;
     filter: drop-shadow(1px 1px 3px #000000a1);
+    scroll-snap-type: x mandatory;
 }
 la-imageroll{
     width: 100%;
@@ -64,4 +64,21 @@ la-imageroll > div{
     background-size: cover;
     outline: none;
     border-radius: 20px;
+    scroll-snap-align: center;
+}
+@media screen and (max-width: 750px){
+    la-carousel{
+        grid-area: la-carousel;
+        width: 100%;
+        height:100% ;
+        grid-template-areas:"... ... ... " "... photo ..." "... ... ... ";
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 9% 1fr 9%;
+        background: transparent;
+        margin: 0;
+        border-radius: 10px;
+    }
+    .imagecontainer{
+        width: calc(100vw / 1.35);
+    }
 }

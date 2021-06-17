@@ -27,7 +27,7 @@ la-menubutton {
     width: 20px;
     height: 2px;
     border-radius: 3px;
-    background: whitesmoke
+    background: #312c2c
    }
    
    la-menubutton::after,
@@ -49,7 +49,8 @@ la-menubutton {
     grid-auto-flow: column;
     width: 300px;
     height: fit-content;
-    backdrop-filter: opacity(0.1) invert(1);
+    background: #f0f8ff9e;
+    backdrop-filter: opacity(1) blur(8px);
 }
 
 .backdropdiv > la-menuanchorbutton{

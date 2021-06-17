@@ -13,16 +13,18 @@ la-alumnistore {
   overflow: hidden;
   perspective: 1800px;
   text-align: center;
-  margin: 0 20px;
+  margin: auto;
+  box-shadow: 0px 10px 20px 20px rgb(0 0 0 / 17%);
+  border-radius: 15px;
 }
-
 h1 {
   color: #3e3e42;
-  font-size:32px;
+  font-size:16px;
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 30px;
   transform: translateZ(35px);
+  text-shadow: 2px 3px 12px #0000008f;
 }
 
 h3 {

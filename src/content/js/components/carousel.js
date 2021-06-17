@@ -49,7 +49,6 @@ export class Carousel extends HTMLElement{
             case "ALUMNI STORES":
                 this.disconnectedCallback()
                 this.appendChild(this.components.alumnistore)
-                this.setAttribute("alumnistore",'')
             return
             default:
                 var center = document.createElement("div")

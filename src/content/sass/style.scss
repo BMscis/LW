@@ -40,10 +40,14 @@ la-componenthandler {
     background: #f0f2f5;
     height: 100vh;
     overflow: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 @media only screen and (max-width: 750px){
     la-componenthandler{
         grid-template-areas: "la-mainmenu" "la-mainmenu" "la-carousel " "la-calendar" "la-news" "la-contact";
         grid-template-columns:  auto ;
-        grid-template-rows: 8vh 5.5vh 95vh 50vh auto;        }
+        grid-template-rows: 8vh 5.5vh 86.6vh 86.6vh auto;
+        width: 100%;
+    }
 }

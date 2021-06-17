@@ -6,4 +6,6 @@ la-stories{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top, center, bottom;
+    scroll-snap-align: end;
+    margin-top: 20px;
 }

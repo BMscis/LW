@@ -209,6 +209,8 @@ la-calendar{
     display: grid;
     grid-area:la-calendar;
     justify-items: center;
+    overflow: auto;
+    scroll-snap-align: end;
 }
 .cal-device {
   width: $device-width;

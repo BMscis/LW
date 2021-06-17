@@ -15,6 +15,7 @@ export class AlumniStore extends HTMLElement{
     
         let timeout;
         this.addEventListener('mouseover', ({ x, y }) => {
+          console.log("mouse over")
           var images = document.querySelectorAll(".card__img");
           var backgrounds = document.querySelectorAll(".card__bg");
           if (timeout) {
@@ -51,7 +52,6 @@ export class AlumniStore extends HTMLElement{
     }
     render(){
         this.innerHTML = `
-        <a href=/alumnistore/></a>
         <div id="alumnistore" class="cards">
         <h3>Alumni Stores</h3>
         <h1>Get The Alumni Discount</h1>
