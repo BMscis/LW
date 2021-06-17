@@ -16,7 +16,7 @@ export class MenuAnchor extends HTMLElement{
         var buttonHome = new MenuAnchorButton("HOME",true,[])
         var buttonAbout = new MenuAnchorButton("ABOUT LAAA",false,["MISSION AND VISION","CONSTITUTION","PARTNERSHIP","ABOUT US","CLUBS"])
         var buttonActivities = new MenuAnchorButton("ACTIVITIES",false,["EVENTS", "PROJECTS"])
-        var buttonAlumniStories = new MenuAnchorButton("ALUMNI STORIES",false,[])
+        var buttonAlumniStories = new MenuAnchorButton("ALUMNI STORES",false,[])
         var buttonGallery = new MenuAnchorButton("GALLERY",false,[])
         var buttonContact = new MenuAnchorButton("CONTACT US",false,[])
 

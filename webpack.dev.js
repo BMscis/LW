@@ -10,5 +10,6 @@ module.exports = merge(common, {
     overlay: true,
     hot:true,
     disableHostCheck: true,
+    port:9000
   },
 });

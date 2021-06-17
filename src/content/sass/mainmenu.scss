@@ -18,11 +18,16 @@ la-mainmenu{
     grid-template-columns: 19vw 1fr 14vw;
     grid-template-rows: 8vh 0px;
     height: 100%;
-    position: relative;
+    width: 100%;
+    position: sticky;
+    top:0;
+    background: #f0f2f5;
     font-size: 15px;
     letter-spacing: 0px;
     text-transform: uppercase;
     margin: 0vh 1vw;
+    z-index: 1000;
+
 }
 la-mainmenu::after{
     grid-area:four;

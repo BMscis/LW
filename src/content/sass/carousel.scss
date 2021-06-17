@@ -4,8 +4,16 @@ la-carousel{
     width: 100%;
     height:100% ;
     grid-template-areas:"... photo ... " "prev photo next";
-    grid-template-columns: 10% 1fr 10%;
+    grid-template-columns: 10% 80% 10%;
     grid-template-rows: 9% 1fr;
+    background: transparent;
+    margin: 0;
+    border-radius: 10px;
+}
+la-carousel[alumnistore]{
+    grid-template-areas:"photo";
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     background: transparent;
     margin: 0;
     border-radius: 10px;

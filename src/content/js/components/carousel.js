@@ -1,3 +1,4 @@
+import { AlumniStore } from "./alumnistores"
 import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
 
@@ -30,6 +31,7 @@ export class Carousel extends HTMLElement{
         this.components["imagecontainer"] = div
         this.components["toggleright"] = toggleright
         this.components["toggleleft"] = toggleleft
+        this.components["alumnistore"] = new AlumniStore()
         return
     }
     static get observedAttributes() {
@@ -41,13 +43,22 @@ export class Carousel extends HTMLElement{
     }
     attributeChangedCallback(prop, oldVal, newVal) {
     }
-    render(){
-        var center = document.createElement("div")
-        center.classList.add("centralcarousel")
-        center.appendChild(this.components.imagecontainer)
-        this.appendChild(center)
-        this.appendChild(this.components.toggleleft)
-        this.appendChild(this.components.toggleright)
+    render(val){
+        switch(val){
+            case "ALUMNI STORES":
+                this.disconnectedCallback()
+                this.appendChild(this.components.alumnistore)
+                this.setAttribute("alumnistore",'')
+            return
+            default:
+                var center = document.createElement("div")
+                center.classList.add("centralcarousel")
+                center.appendChild(this.components.imagecontainer)
+                this.appendChild(center)
+                this.appendChild(this.components.toggleleft)
+                this.appendChild(this.components.toggleright)
+                return
+        }
     }
     get styledTemplate(){
         return `
@@ -60,6 +71,10 @@ export class Carousel extends HTMLElement{
         `
     }
     disconnectedCallback(){
+        var childCount = this.childElementCount
+        for(let i = 0; i < childCount; i++){
+            this.removeChild(this.children[0])
+        }
         console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
     }
 }

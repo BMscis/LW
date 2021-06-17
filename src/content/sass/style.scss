@@ -11,7 +11,6 @@ $global-typography-text-font-family: "Roboto";
 $global-typography-text-font-weight: 400;
 $global-typography-accent-font-family: "Roboto";
 $global-typography-accent-font-weight:500;
-
 *{
     box-sizing: border-box;
     transition: 0.5s ease-in-out;
@@ -24,9 +23,11 @@ body{
 }
 la-componenthandler {
     display: grid;
-    grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" "la-news la-carousel la-calendar" "la-news la-carousel la-next";
-    grid-template-columns: 20vw 1fr 28vw;
-    grid-template-rows:9vh 100vh auto;
+    grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" 
+                            "la-news la-carousel la-calendar" 
+                            "la-update la-update la-update";
+    grid-template-columns: 20vw 52vw 28vw;
+    grid-template-rows:9vh 91vh 100vh;
     font-family: "Helvetica Neue", helvetica, arial, sans-serif;
     padding: 0;
     margin:0;
@@ -40,7 +41,6 @@ la-componenthandler {
     height: 100vh;
     overflow: auto;
 }
-
 @media only screen and (max-width: 750px){
     la-componenthandler{
         grid-template-areas: "la-mainmenu" "la-mainmenu" "la-carousel " "la-calendar" "la-news" "la-contact";

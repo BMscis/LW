@@ -23,6 +23,9 @@ export class MenuAnchorButton extends HTMLElement{
             prevActive.getActive
             this.setActive = 0
             this.active = true
+            if(this.text === "ALUMNI STORES"){
+                document.querySelector('la-carousel').render(this.text)
+            }
             return
             
         })
