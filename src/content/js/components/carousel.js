@@ -2,6 +2,17 @@ import { AlumniStore } from "./alumnistores"
 import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
 
+// import espiiLogo from '../../../assets/espiiforweb.png';
+// import lacard from '../../../assets/lacardLight.png';
+// import cog1 from '../../../assets/cognita1.png'
+import cog4 from '../../../assets/cognita4s.svg'
+import anatolia1 from '../../../assets/anatolia.png'
+import anatolia2 from '../../../assets/anatolia2.svg'
+import lis2 from '../../../assets/LIS-FLAT.svg'
+import lis1 from '../../../assets/Round-Logo-International.svg'
+import lan1 from '../../../assets/Round-Logo-Academy.svg'
+import lan2 from '../../../assets/LGS-flat.svg'
+
 export class Carousel extends HTMLElement{
     constructor(imageSet=[],render = ''){
         super()
@@ -32,7 +43,10 @@ export class Carousel extends HTMLElement{
         this.components["imagecontainer"] = div
         this.components["toggleright"] = toggleright
         this.components["toggleleft"] = toggleleft
-        this.components["alumnistore"] = new AlumniStore()
+        this.components["one"]   = new AlumniStore("","cognita.png","Cognita","http://cognitaconsultancy.com",cog4),
+        this.components["two"]   = new AlumniStore(anatolia2,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia1),
+        this.components["three"] = new AlumniStore(lis1,"lacardLight.png","Light Academy International School","http://lis.sc.ke/nairobi/",lis2)
+        this.components["four"] = new AlumniStore(lan1,"lacardLight.png","Light Academy Nairobi School","http://lightacademy.ac.ke/nairobi/",lan2)
         return
     }
     static get observedAttributes() {
@@ -48,7 +62,20 @@ export class Carousel extends HTMLElement{
         switch(val){
             case "ALUMNI STORES":
                 this.disconnectedCallback()
-                this.appendChild(this.components.alumnistore)
+                this.setAttribute('store','')
+                this.appendChild(this.components.one)
+                this.appendChild(this.components.two)
+                this.appendChild(this.components.three)
+                this.appendChild(this.components.four)
+            return
+            case "HOME":
+                this.disconnectedCallback()
+                var center = document.createElement("div")
+                center.classList.add("centralcarousel")
+                center.appendChild(this.components.imagecontainer)
+                this.appendChild(center)
+                this.appendChild(this.components.toggleleft)
+                this.appendChild(this.components.toggleright)
             return
             default:
                 var center = document.createElement("div")

@@ -26,6 +26,9 @@ export class MenuAnchorButton extends HTMLElement{
             if(this.text === "ALUMNI STORES"){
                 document.querySelector('la-carousel').render(this.text)
             }
+            else if(this.text === "HOME"){
+                document.querySelector('la-carousel').render(this.text)
+            }
             return
             
         })
