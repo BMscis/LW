@@ -2,13 +2,13 @@ import { AlumniStore } from "./alumnistores"
 import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
 
-import espiiLogo from '../../../assets/espiiforweb.png';
+import espiiLogo from '../../../assets/espiiforweb.svg';
 import eidesign from '../../../assets/eidesign.png';
 // import lacard from '../../../assets/lacardLight.png';
 import cog1 from '../../../assets/cognita1.svg'
 import cog4 from '../../../assets/cognita4s.svg'
-import anatolia1 from '../../../assets/anatolia.png'
-import anatolia2 from '../../../assets/anatolia2.svg'
+import anatolia1 from '../../../assets/anatolia.svg'
+import anatolia2 from '../../../assets/anatolia2.png'
 import lis2 from '../../../assets/LIS-FLAT.svg'
 import lis1 from '../../../assets/Round-Logo-International.svg'
 import lan1 from '../../../assets/Round-Logo-Academy.svg'

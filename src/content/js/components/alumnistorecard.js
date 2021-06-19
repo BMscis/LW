@@ -25,7 +25,7 @@ export class AlumniStoreCard extends HTMLElement{
         card_bg.style.backgroundImage = `url(${this.bg})`
         card_bg.style.backgroundSize = `contain`
         card_bg.style.backgroundRepeat = `no-repeat`
-        card_bg.style.backgroundPosition = `center`
+        //card_bg.style.backgroundPosition = `center`
         var card_img = document.createElement("img")
         card_img.classList.add("card__img")
         card_img.id = this.text
