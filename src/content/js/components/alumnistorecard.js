@@ -28,6 +28,7 @@ export class AlumniStoreCard extends HTMLElement{
         card_bg.style.backgroundPosition = `center`
         var card_img = document.createElement("img")
         card_img.classList.add("card__img")
+        card_img.id = this.text
         card_img.src = this.source
         card_img.alt = this.alt
         var card_text = document.createElement("div")

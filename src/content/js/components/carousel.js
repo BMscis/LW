@@ -2,9 +2,10 @@ import { AlumniStore } from "./alumnistores"
 import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
 
-// import espiiLogo from '../../../assets/espiiforweb.png';
+import espiiLogo from '../../../assets/espiiforweb.png';
+import eidesign from '../../../assets/eidesign.png';
 // import lacard from '../../../assets/lacardLight.png';
-// import cog1 from '../../../assets/cognita1.png'
+import cog1 from '../../../assets/cognita1.svg'
 import cog4 from '../../../assets/cognita4s.svg'
 import anatolia1 from '../../../assets/anatolia.png'
 import anatolia2 from '../../../assets/anatolia2.svg'
@@ -43,10 +44,11 @@ export class Carousel extends HTMLElement{
         this.components["imagecontainer"] = div
         this.components["toggleright"] = toggleright
         this.components["toggleleft"] = toggleleft
-        this.components["one"]   = new AlumniStore("","cognita.png","Cognita","http://cognitaconsultancy.com",cog4),
+        this.components["one"]   = new AlumniStore(cog1,"cognita.png","Cognita","http://cognitaconsultancy.com",cog4),
         this.components["two"]   = new AlumniStore(anatolia2,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia1),
         this.components["three"] = new AlumniStore(lis1,"lacardLight.png","Light Academy International School","http://lis.sc.ke/nairobi/",lis2)
         this.components["four"] = new AlumniStore(lan1,"lacardLight.png","Light Academy Nairobi School","http://lightacademy.ac.ke/nairobi/",lan2)
+        this.components["five"] = new AlumniStore(espiiLogo,"espiilogo.png","Espii Iterface & Designs","https://bmscis.github.io/components/","")
         return
     }
     static get observedAttributes() {
@@ -67,6 +69,7 @@ export class Carousel extends HTMLElement{
                 this.appendChild(this.components.two)
                 this.appendChild(this.components.three)
                 this.appendChild(this.components.four)
+                this.appendChild(this.components.five)
             return
             case "HOME":
                 this.disconnectedCallback()
