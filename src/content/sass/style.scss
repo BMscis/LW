@@ -18,13 +18,14 @@ $global-typography-accent-font-weight:500;
 ::-webkit-scrollbar{
     width: 0;
 }
-body{
+html,body{
+    height: 100vh;
     margin: 0;
 }
 la-componenthandler {
     display: grid;
     grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" 
-                            "la-news la-carousel la-calendar" 
+                            "la-carousel la-carousel la-calendar" 
                             "la-update la-update la-update";
     grid-template-columns: 20vw 52vw 28vw;
     grid-template-rows:9vh 91vh 100vh;
@@ -52,3 +53,12 @@ la-componenthandler {
         scroll-padding: 13.5vh;
     }
 }
+// @media only screen and (max-width: 1250px){
+//     la-componenthandler{
+//         grid-template-areas: "la-mainmenu la-mainmenu" 
+//                             "la-carousel la-calendar" 
+//                             "la-update la-news";
+//     grid-template-columns: 1fr 35vw;
+//     grid-template-rows:9vh 91vh 100vh;
+//     }
+// }

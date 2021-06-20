@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-html, body { height: 100%}
-
 $width:581px;
 $height:366px;
 $cardpadding:50px;
@@ -10,18 +8,18 @@ $textheight:calc($width / 8.3);
 la-alumnistore {
   grid-area:photo;
   align-items: center;
-  width: $width;
-  height: $height;
+  width: min(100vw / 2.35, 581px );
+  height: min(100vh / 1.8,366px );
   //background: #642B73;
   //background: linear-gradient(to bottom, #C6426E, #642B73);
-  background: transparent;
+  background: #1f2e35;
   display: flex;
   font-family: 'Open Sans', sans;
   justify-content: center;
   overflow: hidden;
   perspective: 1800px;
   text-align: center;
-  margin: auto;
+  margin: 20px;
   //box-shadow: 0px 10px 20px 20px rgb(0 0 0 / 17%);
   border-radius: 15px;
   z-index: 3;
@@ -38,7 +36,6 @@ h1 {
   position: absolute;
   z-index: 2;
 }
-
 h3 {
   color: #eb285d;
   font-size: 16px;
@@ -49,15 +46,12 @@ h3 {
   position: absolute;
   z-index: 2;
 }
-
 .cards {
   box-shadow: 5px 5px 20px -5px rgb(0 0 0 / 97%);
   border-radius: 15px;
   //box-shadow: 0px 10px 20px 20px rgba(0,0,0,0.17);
-  background: #1f2e35;
+  background: transparent;
   display: flex;
-  height: $height - $cardpadding;
-  width: $width - $cardpadding;
   margin: auto;
   //padding: 30px 35px;
   perspective: 1800px;
@@ -67,16 +61,17 @@ h3 {
   z-index: 2;
   //transform: rotateX(11deg) rotateY(16.5deg);
   //min-width: 595px;
+  width: min(100vw / 2.35 - 15px, 581px - 15px );
+  height: min(100vh / 1.8 - 15px ,366px - 15px );
 }
 
 .card {
-  background-image: url(../../assets/newQrCard.png);
+  background-image: url(../../assets/newQrCard.svg);
   border-radius: 15px;
   box-shadow: inset 5px 5px 20px -5px rgba(0,0,0,0.6);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position-x: 123px;
-  background-position-y: -31px;
+  background-position: center;
   // cursor: pointer;
   display: flex;
   overflow: hidden;
@@ -88,14 +83,15 @@ h3 {
   text-align: center;
   cursor: pointer;
   margin: auto;
-  height: $height - $cardmargin;
-  width: 90%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   //background: transparent;
   //background: #041820;
   z-index: 2;
+  width: min(100vw / 2.35 - 30px, 581px - 30px );
+  height: min(100vh / 1.8 - 30px ,366px - 30px );
+  background-color: transparent;
   
   
   // &:hover {
@@ -123,17 +119,20 @@ h3 {
   border-radius: 25px;
 }
 img.card__img {
-  height: 50%;
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
+  filter: drop-shadow(2px 4px 6px black) opacity(0.3);
+  width: min(50%,218px);
 }
-#Cognita{
-    top: 20px;
-    right: 11px;
-    left: unset;
-    bottom: unset;
-  }
+// #Cognita{
+//     top: 20px;
+//     right: 11px;
+//     left: unset;
+//     bottom: -30px;;
+//   }
+// img#Espii\ Iterface\ \&\ Designs {
+//     bottom: unset;
+//     left: unset;
+//     top: 0;
+// }
 .card__one {
   .card__img {
     top: 14px;
@@ -240,8 +239,5 @@ img.card__img {
 }
 @media screen and (max-width: 650px){
 
-  la-alumnistore{
-    width: auto;
-  }
 
 }

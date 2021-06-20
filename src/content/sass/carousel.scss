@@ -9,11 +9,16 @@ la-carousel{
     background: transparent;
     margin: 0;
     border-radius: 10px;
-    scroll-snap-align: end;
+    scroll-snap-align: start;
     overflow: auto;
 }
 la-carousel[store]{
-    display: block;
+    display: flow-root;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    flex-direction: row;
 }
 .cal-button{
     .fa{
