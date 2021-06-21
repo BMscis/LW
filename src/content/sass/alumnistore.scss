@@ -6,23 +6,29 @@ $cardmargin:102px;
 $textheight:calc($width / 8.3);
 
 la-alumnistore {
-  grid-area:photo;
-  align-items: center;
-  width: min(100vw / 2.35, 581px );
-  height: min(100vh / 1.8,366px );
-  //background: #642B73;
-  //background: linear-gradient(to bottom, #C6426E, #642B73);
-  background: #1f2e35;
-  display: flex;
-  font-family: 'Open Sans', sans;
-  justify-content: center;
-  overflow: hidden;
+  //grid-area:photo;
+  margin:auto;
+  background-image: url(../../assets/newQrCard.svg);
+  background-repeat: no-repeat;
+  width: clamp(135.5px,100vw / 5,271px);
+  height: clamp(190.5px,100vw / 3,381px);
+  background-color: #ffffff;
+  display: grid;
+  grid-auto-columns: 80%;
+  grid-auto-rows: 75% 5%;
   perspective: 1800px;
-  text-align: center;
-  margin: 20px;
-  //box-shadow: 0px 10px 20px 20px rgb(0 0 0 / 17%);
   border-radius: 15px;
-  z-index: 3;
+  background-size: 4vw;
+  background-position-y: 2%;
+  background-position-x: 90%;
+  justify-content: center;
+  align-content: center;
+  transform-origin: 50% 50%;
+  transform-style:preserve-3d;
+  //transform: rotateX(111deg) rotateY(16.5deg);
+  transition:transform 200ms ease-out;
+  transition-delay: 200ms;
+  box-shadow: 5px 5px 20px -5px rgb(0 0 0 / 60%);
 }
 h1 {
   color: #3e3e42;
@@ -49,72 +55,46 @@ h3 {
 .cards {
   box-shadow: 5px 5px 20px -5px rgb(0 0 0 / 97%);
   border-radius: 15px;
-  //box-shadow: 0px 10px 20px 20px rgba(0,0,0,0.17);
-  background: transparent;
-  display: flex;
-  margin: auto;
-  //padding: 30px 35px;
   perspective: 1800px;
-  text-align: left;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
-  z-index: 2;
-  //transform: rotateX(11deg) rotateY(16.5deg);
-  //min-width: 595px;
-  width: min(100vw / 2.35 - 15px, 581px - 15px );
-  height: min(100vh / 1.8 - 15px ,366px - 15px );
+  //transform:translateZ(-50px);
+  transition: transform 200ms ease-out;
+  display: grid;
+  grid-auto-columns: 80%;
+  grid-auto-rows: 80%;
+  align-content: center;
+  justify-content: center;
+  background-size: 50%;
+  background-position: top center;
+  background-color: #56bfee;
 }
 
 .card {
-  background-image: url(../../assets/newQrCard.svg);
-  border-radius: 15px;
-  box-shadow: inset 5px 5px 20px -5px rgba(0,0,0,0.6);
+  /* border-radius: 15px; */
+  //box-shadow: inset 5px 5px 20px -5px rgb(0 0 0 / 60%);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  // cursor: pointer;
-  display: flex;
-  overflow: hidden;
   perspective: 1200px;
-  position: relative;
   transform-style: preserve-3d;
-  transform: translatez(35px);
+  transform-origin: 50% 50%;
+  //transform: translateZ(35px);
   transition: transform 200ms ease-out;
-  text-align: center;
-  cursor: pointer;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  //background: transparent;
-  //background: #041820;
-  z-index: 2;
-  width: min(100vw / 2.35 - 30px, 581px - 30px );
-  height: min(100vh / 1.8 - 30px ,366px - 30px );
   background-color: transparent;
-  
-  
-  // &:hover {
-  //   box-shadow: 5px 5px 20px -7px rgba(0,0,0,0.5);
-  //   transform: translatez(60px);
-  // }
-  
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
 }
-
+#Cognitacard{
+  background-size: 23%;
+  background-position: 20% 44%;
+}
 .card__img {
   position: relative;
 }
 .card__bg{
-  position: absolute;
   transform-origin: 50% 50%;
   transform: translateZ(-50px);
-  z-index: -1;
   height: 100%;
   width: 100%;
-  //background-color: #041820;
   background-color: transparent;
   border-radius: 25px;
 }
@@ -174,28 +154,16 @@ img.card__img {
 }
 
 .card__text {
-  align-items: center;
-  //background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.55) 100%);
-  bottom: 0;
-  display: flex;
-  flex-direction: column; 
-  height: $textheight;
-  justify-content: center;
-  //position: absolute;
-  z-index: 2;
-  padding: 20px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  text-align: center;
 }
 
 .card__title {
-  color: #EDE63E;
-  font-size: 14px;
-  padding: 0 10px;
-  margin-bottom: 3px;
+  color: #795548;
   text-decoration: none;
-  text-shadow: 4px 2px 4px #0c040480;
+  font-size: 60%;
+  -webkit-text-stroke-width: medium;
+  letter-spacing: 3px;
+  font-variant: unicase;
 }
 
 .notice {
@@ -237,7 +205,9 @@ img.card__img {
 .twitter__icon {
   height: 30px;
 }
-@media screen and (max-width: 650px){
-
+@media screen and (max-height: 650px){
+la-alumnistore {
+  height: clamp(190.5px,100vh / 3.2,381px);
+}
 
 }

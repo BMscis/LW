@@ -44,11 +44,11 @@ export class Carousel extends HTMLElement{
         this.components["imagecontainer"] = div
         this.components["toggleright"] = toggleright
         this.components["toggleleft"] = toggleleft
-        this.components["one"]   = new AlumniStore(cog1,"cognita.png","Cognita","http://cognitaconsultancy.com",cog4),
-        this.components["two"]   = new AlumniStore(anatolia2,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia1),
-        this.components["three"] = new AlumniStore(lis1,"lacardLight.png","Light Academy International School","http://lis.sc.ke/nairobi/",lis2)
-        this.components["four"] = new AlumniStore(lan1,"lacardLight.png","Light Academy Nairobi School","http://lightacademy.ac.ke/nairobi/",lan2)
-        this.components["five"] = new AlumniStore(espiiLogo,"espiilogo.png","Espii Iterface & Designs","https://bmscis.github.io/components/","")
+        this.components["one"]   = new AlumniStore(`url(${cog4})`,"cognita.png","Cognita","http://cognitaconsultancy.com",cog1),
+        this.components["two"]   = new AlumniStore(`url(${anatolia2}`,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia1),
+        this.components["three"] = new AlumniStore( `url(${lis1})`,"lacardLight.png","International School","http://lis.sc.ke/nairobi/",lis2)
+        this.components["four"] = new AlumniStore(  `url(${lan1})`,"lacardLight.png","Nairobi School","http://lightacademy.ac.ke/nairobi/",lan2)
+        this.components["five"] = new AlumniStore(  `url(${espiiLogo})`,"espiilogo.png","Espii Iterface & Designs","https://bmscis.github.io/components/","")
         return
     }
     static get observedAttributes() {

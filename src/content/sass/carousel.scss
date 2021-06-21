@@ -11,14 +11,16 @@ la-carousel{
     border-radius: 10px;
     scroll-snap-align: start;
     overflow: auto;
+    padding:20px;
+    transform-origin: 50% 50%;
+    transform-style:preserve-3d;
+    perspective: 1800px;  
 }
 la-carousel[store]{
-    display: flow-root;
-    flex-wrap: wrap;
-    overflow: auto;
-    padding: 20px;
-    scroll-behavior: smooth;
-    flex-direction: row;
+    grid-template-columns: repeat(2, 33%);
+    grid-template-rows: repeat(3, 77.2%);
+    grid-gap: 20px;
+    
 }
 .cal-button{
     .fa{
@@ -86,6 +88,12 @@ la-imageroll > div{
         margin: 0;
         border-radius: 10px;
     }
+      la-carousel[store] {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: repeat(3, 50%);
+      grid-gap: 20px;
+      grid-template-areas: none;
+  }
     .imagecontainer{
         width: calc(100vw / 1.35);
     }

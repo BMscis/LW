@@ -25,10 +25,10 @@ html,body{
 la-componenthandler {
     display: grid;
     grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" 
-                            "la-carousel la-carousel la-calendar" 
+                            "la-carousel la-carousel la-carousel" 
                             "la-update la-update la-update";
     grid-template-columns: 20vw 52vw 28vw;
-    grid-template-rows:9vh 91vh 100vh;
+    grid-template-rows:9vh 1fr;
     font-family: "Helvetica Neue", helvetica, arial, sans-serif;
     padding: 0;
     margin:0;
@@ -41,7 +41,7 @@ la-componenthandler {
     background: #f0f2f5;
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
 }
 @media only screen and (max-width: 750px){

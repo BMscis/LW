@@ -20,6 +20,9 @@ export class MenuAnchorButton extends HTMLElement{
                 prevActive.toggleAttribute('dropdown',false)
             }
             this.toggleAttribute('dropdown')
+            if(this.parentElement.classList.contains('backdropdiv')){
+                this.parentElement.parentElement.toggleAttribute('overflow')
+            }
             prevActive.getActive
             this.setActive = 0
             this.active = true

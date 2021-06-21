@@ -12,6 +12,7 @@ export class MenuButton extends HTMLElement{
         this.addEventListener('click', e=>{
             this.parentElement.toggleAttribute("overflow")
         })
+
     }
     get getComponents(){
         return
