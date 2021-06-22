@@ -21,8 +21,10 @@ export class AlumniStore extends HTMLElement{
         function calcValue(a, b) {return (a/b*range-range/2).toFixed(1)} // thanks @alice-mx
 
         let timeout;
+        this.addEventListener("click",e =>{
+          window.location = this.components.card_text.firstElementChild.href
+        })
         this.addEventListener("mouseover", e =>{
-          console.log("mouseleover")
           var thisX = this.getBoundingClientRect().x
           var thisY = this.getBoundingClientRect().y
           var thisW = this.getBoundingClientRect().width
@@ -43,15 +45,15 @@ export class AlumniStore extends HTMLElement{
               this.style.transform = `rotateY(${atan}deg) translateZ(-50px)`
               this.components.cardholder.style.transform = `rotateY(${atan/3}deg) translateZ(25px) `
               var moveLogo = calcValue(this.components.cardholder.getBoundingClientRect().x ,this.components.alumnistorecard.getBoundingClientRect().x)
-              this.components.alumnistorecard.style.transform = `translateX(${moveLogo}px) translateZ(15px)`
-              console.log(true)
+              this.components.alumnistorecard.style.transform = `translateZ(${moveLogo}px)`
+              this.components.alumnistorecard.style.filter = `drop-shadow(${moveLogo/2}px ${moveLogo/2}px 1.5px #000000a1`
               break
             case false:
               this.style.transform = `rotateY(${atan2}deg) translateZ(-50px)`
               this.components.cardholder.style.transform = `rotateY(${atan2/3}deg) translateZ(25px)`
               var moveLogo = calcValue(this.components.cardholder.getBoundingClientRect().x ,this.components.alumnistorecard.getBoundingClientRect().x)
               this.components.alumnistorecard.style.transform = `translateZ(${moveLogo}px) `
-              console.log(false)
+              this.components.alumnistorecard.style.filter = `drop-shadow(${moveLogo/2}px ${moveLogo/2}px 1.5px #000000a1`
               break
           }
         })
@@ -67,7 +69,6 @@ export class AlumniStore extends HTMLElement{
           // )
         })
         this.addEventListener('mouseout', e =>{
-          console.log("mouseleave")
           if (timeout) {
             window.cancelAnimationFrame(timeout);
           }
@@ -75,6 +76,7 @@ export class AlumniStore extends HTMLElement{
           this.style.transform =                            `initial`
           this.components.cardholder.style.transform =      `initial`
           this.components.alumnistorecard.style.transform = `initial`
+          this.components.alumnistorecard.style.filter =    `initial`
           })
         })
         // this.addEventListener('mousemove', ({x, y}) => {

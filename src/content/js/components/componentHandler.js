@@ -3,11 +3,11 @@ import { Carousel } from "./carousel";
 import { MainMenu } from "./mainmenu";
 import { Stories } from "./stories";
 
-import ag from "../../../assets/ANNUALGALA2019.jpg"
-import ag2 from "../../../assets/ANNUALGALA20192.jpg"
+import ag from "../../../assets/ANNUALGALA2019.webp"
+import ag2 from "../../../assets/ANNUALGALA20192.webp"
 import ag3 from "../../../assets/FOOTBALLTOURNAMENT2019.jpg"
-import ag4 from "../../../assets/FOOTBALLTOURNAMENT2020.jpg"
-import ag5 from "../../../assets/IFTAR2018.jpg"
+import ag4 from "../../../assets/FOOTBALLTOURNAMENT2020.webp"
+import ag5 from "../../../assets/IFTAR2018.jpeg"
 import ag6 from "../../../assets/IGCSEREUNIONOLDOFFICE.jpg"
 import ag7 from "../../../assets/SATURDAYFOOTBALLMATCHES.jpg"
 import { ScrollLedger } from "../Classes/scrolledger";

@@ -8,10 +8,10 @@ $textheight:calc($width / 8.3);
 la-alumnistore {
   //grid-area:photo;
   margin:auto;
-  background-image: url(../../assets/newQrCard.svg);
+  background-image: url(../../assets/QRCODE/QRCODE.svg);
   background-repeat: no-repeat;
-  width: clamp(135.5px,100vw / 5,271px);
-  height: clamp(190.5px,100vw / 3,381px);
+  width: clamp(80%,100vw / 3,271px);
+  height: clamp(95%,100vw / 2,381px);
   background-color: #ffffff;
   display: grid;
   grid-auto-columns: 80%;
@@ -29,6 +29,19 @@ la-alumnistore {
   transition:transform 200ms ease-out;
   transition-delay: 200ms;
   box-shadow: 5px 5px 20px -5px rgb(0 0 0 / 60%);
+  cursor: pointer;
+}
+la-alumnistore:hover{
+  a::after{
+    content: attr(href);
+    color: black;
+    position: absolute;
+    text-align: center;
+    font-stretch: ultra-condensed;
+    font-size: 50%;
+    left: 0;
+    bottom: -50%;
+  }
 }
 h1 {
   color: #3e3e42;
@@ -67,7 +80,7 @@ h3 {
   justify-content: center;
   background-size: 50%;
   background-position: top center;
-  background-color: #56bfee;
+  background-color: #ffc629;
 }
 
 .card {
@@ -85,7 +98,7 @@ h3 {
 }
 #Cognitacard{
   background-size: 23%;
-  background-position: 20% 44%;
+  background-position: 20% 50%;
 }
 .card__img {
   position: relative;
@@ -154,16 +167,20 @@ img.card__img {
 }
 
 .card__text {
-  text-align: center;
+  text-align: left;
 }
 
 .card__title {
   color: #795548;
   text-decoration: none;
-  font-size: 60%;
+  font-size: clamp(10px,1vw,16px);
   -webkit-text-stroke-width: medium;
-  letter-spacing: 3px;
-  font-variant: unicase;
+  letter-spacing: min(0px,2px);
+  font-family: system-ui;
+  font-stretch: extra-condensed;
+  text-align: left;
+  line-break: auto;
+  white-space: nowrap;
 }
 
 .notice {

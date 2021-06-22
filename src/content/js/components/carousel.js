@@ -2,17 +2,17 @@ import { AlumniStore } from "./alumnistores"
 import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
 
-import espiiLogo from '../../../assets/espiiforweb.svg';
-import eidesign from '../../../assets/eidesign.png';
+import espiiLogo from '../../../assets/ESPII/ESPIISVG.svg';
+//import eidesign from '../../../assets/eidesign.png';
 // import lacard from '../../../assets/lacardLight.png';
-import cog1 from '../../../assets/cognita1.svg'
-import cog4 from '../../../assets/cognita4s.svg'
-import anatolia1 from '../../../assets/anatolia.svg'
-import anatolia2 from '../../../assets/anatolia2.svg'
-import lis2 from '../../../assets/LIS-FLAT.svg'
-import lis1 from '../../../assets/Round-Logo-International.svg'
-import lan1 from '../../../assets/Round-Logo-Academy.svg'
-import lan2 from '../../../assets/LGS-flat.svg'
+import cog1 from '../../../assets/COGNITA/COGNITA1SVG.svg'
+import cog2 from '../../../assets/COGNITA/COGNITA2SVG.svg'
+import anatolia1 from '../../../assets/ANATOLIA/ANATOLIASVG1.svg'
+import anatolia2 from '../../../assets/ANATOLIA/ANATOLIASVG2.svg'
+import lis2 from '../../../assets/LIF/LIFSVG.svg'
+import lis1 from '../../../assets/LIS/LISVG.svg'
+import lan1 from '../../../assets/LNS/LNSVG.svg'
+import lan2 from '../../../assets/LNF/LNFSVG.svg'
 
 export class Carousel extends HTMLElement{
     constructor(imageSet=[],render = ''){
@@ -44,8 +44,8 @@ export class Carousel extends HTMLElement{
         this.components["imagecontainer"] = div
         this.components["toggleright"] = toggleright
         this.components["toggleleft"] = toggleleft
-        this.components["one"]   = new AlumniStore(`url(${cog4})`,"cognita.png","Cognita","http://cognitaconsultancy.com",cog1),
-        this.components["two"]   = new AlumniStore(`url(${anatolia2}`,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia1),
+        this.components["one"]   = new AlumniStore(`url(${cog2})`,"cognita.png","Cognita","http://cognitaconsultancy.com",cog1),
+        this.components["two"]   = new AlumniStore(`url(${anatolia1}`,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia2),
         this.components["three"] = new AlumniStore( `url(${lis1})`,"lacardLight.png","International School","http://lis.sc.ke/nairobi/",lis2)
         this.components["four"] = new AlumniStore(  `url(${lan1})`,"lacardLight.png","Nairobi School","http://lightacademy.ac.ke/nairobi/",lan2)
         this.components["five"] = new AlumniStore(  `url(${espiiLogo})`,"espiilogo.png","Espii Iterface & Designs","https://bmscis.github.io/components/","")

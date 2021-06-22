@@ -5,13 +5,12 @@ la-carousel{
     height:100% ;
     grid-template-areas:"... ... ... " "prev photo next";
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 9% 1fr;
+    grid-template-rows: 3% 1fr;
     background: transparent;
     margin: 0;
     border-radius: 10px;
     scroll-snap-align: start;
     overflow: auto;
-    padding:20px;
     transform-origin: 50% 50%;
     transform-style:preserve-3d;
     perspective: 1800px;  
@@ -43,7 +42,7 @@ caption{
 }
 .imagecontainer{
     width: 90%;
-    height: 70%;
+    height: 90%;
     display: grid;
     grid-auto-flow: column;
     position: relative;
@@ -71,12 +70,14 @@ la-imageroll > div{
     height: 100%;
     margin: auto;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-color: #f0f2f5;
     outline: none;
     border-radius: 20px;
     scroll-snap-align: center;
 }
-@media screen and (max-width: 750px){
+@media screen and (max-width: 768px){
     la-carousel{
         grid-area: la-carousel;
         width: 100%;
@@ -90,11 +91,18 @@ la-imageroll > div{
     }
       la-carousel[store] {
       grid-template-columns: 50% 50%;
-      grid-template-rows: repeat(3, 50%);
-      grid-gap: 20px;
+      grid-gap: 0;
       grid-template-areas: none;
   }
     .imagecontainer{
         width: calc(100vw / 1.35);
+    }
+}
+@media screen and (max-width: 650px){
+    la-carousel[store] {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(3, 50%);
+        grid-gap: 0;
+        grid-template-areas: none;
     }
 }

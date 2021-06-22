@@ -1,4 +1,4 @@
-import lalogo from "../../../assets/lalogo.svg"
+import lalogo from "../../../assets/LAA/LAASVG.svg"
 
 export class Logo extends HTMLElement{
     constructor(){

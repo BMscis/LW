@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Manifest = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 const glob = require('glob')
-
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 module.exports = {
     target:"web",
     entry:{
         home:glob.sync("./src/content/js/index.js"),
         store:glob.sync("./src/content/js/alumnistorentry.js"),
         style:glob.sync('./src/content/sass/*.scss'),
+        images:glob.sync("./src/assets/**/*.svg")
         //components:glob.sync("./src/content/js/components/*.js"),
     },
     module: {
@@ -28,7 +29,7 @@ module.exports = {
             },
             //files
             {
-                test: [/\.(bin)$/, /\.(png|svg|jpg|gif|glb|gltf|hdr)$/],
+                test: [/\.(bin)$/, /\.(png|webp|jpeg|svg|jpg|gif|glb|gltf|hdr)$/],
                 use: [
                     'file-loader',
                 ],
@@ -57,7 +58,12 @@ module.exports = {
             title: "Alumni Store",
             filename:"alumnistore.html",
             excludeChunks:["home"]
-        })
+        }),
+        new PreloadWebpackPlugin({
+            rel: 'preload',
+            include: ["images"],
+            as:"image"
+          })
     ],
     output: {
         filename: '[name].[contenthash].js',
