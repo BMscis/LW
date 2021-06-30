@@ -26,9 +26,10 @@ la-componenthandler {
     display: grid;
     grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" 
                             "la-carousel la-carousel la-carousel" 
-                            "la-update la-update la-update";
-    grid-template-columns: 20vw 52vw 28vw;
-    grid-template-rows:9vh 1fr;
+                            "la-aboutus la-aboutus la-aboutus"
+                            "la-social la-social la-social";
+    grid-template-columns: 25vw 50vw 25vw;
+    grid-template-rows:9vh 91vh 91vh 91vh;
     font-family: "Helvetica Neue", helvetica, arial, sans-serif;
     padding: 0;
     margin:0;
@@ -41,8 +42,9 @@ la-componenthandler {
     background: #f0f2f5;
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    scroll-padding-block: 9vh;
 }
 @media only screen and (max-width: 750px){
     la-componenthandler{
@@ -57,7 +59,7 @@ la-componenthandler {
 //     la-componenthandler{
 //         grid-template-areas: "la-mainmenu la-mainmenu" 
 //                             "la-carousel la-calendar" 
-//                             "la-update la-news";
+//                             "la-aboutus la-news";
 //     grid-template-columns: 1fr 35vw;
 //     grid-template-rows:9vh 91vh 100vh;
 //     }

@@ -103,7 +103,7 @@ export class Carousel extends HTMLElement{
     }
     disconnectedCallback(){
         var childCount = this.childElementCount
-        for(let i = 0; i < childCount; i++){
+        for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }
         console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   

@@ -12,6 +12,8 @@ import ag6 from "../../../assets/IGCSEREUNIONOLDOFFICE.jpg"
 import ag7 from "../../../assets/SATURDAYFOOTBALLMATCHES.jpg"
 import { ScrollLedger } from "../Classes/scrolledger";
 import { Calendar } from "./calendar";
+import { AboutContainer } from "./aboutlaacontainer";
+import { Social } from "./social";
 export class ComponentHandler extends HTMLElement{
     constructor(renderCarousel = ''){
         super()
@@ -64,6 +66,8 @@ export class ComponentHandler extends HTMLElement{
             this.renderCarousel
         )
         this.components["sidebar"] = new SideBar(this.components.mainmenu.components.menuanchor)
+        this.components["aboutcontainer"] = new AboutContainer()
+        this.components["social"] = new Social()
         return
     }
     static get observedAttributes() {
@@ -79,6 +83,8 @@ export class ComponentHandler extends HTMLElement{
     render(){
         this.appendChild(this.components.mainmenu)
         this.appendChild(this.components.carousel)
+        this.appendChild(this.components.aboutcontainer)
+        this.appendChild(this.components.social)
         //this.appendChild(this.components.stories)
         //this.appendChild(this.components.calendar)
 

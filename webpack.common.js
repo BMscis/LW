@@ -10,7 +10,6 @@ module.exports = {
         home:glob.sync("./src/content/js/index.js"),
         store:glob.sync("./src/content/js/alumnistorentry.js"),
         style:glob.sync('./src/content/sass/*.scss'),
-        images:glob.sync("./src/assets/**/*.svg")
         //components:glob.sync("./src/content/js/components/*.js"),
     },
     module: {

@@ -641,28 +641,9 @@ la-calendar{
   }
 }
 
-body {
-  background: #4ACDDE;
-  background: linear-gradient(135deg, #4EFFDF, #48BBDE, #F47EC6);
-  font-family: Source Sans Pro, sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  overflow: hidden;
-  
-  @media (max-width: 750px) {
-    justify-content: center;
-  }
-}
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  quotes: "«" "»";
-}
+
+
 
 *, *:before, *:after {
   box-sizing: border-box;

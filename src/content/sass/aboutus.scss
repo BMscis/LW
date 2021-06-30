@@ -1,0 +1,28 @@
+la-aboutcontainer{
+    grid-area: la-aboutus;
+    width: 70vw;
+    height:100%;
+    margin:auto;
+}
+la-aboutus{
+    grid-area: la-aboutus;
+    width: 70vw;
+    height:100%;
+    margin: auto;
+    scroll-snap-align: start;
+    display: block;
+    text-align-last: left;
+    font-size: large;
+    overflow: auto;
+    scroll-padding-block: 20px;
+}
+la-aboutus h3{
+    margin-bottom: 40px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    color: slategray;
+    position: relative;
+}

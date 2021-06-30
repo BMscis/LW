@@ -1,4 +1,5 @@
 import { MenuAnchorButton } from "./menuanchorbutton"
+import { MenuAnchorDropDownButton } from "./menuanchordropdownbutton"
 
 export class MenuAnchorButtonDropdown extends HTMLElement{
     constructor(dropdownList){
@@ -37,7 +38,7 @@ export class MenuAnchorButtonDropdown extends HTMLElement{
     }
     get getComponents(){
         this.dropdownList.forEach(element => {
-            this.components[element] = new MenuAnchorButton(element,false,[])
+            this.components[element] = new MenuAnchorDropDownButton(element)
         });
         return
     }
