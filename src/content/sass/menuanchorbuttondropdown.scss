@@ -11,23 +11,63 @@ $global-typography-text-font-weight: 400;
 $global-typography-accent-font-family: "Roboto";
 $global-typography-accent-font-weight:500;
 la-menuanchorbuttondropdown{
-    display: flex;
+    display: none;
     flex-direction: column;
-    position: absolute;
-    top: -1000px;
     justify-items: baseline;
-    margin:10px;
-}
-la-menuanchorbutton[dropdown] > la-menuanchorbuttondropdown{
-    transform: translateY(1045px);
-    backdrop-filter: opacity(0.1) invert(1);
-}
-la-menuanchorbuttondropdown > la-menuanchordropdownbutton{
-        width: 100%;
-        margin:10px;
-        opacity: 1;
+    position: fixed;      
+    width: calc(100vw / 1.16);
+    //background-color: #00001c; 
+    top:78px;
+    left:0;
+    margin: auto calc((100vw - 100vw / 1.16) / 2);
+    background-image: linear-gradient(45deg, #00001c, transparent);
+    border-radius: 10px;
+    backdrop-filter: brightness(0.5) brightness(0.5) sepia(1) blur(3px); 
 
 }
-la-menuanchorbutton > button{
-    //font-weight: $global-typography-secondary-font-weight;
+la-menuanchor[overflow] la-menuanchorbuttondropdown {
+    width: auto;
+    top:unset;
+    left:unset;
+    margin: auto calc((100vw - 100vw / 1.16) / 2);
+    background-image: unset;
+    border-radius: 10px;
+    backdrop-filter: unset;
+    position: relative;
+}
+la-menuanchorbuttondropdown{
+    ul{
+        margin:140px 0;
+        padding-left: 20px;
+        flex-direction: column;
+    }
+}
+la-menuanchorbutton[dropdown]{
+    flex-direction: column;
+    li{
+        padding: 10px 0 10px 7px;
+        margin-left: -7px;
+        position: relative;
+        display: block;
+        line-height: 1;
+        color: #000!important;
+        letter-spacing: -.2px;
+        font-size: 17px;
+        border-bottom: none;
+    }
+}
+// la-menuanchor[dropdown=aboutalumni-dropdown] > #aboutalumni-dropdown{
+//     display: flex;
+// }
+// la-menuanchorbutton[dropdown]{
+//     display: flex;
+// }
+@media only screen and (max-width: 1050px) {
+    
+    la-menuanchorbutton[dropdown]{
+        h3, ul{
+            width: unset;
+        }
+    }
+
 }

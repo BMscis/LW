@@ -2,39 +2,25 @@ import { MenuAnchorButton } from "./menuanchorbutton"
 import { MenuAnchorDropDownButton } from "./menuanchordropdownbutton"
 
 export class MenuAnchorButtonDropdown extends HTMLElement{
-    constructor(dropdownList){
+    constructor(text,dropdownList){
         super()
         console.log(`${this.nodeName} has been constructed`)
-        //this.shadow = this.attachShadow({mode:'open'})
+        this.text = text
         this.components = {}
         this.dropdownList = dropdownList
         this.setup()
-
+        return
     }
     setup(){
+        this.id = this.buttonId
         this.getComponents
+        return
     }
-    drop(){
-        this.animate([
-            {transform: "translateY(1045px)"}
-        ],
-        {
-            duration:650,
-            fill:'forwards',
-            easing:'cubic-bezier(.39,.11,.61,.84)'
-        }
-        )
-    }
-    fold(){
-        this.animate([
-            {transform: "translateY(1020px)"}
-        ],
-        {
-            duration:650,
-            fill:'forwards',
-            easing:'cubic-bezier(.39,.11,.61,.84)'
-        }
-        )
+    get buttonId(){
+        let txt = this.text.replace(/\s+/g, '');
+        let txtL = txt.toLowerCase()
+        
+        return txtL + `-dropdown`
     }
     get getComponents(){
         this.dropdownList.forEach(element => {
@@ -42,22 +28,28 @@ export class MenuAnchorButtonDropdown extends HTMLElement{
         });
         return
     }
-    static get observedAttributes() {
-        return [""]
-    }
     connectedCallback(){
         console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
-    }
-    attributeChangedCallback(prop, oldVal, newVal) {
+        return
     }
     render(){
+        var ul = document.createElement("ul")
         for (const [key, value] of Object.entries(this.components)){
-            this.appendChild(value)
+            var li = document.createElement("li")
+            li.appendChild(value)
+            ul.appendChild(li)
         }
+        this.appendChild(ul)
+        return
     }
     disconnectedCallback(){
+        var childCount = this.childElementCount
+        for(let i = childCount; i > 0; i--){
+            this.removeChild(this.children[0])
+        }
         console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        return
     }
 }
 customElements.define('la-menuanchorbuttondropdown',MenuAnchorButtonDropdown);

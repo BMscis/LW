@@ -1,8 +1,92 @@
 la-menuanchor{
-    display: grid;
-    grid-area: two;
-    position: relative;
-    grid-auto-flow: column;
+    display: flex;
+    flex-direction: row;
     margin: auto;
-    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+la-menuanchor ul {
+    list-style: none;
+    display: flex;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+}
+.material-icons{
+    cursor: pointer;
+}
+la-menuanchor li {
+    position: static;
+    padding: 22px 9px;
+}
+la-menuanchor button {
+    position: relative;
+    font-size: 18px;
+    letter-spacing: -.3px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1;
+    cursor: pointer;
+    text-align: left;
+    //color: #04354a;
+    color: #6EC1E4;
+    outline: none;
+    background: none;
+    border: none;
+}
+@media only screen and (max-width: 1050px) {
+    la-menuanchor #anchorbuttons{
+        display: none;
+        position: absolute;
+        left: 0;
+        backdrop-filter: sepia(1) invert(1);
+        width: 50%;
+        top: 78px;
+    }
+    la-menuanchor ul{   
+        background-color: #00001c;
+        }
+    la-menuanchor[overflow] #anchorbuttons{
+        display: block;
+        width: 100%;
+        button{
+            color: #6EC1E4;
+        }
+    }
+    la-menuanchor[overflow][dropdown=activities-dropdown] > #activities-dropdown{
+        width: 50%;
+        left: unset;
+        right: 0;
+        padding: unset;
+        backdrop-filter: saturate(1.5) brightness(0.5) blur(8px);
+        background-image: linear-gradient(to bottom, black, transparent);
+        h3{
+            width: unset;
+            padding: unset;
+        }
+        ul{
+            width: unset;
+            padding: unset;
+        }
+
+
+    }
+}
+@media only screen and (max-width: 600px){
+    la-menuanchor #anchorbuttons{
+        width: 100%;
+        padding-top: 50px;
+
+    }
+    
+    
+    
+    la-menuanchorbutton[dropdown]{
+        
+        width: 100%;
+        //background-color: transparent;
+        button{
+            color: #6EC1E4;
+        }
+    }
 }

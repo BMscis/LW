@@ -1,0 +1,46 @@
+la-loginregister{
+    display: flex;
+    margin: auto;
+    padding-top: 10px;
+    position: relative;
+    top: 78px;
+}
+la-loginregister[hide]{
+    opacity: 0;
+}
+la-loginregister li{
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+la-loginregister ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+la-loginregister button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none!important;
+    background-blend-mode: overlay,normal;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    fill: #fff;
+    font-weight: 700;
+    position: relative;
+    transition: all .3s ease;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -.3px;
+    border:none;
+    white-space: nowrap;
+}
+.login{
+    color: #000;
+    font-weight: 400;
+
+}
+.register{
+    background-color: #000;
+}

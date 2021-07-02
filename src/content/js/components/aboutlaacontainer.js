@@ -2,18 +2,17 @@ import { TextContainer } from "./textcontainer"
 import { aboutushtml } from "../../html/aboutushtml"
 import { clubs } from "../../html/clubs"
 import { missionAndVision } from "../../html/missionandvision"
-const filereader = new FileReader()
 export class AboutContainer extends HTMLElement{
     constructor(){
         super()
         console.log(`${this.nodeName} has been constructed`)
-        //this.shadow = this.attachShadow({mode:'open'})
         this.components = {}
         this.setup()
-
+        return
     }
     setup(){
         this.components = this.getComponents
+        return
     }
     get getComponents(){
         return {
@@ -22,14 +21,10 @@ export class AboutContainer extends HTMLElement{
             "mission": new TextContainer("missionandvision",missionAndVision())
         }
     }
-    static get observedAttributes() {
-        return [""]
-    }
     connectedCallback(){
         console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
-    }
-    attributeChangedCallback(prop, oldVal, newVal) {
+        return
     }
     render(val){
         switch(val){
@@ -37,7 +32,7 @@ export class AboutContainer extends HTMLElement{
                 this.disconnectedCallback()
                 this.appendChild(this.components.clubs)
                 return
-            case "MISSION AND VISION":
+            case "MISSION & VISION":
                 this.disconnectedCallback()
                 this.appendChild(this.components.mission)
                 return

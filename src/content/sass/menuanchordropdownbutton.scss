@@ -15,61 +15,19 @@ la-menuanchordropdownbutton{
     position: relative;
     text-align: center;
     cursor: pointer;
-    margin:auto;
     //opacity: 0.5;
 }
-la-menuanchordropdownbutton:nth-of-type(4)::before{
-    content: "(NEW!)";
-    color: #b30808;
-    text-align: center;
-    font-size: xx-small;
-    position: absolute;
-    right: -32px;
-    top: -16px;
-    filter: opacity(1.5);
-    font-weight: 600;
-}
+
 la-menuanchordropdownbutton[active]{
 opacity: 1;
 }
-la-menuanchordropdownbutton:hover::after{
-    content: "";
-    background-image: linear-gradient(to right, $global-color-secondary, transparent);
-    height:2px;
-    opacity: 0.5;
+la-menuanchordropdownbutton:hover{
+    filter: sepia(1);
+    border-radius: 4px;
 }
 la-menuanchordropdownbutton[active]::after{
     content: "";
     background-image: linear-gradient(to right, $global-color-primary, transparent);
     height:2px;
 }
-button {
-    position: relative;
-    outline: none;
-    border: none;
-    background: none;
-    font-size: 1vw;
-    letter-spacing: 0px;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding: 0;
-    white-space: nowrap;
-    text-align: left;
-    font-weight: $global-typography-primary-font-weight;
-    color: #04354a;
-}
 
-@media only screen and (max-width: 750px){
-    la-menuanchordropdownbutton{
-        margin:auto
-    }
-    la-menuanchordropdownbutton img,
-    la-logo img
-    {
-        max-width: 50%;
-        margin:auto
-    }
-    button{
-        font-size: 1.3vh;
-    }
-}

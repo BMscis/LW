@@ -8,11 +8,8 @@ export class ToggleButton extends HTMLElement {
         super()
         console.log(`${this.nodeName} has been constructed` )                                                                             
         this.direction = direction
-        //this.shadow = this.attachShadow({ mode: 'open' })
         this.setup()
-    }
-    static get observedAttributes() {
-        return ['']
+        return
     }
     get styleTemplate() {
         return `
@@ -80,60 +77,17 @@ export class ToggleButton extends HTMLElement {
          this.addEventListener('click', e=>{
              window.ComponentHandler.scrolledger.toggleScroll("la-imageroll",this.direction)
          })
-    //     this.dimension = new Dimensions()
-    //     this.dimension.toggleSetup
-        // window.addEventListener('resize', e => {
-        //     //this.resize()
-        // })
-        // this.addEventListener('orientationchange', e => {
-        //     this.setup()
-        //     //this.visibility()
-        //     this.render()
-        // })
-        // this.addEventListener('click', e => {
-        //     console.log()
-        //     var story = document.querySelector('es-carousel').shadow.querySelector('es-story[active]')
-        //     switch (this.hasAttribute('prev')) {
-        //         case true:
-        //             if (story.previousElementSibling.nodeName == 'ES-STORY') {
-        //                 if (story.previousElementSibling) {
-        //                     story.active = false
-        //                     story.previousElementSibling.active = true
-        //                     var stories = document.querySelector('es-carousel').shadow.querySelectorAll('es-story')
-        //                     stories.forEach(element => {
-        //                         element.next("left")
-        //                     });
-        //                 }
-        //             }
-        //             return
-        //         case false:
-        //             if (story.nextElementSibling.nodeName == 'ES-STORY') {
-        //                 if (story.nextElementSibling) {
-        //                     story.active = false
-        //                     story.nextElementSibling.active = true
-        //                     var stories = document.querySelector('es-carousel').shadow.querySelectorAll('es-story')
-        //                     stories.forEach(element => {
-        //                         element.next("right")
-        //                     });
-        //                     //story.nextElementSibling.translateX('right')
-        //                 }
-        //             }
-        //             return
-        //     }
-        // })
+         return
     }
     resize(){
-        //this.dimension.toggleSetup        
-        //this.visibility()
         this.render()
+        return
     }
     connectedCallback() {
         console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )                                                                             
-
-        //this.visibility()
-
         this.render()
         this.setAttribute(this.direction, '')
+        return
     }
     visibility() {
         switch(window.Espii.mobile)
@@ -143,13 +97,16 @@ export class ToggleButton extends HTMLElement {
             case false:
                 return this.toggleAttribute("hide",false)
         }
+        return
     }
     disconnectedCallback() {
+        var childCount = this.childElementCount
+        for(let i = childCount; i > 0; i--){
+            this.removeChild(this.children[0])
+        }
         console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" ) 
+        return
     }
-    attributeChangedCallback(prop, oldVal, newVal) {
-    }
-
     render() {
         return this.innerHTML = `
         `

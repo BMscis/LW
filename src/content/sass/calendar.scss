@@ -210,7 +210,6 @@ la-calendar{
     grid-area:la-calendar;
     justify-items: center;
     overflow: auto;
-    scroll-snap-align: end;
 }
 .cal-device {
   width: $device-width;
@@ -645,7 +644,7 @@ la-calendar{
 
 
 
-*, *:before, *:after {
+*:before, *:after {
   box-sizing: border-box;
   position: relative;
 }

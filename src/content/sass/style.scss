@@ -14,53 +14,41 @@ $global-typography-accent-font-weight:500;
 *{
     box-sizing: border-box;
     transition: 0.5s ease-in-out;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+p , text{
+    line-height: 30px;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 7px;
+}
+li{
+    padding: 22px 9px;
 }
 ::-webkit-scrollbar{
     width: 0;
 }
 html,body{
-    height: 100vh;
     margin: 0;
+    font-size: 18px;
+    letter-spacing: -.3px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1;
+    word-wrap: break-word;
+
 }
 la-componenthandler {
-    display: grid;
-    grid-template-areas: "la-mainmenu la-mainmenu la-mainmenu" 
-                            "la-carousel la-carousel la-carousel" 
-                            "la-aboutus la-aboutus la-aboutus"
-                            "la-social la-social la-social";
-    grid-template-columns: 25vw 50vw 25vw;
-    grid-template-rows:9vh 91vh 91vh 91vh;
-    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    display: block;
     padding: 0;
     margin:0;
     color: black;
-    font-weight: 300;
-    line-height: 1.6;
-    font-size: 16px;
-    word-wrap: break-word;
     position: relative;
     background: #f0f2f5;
-    height: 100vh;
+    height: -webkit-fill-available;
     overflow: auto;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    scroll-padding-block: 9vh;
 }
-@media only screen and (max-width: 750px){
-    la-componenthandler{
-        grid-template-areas: "la-mainmenu" "la-mainmenu" "la-carousel " "la-calendar" "la-news" "la-contact";
-        grid-template-columns:  auto ;
-        grid-template-rows: 8vh 5.5vh 86.6vh 86.6vh auto;
-        width: 100%;
-        scroll-padding: 13.5vh;
-    }
+h3{
+    color: #eb285d;
+    box-shadow: 0 2px 2px -3px black;
+    text-align: center;
 }
-// @media only screen and (max-width: 1250px){
-//     la-componenthandler{
-//         grid-template-areas: "la-mainmenu la-mainmenu" 
-//                             "la-carousel la-calendar" 
-//                             "la-aboutus la-news";
-//     grid-template-columns: 1fr 35vw;
-//     grid-template-rows:9vh 91vh 100vh;
-//     }
-// }

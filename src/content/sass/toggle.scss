@@ -10,6 +10,7 @@ es-toggle{
     justify-self: center;
     align-self: center;
     opacity: 0.5;
+    position: absolute;
 }
 es-toggle::before{
     content: "";
@@ -29,12 +30,12 @@ es-toggle::after{
     border-radius:25%;
 }
 es-toggle[prev]{
-    grid-area: prev;
     justify-self: end;
+    left: 20px;
 }
 es-toggle[next]{
-    grid-area: next;
     justify-self: start;
+    right: 20px;
 }
 es-toggle[prev]::after{
     border-bottom: 7px inset black;
@@ -52,9 +53,4 @@ es-toggle[hide]{
 es-toggle:hover{
     opacity: 0.7;
     transform: scaleY(1.25) scaleX(1.5);
-}
-@media only screen and (max-width: 650px){
-    es-toggle{
-        display:none;
-    }
 }

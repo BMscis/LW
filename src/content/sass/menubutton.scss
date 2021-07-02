@@ -1,62 +1,8 @@
-la-sidebar{
-    grid-area: two;
-    width: 24px;
-    height: 24px;
-    margin-left: 24px;
-    overflow: hidden;
-    transition:0.5s ease;
-    position: relative;
-    top: 2vh;
+la-menubutton.material-icons{
+    display: none;
 }
-
-la-sidebar[overflow]{
-    overflow: unset;
-}
-la-menubutton {
-    transform: scale(var(--ggs,1));
-    cursor: pointer;
-    margin-bottom: 24px;
-   }
-
-   la-menubutton,
-   la-menubutton::after,
-   la-menubutton::before {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 20px;
-    height: 2px;
-    border-radius: 3px;
-    background: #312c2c
-   }
-   
-   la-menubutton::after,
-   la-menubutton::before {
-    content: "";
-    position: relative;
-    top: 6px
-   }
-   
-   la-menubutton::after {
-    top: 11px
-   }
-   la-menubutton:hover{
-
-   }
-.backdropdiv{
-    display: grid;
-    grid-template-rows: 30px 30px 30px 30px 30px 30px;
-    grid-auto-flow: column;
-    width: 300px;
-    height: fit-content;
-    background: #f0f8ff9e;
-    backdrop-filter: opacity(1) blur(8px);
-}
-
-.backdropdiv > la-menuanchorbutton{
-    margin: auto auto auto 20px;
-}
-.backdropdiv > la-menuanchorbutton[dropdown] > la-menuanchorbuttondropdown{
-    transform: translateX(75px);
-    top: -18px
+@media only screen and (max-width: 1050px) {
+    la-menubutton.material-icons{
+        display: block;
+    }
 }

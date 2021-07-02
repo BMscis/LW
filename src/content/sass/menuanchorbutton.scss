@@ -16,9 +16,11 @@ la-menuanchorbutton{
     text-align: center;
     cursor: pointer;
     margin:auto;
+    width: 100%;
+    white-space: nowrap;
     //opacity: 0.5;
 }
-la-menuanchorbutton:nth-of-type(4)::before{
+la-menuanchorbutton:nth-of-type(3)::before{
     content: "(NEW!)";
     color: #b30808;
     text-align: center;
@@ -29,47 +31,28 @@ la-menuanchorbutton:nth-of-type(4)::before{
     filter: opacity(1.5);
     font-weight: 600;
 }
-la-menuanchorbutton[active]{
-opacity: 1;
+.dropdownanchor{
+    display: flex;
 }
-la-menuanchorbutton:hover::after{
-    content: "";
-    background-image: linear-gradient(to right, $global-color-secondary, transparent);
-    height:2px;
-    opacity: 0.5;
+#expandmore,#expandless{
+    margin:auto;
 }
-la-menuanchorbutton[active]::after{
-    content: "";
-    background-image: linear-gradient(to right, $global-color-primary, transparent);
-    height:2px;
+#expandmore[disabled],#expandless[disabled]{
+    display: none;
 }
-button {
-    position: relative;
-    outline: none;
-    border: none;
-    background: none;
-    font-size: 1vw;
-    letter-spacing: 0px;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding: 0;
-    white-space: nowrap;
-    text-align: left;
-    font-weight: $global-typography-primary-font-weight;
-    color: #04354a;
+// la-menuanchorbutton:hover{
+//     background-color: #6EC1E4;
+//     border-radius: 10px;
+// }
+la-menuanchorbutton[dropdown]{
+    la-menuanchorbuttondropdown{
+        display: block;
+    }
+}
+@media only screen and (max-width: 1050px){
+    #expandmore,#expandless{
+        color: white;
+    }
+    la-menuanchorbutton{width: unset;}
 }
 
-@media only screen and (max-width: 750px){
-    la-menuanchorbutton{
-        margin:auto
-    }
-    la-menuanchorbutton img,
-    la-logo img
-    {
-        max-width: 50%;
-        margin:auto
-    }
-    button{
-        font-size: 1.3vh;
-    }
-}

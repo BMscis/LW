@@ -3,7 +3,6 @@ export class AlumniStoreCard extends HTMLElement{
     constructor(source,alt,text,href,bg){
         super()
         console.log(`${this.nodeName} has been constructed`)
-        //this.shadow = this.attachShadow({mode:'open'})
         this.source = source
         this.alt = alt
         this.text = text
@@ -11,39 +10,37 @@ export class AlumniStoreCard extends HTMLElement{
         this.bg = bg
         this.components = {}
         this.setup()
-
+        return
     }
     setup(){
-        this.getComponents
-
+        this.components = this.getComponents
         this.classList.add("card")
+        return
     }
     get getComponents(){
         var card_bg = document.createElement("div")
         card_bg.classList.add("card__bg")
-
-        // this.style.backgroundImage = `url(${this.bg})`
-        // card_bg.style.backgroundSize = `contain`
-        // card_bg.style.backgroundRepeat = `no-repeat`
-        //card_bg.style.backgroundPosition = `center`
         this.style.backgroundImage = this.source
-        this.components["card_bg"] = card_bg
-        return
-    }
-    static get observedAttributes() {
-        return [""]
+        return {
+            "card_bg":card_bg
+        }
     }
     connectedCallback(){
         console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
-    }
-    attributeChangedCallback(prop, oldVal, newVal) {
+        return
     }
     render(){
         this.appendChild(this.components.card_bg)
+        return
     }
     disconnectedCallback(){
+        var childCount = this.childElementCount
+        for(let i = childCount; i > 0; i--){
+            this.removeChild(this.children[0])
+        }
         console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        return
     }
 }
 customElements.define('la-alumnistorecard', AlumniStoreCard);

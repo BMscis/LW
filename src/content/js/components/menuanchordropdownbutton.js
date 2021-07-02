@@ -2,54 +2,44 @@ export class MenuAnchorDropDownButton extends HTMLElement {
     constructor(text) {
         super()
         console.log(`${this.nodeName} has been constructed`)
-        //this.shadow = this.attachShadow({mode:'open'})
         this.text = text
         this.setup()
         return
     }
     setup() {
          this.addEventListener("click", e => {
-            const effect = 1
-             if (e.path.length > 9) {
-                 e.path[3].toggleDropDown = 0
-                 e.path[1].buttonAction()
-             }
-             else {
-                 document.querySelector("la-menuanchorbutton[active]").setActive = 0
-                 e.path[1].setActive = 0
-                 if (e.path[1].setupDropdown) {
-                     e.path[1].toggleDropDown = 0
-                     e.path[1].buttonAction()
-                    }
-                    else{
-                        e.path[1].buttonAction()
-                    }
-             }
+            if(e.path[8].hasAttribute("overflow")){
+            document.querySelector("la-menubutton").click()
+            }
+            e.path[5].components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
+            e.path[5].components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
+            e.path[5].toggleAttribute("dropdown")
+            e.path[1].buttonAction()
          },false)
         return
     }
     buttonAction() {
-        switch (this.text) {
+        switch (this.text.toUpperCase()) {
             case "ABOUT US":
-                document.querySelector('la-aboutcontainer').render(this.text)
+                document.querySelector('la-aboutcontainer').render(this.text.toUpperCase())
                 window.location = this.buttonId
-                document.querySelector('la-aboutcontainer').scrollIntoView(false)
+                document.querySelector('la-aboutcontainer').scrollIntoView({block: "start"})
                 return
-            case "MISSION AND VISION":
-                document.querySelector('la-aboutcontainer').render(this.text)
+            case "MISSION & VISION":
+                document.querySelector('la-aboutcontainer').render(this.text.toUpperCase())
                 window.location = this.buttonId
-                document.querySelector('la-aboutcontainer').scrollIntoView(false)
+                document.querySelector('la-aboutcontainer').scrollIntoView({block: "start"})
                 return
             case "CONSTITUTION":
                 return
             case "PARTNERSHIP":
                 document.querySelector('la-carousel').render("ALUMNI STORES")
-                document.querySelector('la-carousel').scrollIntoView(false)
+                document.querySelector('la-carousel').scrollIntoView({block: "start"})
                 return
             case "CLUBS":
-                document.querySelector('la-aboutcontainer').render(this.text)
+                document.querySelector('la-aboutcontainer').render(this.text.toUpperCase())
                 window.location = this.buttonId
-                document.querySelector('la-aboutcontainer').scrollIntoView(false)
+                document.querySelector('la-aboutcontainer').scrollIntoView({block: "start"})
                 return
             default:
                 return
@@ -58,20 +48,12 @@ export class MenuAnchorDropDownButton extends HTMLElement {
     get buttonId(){
         let txt = this.text.replace(/\s+/g, '');
         let txtL = txt.toLowerCase()
-        
         return '#' + txtL
-    }
-    get getComponents() {
-        return
-    }
-    static get observedAttributes() {
-        return [""]
     }
     connectedCallback() {
         console.log(`%c ${this.nodeName} %c has been %c CONNECTED`, "color:#cd4cf7", "color:black", "color:#0ee232")
         this.render()
-    }
-    attributeChangedCallback(prop, oldVal, newVal) {
+        return
     }
     render() {
         this.innerHTML = `
@@ -80,7 +62,12 @@ export class MenuAnchorDropDownButton extends HTMLElement {
         return
     }
     disconnectedCallback() {
+        var childCount = this.childElementCount
+        for(let i = childCount; i > 0; i--){
+            this.removeChild(this.children[0])
+        }
         console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`, "color:#cd4cf7", "color:black", "color:#ef1a1a")
+        return
     }
 }
 customElements.define('la-menuanchordropdownbutton', MenuAnchorDropDownButton);
