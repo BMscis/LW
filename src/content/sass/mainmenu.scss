@@ -15,7 +15,7 @@ la-mainmenu{
     background-position: left center;
     background-size: 20rem;
     display: flex;
-    height: 78px;
+    height: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     background-color: white;
     margin: auto;
     flex-direction: row;
@@ -27,10 +27,10 @@ la-mainmenu{
 }
 la-mainmenucontainer{
     margin: auto;
-    height: 78px;
+    height: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     display: flex;
     background-color: white;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -39,12 +39,10 @@ la-mainmenucontainer{
 @media only screen and (max-width: 1024px){
     la-mainmenu{
         flex-direction: column;
-        padding-top:1vh;
         width: 100%;
         la-logo{
             align-self: center;
             margin: auto;
-            margin-bottom: 1vh;
         }
         la-menuanchor{
             margin: unset;
@@ -54,8 +52,11 @@ la-mainmenucontainer{
         la-loginregister{
             margin: unset;
             align-self: flex-end;
-            top:30px;
+            position: unset;
             padding-inline-end: 5vw;
+
+            la-backhome.material-icons, 
+            la-backtotop.material-icons,
             button{
                 padding: 8px 20px;
             }

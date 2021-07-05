@@ -3,7 +3,7 @@ la-social{
     display: grid;
     margin: auto;
     padding: 30px 0;
-    scroll-margin-block: 78px;
+    //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 
 }
 la-socialpad{
@@ -14,7 +14,7 @@ la-socialpad{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 140px;
+    margin-top: min(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
 }
 la-socialpad input{
     display: none;
@@ -77,3 +77,9 @@ la-socialbutton, la-socialpad label{
 //   z-index: 0;
 //   //filter: blur(15px);
 // }
+@media only screen and (max-width: 600px){
+    la-social{
+        margin-top: max(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
+        width: unset;
+    }
+}

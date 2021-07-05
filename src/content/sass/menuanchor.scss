@@ -19,6 +19,7 @@ la-menuanchor ul {
 la-menuanchor li {
     position: static;
     padding: 22px 9px;
+    width: calc(100vw / 1.6 / 6);
 }
 la-menuanchor button {
     position: relative;
@@ -41,7 +42,7 @@ la-menuanchor button {
         left: 0;
         backdrop-filter: sepia(1) invert(1);
         width: 50%;
-        top: 78px;
+        top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     }
     la-menuanchor ul{   
         background-color: #00001c;

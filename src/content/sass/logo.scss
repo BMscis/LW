@@ -3,7 +3,9 @@ la-logo{
     float:left;
     position: relative;
     height: auto;
-    width: 189px;
     align-items: center;
     margin:auto
+}
+la-logo img{
+    height:clamp(calc(100vh * 0.0758 / 2),78px, calc(100vw * 0.0758 / 3));
 }

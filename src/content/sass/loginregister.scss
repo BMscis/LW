@@ -14,7 +14,7 @@ la-loginregister{
     margin: auto;
     padding-top: 10px;
     position: relative;
-    top: 78px;
+    top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
 }
 la-loginregister[hide]{
     opacity: 0;
@@ -30,7 +30,9 @@ la-loginregister ul{
     margin: 0;
 }
 la-loginregister button,
-la-loginregister la-backtotop
+la-loginregister la-backtotop,
+la-backhome.material-icons, 
+la-backtotop.material-icons
 {
     cursor: pointer;
     display: inline-block;
@@ -62,30 +64,27 @@ la-loginregister la-backtotop
 la-backhome.material-icons,
 la-backtotop.material-icons
 {
-    background-color: #8345BA;
+    background-color: transparent;
     position: fixed;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px 5px;
-    pointer:cursor;
-    -webkit-text-stroke-width: thick;
     opacity:0;
     color:#2A163B;
     display:flex;
+    align-items: center;
+    -webkit-text-stroke-width: thick;
 }
 la-backtotop.material-icons{
-    bottom: 78px;
+    bottom: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     right: 4%;
     margin: calc(100vh * 0.07) auto;
 }
 la-backhome.material-icons{
-    top: 78px;
+    top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     left: 4%;
-    padding: 15px 0 15px 10px;
-    margin: calc(100vh * 0.07) auto;
+    //margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto;
+    padding-inline-start: 5vw;
 }
-la-backtotop::before,
-la-backhome::before
+la-backtotop::after,
+la-backhome::after
 {
     color: white;
     padding: 5px 10px;
@@ -96,10 +95,11 @@ la-backhome::before
     animation-timing-function: forwards;
     font-size: small;
 }
-la-backtotop:hover::before{
+la-backtotop:hover::after{
     content: "Back to Top";
+    color:#32273B;
 }
-la-backhome:hover::before{
+la-backhome:hover::after{
     content: "Home";
 }
 la-backtotop[show]{
@@ -109,10 +109,25 @@ la-carousel[store] la-backhome{
     opacity:1;
 }
 @media only screen and (max-width: 600px){
-    la-backtotop::before{
-        content: "Back to Top";
+    la-backtotop.material-icons {
+        bottom: 39px;
+        margin: calc(100vh * 0.07 / 2) auto;
     }
-    la-backhome::before{
+    la-backtotop::after{
+        content: "Back to Top";
+        color:#32273B;
+    }
+    la-backhome::after{
         content: "Home";
+    }
+    la-backtotop::after,
+    la-backhome::after
+    {
+        font-size: xx-small;
+        -webkit-text-stroke-width: thin;
+    }
+    la-backhome.material-icons, la-backtotop.material-icons {
+        -webkit-text-stroke-width: thin;
+        font-size: smaller;
     }
 }

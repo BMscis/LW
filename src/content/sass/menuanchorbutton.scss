@@ -16,7 +16,6 @@ la-menuanchorbutton{
     text-align: center;
     cursor: pointer;
     margin:auto;
-    width: 100%;
     white-space: nowrap;
     //opacity: 0.5;
 }
@@ -32,10 +31,14 @@ la-menuanchorbutton:nth-of-type(3)::before{
     font-weight: 600;
 }
 .dropdownanchor{
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 80%;
 }
 #expandmore,#expandless{
     margin:auto;
+    position: absolute;
+    right: -20px;
 }
 #expandmore[disabled],#expandless[disabled]{
     display: none;
@@ -53,6 +56,5 @@ la-menuanchorbutton[dropdown]{
     #expandmore,#expandless{
         color: white;
     }
-    la-menuanchorbutton{width: unset;}
 }
 

@@ -17,7 +17,7 @@ la-menuanchorbuttondropdown{
     position: fixed;      
     width: calc(100vw / 1.16);
     //background-color: #00001c; 
-    top:78px;
+    top:clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     left:0;
     margin: auto calc((100vw - 100vw / 1.16) / 2);
     background-image: linear-gradient(45deg, #00001c, transparent);
@@ -37,7 +37,7 @@ la-menuanchor[overflow] la-menuanchorbuttondropdown {
 }
 la-menuanchorbuttondropdown{
     ul{
-        margin:140px 0;
+        margin:20px 0;
         padding-left: 20px;
         flex-direction: column;
     }

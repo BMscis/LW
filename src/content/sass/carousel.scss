@@ -9,7 +9,7 @@ la-carousel{
     perspective: 1800px;
     padding-right: 15px;
     padding-left: 15px;
-    scroll-margin-block: 78px;
+    //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
     align-items: center;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ la-carousel[store]{
     }
     h2 {
         text-align: center;
-        margin: calc(100vh * 0.25) auto auto;
+        margin: min(calc(100vh * 0.25), calc(100vw * 0.25)) auto auto;
         font-weight: 900;
         font-size: inherit;
         color: white;
@@ -98,6 +98,9 @@ la-imageroll[mouse] > div{
     .centralcarousel h1{
         font-size: unset;
         margin: 140px auto auto auto;
+    }
+    la-carousel[store] h2{
+        margin: max(calc(100vh * 0.25), calc(100vw * 0.25)) auto auto;
     }
     la-imageroll{
         height: calc(100vh / 2.5);
