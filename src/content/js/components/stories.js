@@ -1,7 +1,7 @@
 export class Stories extends HTMLElement{
     constructor(){
         super()
-        console.log(`${this.nodeName} has been constructed`)
+        //console.log(`${this.nodeName} has been constructed`)
         this.components = {}
         this.setup()
         return
@@ -14,7 +14,7 @@ export class Stories extends HTMLElement{
         return
     }
     connectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
+        //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
         return
     }
@@ -24,7 +24,7 @@ export class Stories extends HTMLElement{
         return
     }
     disconnectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        //console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
         return
     }
 }

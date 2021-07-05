@@ -1,7 +1,7 @@
 export class LoginRegister extends HTMLElement{
     constructor(){
         super()
-        console.log(`${this.nodeName} has been constructed`)
+        //console.log(`${this.nodeName} has been constructed`)
         this.components = {}
         this.setup()
         return
@@ -9,15 +9,17 @@ export class LoginRegister extends HTMLElement{
     setup(){
         this.components = this.getComponents
         window.addEventListener("scroll", e=>{
-            console.log(window.scrollY)
             if(window.scrollY > window.innerHeight / 2){
                 this.setAttribute("hide","")
+                document.querySelector("la-backtotop").setAttribute("show","")
                 return
             }
             else{
                 if(this.hasAttribute("hide")){
                     this.removeAttribute("hide")
-                    return
+                }
+                if(document.querySelector("la-backtotop").hasAttribute("show")){
+                    document.querySelector("la-backtotop").removeAttribute("show")
                 }
                 return
             }
@@ -37,7 +39,7 @@ export class LoginRegister extends HTMLElement{
         }
     }
     connectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
+        //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
         return
     }
@@ -51,7 +53,7 @@ export class LoginRegister extends HTMLElement{
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }
-        console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        //console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
         return
     }
 }

@@ -4,7 +4,7 @@ import { AlumniStoreCard } from './alumnistorecard';
 export class AlumniStore extends HTMLElement{
     constructor(image,alternative,text,link, bg){
         super()
-        console.log(`${this.nodeName} has been constructed`)
+        //console.log(`${this.nodeName} has been constructed`)
         this.image = image
         this.alternative = alternative
         this.text = text
@@ -94,7 +94,7 @@ export class AlumniStore extends HTMLElement{
       return Math.atan2(y, x) * 180 / Math.PI;
     }
     connectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
+        //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
         return
     }
@@ -109,7 +109,7 @@ export class AlumniStore extends HTMLElement{
       for(let i = childCount; i > 0; i--){
           this.removeChild(this.children[0])
       }
-      console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+      //console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
       return
     }
 }

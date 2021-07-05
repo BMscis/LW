@@ -6,8 +6,8 @@ export class ScrollLedger{
     }
 
     toggleScroll(nodeList,direction){
-        console.log(direction)
-        console.log(this.click)
+        //console.log(direction)
+        //console.log(this.click)
         this.nodes = document.querySelectorAll(nodeList)
         this.nodeLength = this.nodes.length
         switch(direction){
@@ -24,8 +24,8 @@ export class ScrollLedger{
         if(this.click > this.nodeLength - 1){
             this.click = this.nodeLength - 1 
         }
-        console.log(this.nodes[this.click])
-        console.log(this.click)
+        // console.log(this.nodes[this.click])
+        // console.log(this.click)
         this.nodes[this.click].scrollIntoView(false)
     }
 }

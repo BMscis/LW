@@ -1,7 +1,7 @@
 export class TextContainer extends HTMLElement{
     constructor(id, innerhtml){
         super()
-        console.log(`${this.nodeName} has been constructed`)
+        //console.log(`${this.nodeName} has been constructed`)
         this.id = id
         this.innerhtml =  innerhtml
         this.components = {}
@@ -16,7 +16,7 @@ export class TextContainer extends HTMLElement{
         return
     }
     connectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
+        //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
         return
     }
@@ -29,7 +29,7 @@ export class TextContainer extends HTMLElement{
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }
-        console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        //console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
         return
     }
 }

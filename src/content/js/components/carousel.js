@@ -1,6 +1,7 @@
 import { AlumniStore } from "./alumnistores"
 import { ImageRoll } from "./imageroll"
 import { ToggleButton } from "./toggleButton"
+import { BackHome } from "./backhome"
 
 import espiiLogo from '../../../assets/ESPII/ESPIISVG.svg';
 //import eidesign from '../../../assets/eidesign.png';
@@ -17,7 +18,7 @@ import lan2 from '../../../assets/LNF/LNFSVG.svg'
 export class Carousel extends HTMLElement{
     constructor(imageSet=[],render = ''){
         super()
-        console.log(`${this.nodeName} has been constructed`)
+        //console.log(`${this.nodeName} has been constructed`)
         this.components = {}
         this.renderer = render
         this.imageSet = imageSet
@@ -51,10 +52,12 @@ export class Carousel extends HTMLElement{
         "two"   : new AlumniStore(`url(${anatolia1}`,"anatolia.png","Anatolia Consultancy","https://anatoliaconsultancy.business.site",anatolia2),
         "three" : new AlumniStore( `url(${lis1})`,"lacardLight.png","International School","http://lis.sc.ke/nairobi/",lis2),
         "four" : new AlumniStore(  `url(${lan1})`,"lacardLight.png","Nairobi School","http://lightacademy.ac.ke/nairobi/",lan2),
-        "five" : new AlumniStore(  `url(${espiiLogo})`,"espiilogo.png","Espii Iterface & Designs","https://bmscis.github.io/components/","")}
+        "five" : new AlumniStore(  `url(${espiiLogo})`,"espiilogo.png","Espii Iterface & Designs","https://bmscis.github.io/components/",""),
+        "backhome": new BackHome()
+        }
     }
     connectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
+        //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render(this.renderer)
         return
     }
@@ -63,6 +66,7 @@ export class Carousel extends HTMLElement{
             case "ALUMNI STORE":
                 this.disconnectedCallback()
                 this.setAttribute('store','')
+                this.appendChild(this.components.backhome)
                 var heading = document.createElement("h2")
                 heading.innerHTML = "Get access to discounts if you are a member of the Alumni Association."
                 this.appendChild(heading)
@@ -80,6 +84,9 @@ export class Carousel extends HTMLElement{
                 this.removeAttribute('store','')
                 var center = document.createElement("div")
                 center.classList.add("centralcarousel")
+                var heading = document.createElement('h1')
+                heading.innerHTML = "Welcome to the Light Academy Alumni Association."
+                center.appendChild(heading)
                 center.appendChild(this.components.imagecontainer)
                 this.appendChild(center)
             return
@@ -99,7 +106,7 @@ export class Carousel extends HTMLElement{
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }
-        console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        //console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
         return
     }
 }

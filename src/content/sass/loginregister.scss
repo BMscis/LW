@@ -1,3 +1,14 @@
+@keyframes beforeOpacity{
+    from{
+        opacity:0;
+        width:10%;
+
+        }
+    to{
+        opacity:1;
+        width:100%;
+        }
+}
 la-loginregister{
     display: flex;
     margin: auto;
@@ -18,7 +29,9 @@ la-loginregister ul{
     padding: 0;
     margin: 0;
 }
-la-loginregister button{
+la-loginregister button,
+la-loginregister la-backtotop
+{
     cursor: pointer;
     display: inline-block;
     text-decoration: none!important;
@@ -27,12 +40,14 @@ la-loginregister button{
     padding: 10px 20px;
     color: #fff;
     fill: #fff;
+    background-color:#A784C6;
     font-weight: 700;
     position: relative;
     transition: all .3s ease;
     text-align: center;
     line-height: 1;
     letter-spacing: -.3px;
+    margin-right:5px;
     border:none;
     white-space: nowrap;
 }
@@ -42,5 +57,62 @@ la-loginregister button{
 
 }
 .register{
-    background-color: #000;
+    background-color: #32273B;
+}
+la-backhome.material-icons,
+la-backtotop.material-icons
+{
+    background-color: #8345BA;
+    position: fixed;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 5px;
+    pointer:cursor;
+    -webkit-text-stroke-width: thick;
+    opacity:0;
+    color:#2A163B;
+    display:flex;
+}
+la-backtotop.material-icons{
+    bottom: 78px;
+    right: 4%;
+    margin: calc(100vh * 0.07) auto;
+}
+la-backhome.material-icons{
+    top: 78px;
+    left: 4%;
+    padding: 15px 0 15px 10px;
+    margin: calc(100vh * 0.07) auto;
+}
+la-backtotop::before,
+la-backhome::before
+{
+    color: white;
+    padding: 5px 10px;
+    font-family: "Roboto", sans-serif;
+    -webkit-text-stroke-width: thin;
+    animation-name: beforeOpacity;
+    animation-duration: .5s; 
+    animation-timing-function: forwards;
+    font-size: small;
+}
+la-backtotop:hover::before{
+    content: "Back to Top";
+}
+la-backhome:hover::before{
+    content: "Home";
+}
+la-backtotop[show]{
+    opacity:1;
+}
+la-carousel[store] la-backhome{
+    opacity:1;
+}
+@media only screen and (max-width: 600px){
+    la-backtotop::before{
+        content: "Back to Top";
+    }
+    la-backhome::before{
+        content: "Home";
+    }
 }

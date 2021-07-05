@@ -1,7 +1,4 @@
-import { MainMenu } from "./mainmenu"
-import { BackToTop } from "./backtotop"
-
-export class MainMenuContainer extends HTMLElement{
+export class BackHome extends HTMLElement{
     constructor(){
         super()
         //console.log(`${this.nodeName} has been constructed`)
@@ -10,14 +7,16 @@ export class MainMenuContainer extends HTMLElement{
         return
     }
     setup(){
-        this.components = this.getComponents
+        //this.components = this.getComponents
+        this.classList.add("material-icons")
+        this.addEventListener("click", e=>{
+            document.querySelector('la-carousel').render("HOME")
+            document.querySelector("la-carousel").scrollIntoView({block: "nearest"})
+        })
         return
     }
     get getComponents(){
-        return {
-            "mainmenu": new MainMenu(),
-            "backtotop": new BackToTop()
-        }
+        return
     }
     connectedCallback(){
         //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
@@ -25,8 +24,8 @@ export class MainMenuContainer extends HTMLElement{
         return
     }
     render(){
-        this.appendChild(this.components.mainmenu)
-        this.appendChild(this.components.backtotop)
+        this.innerHTML = `arrow_back_ios
+        `
         return
     }
     disconnectedCallback(){
@@ -38,4 +37,4 @@ export class MainMenuContainer extends HTMLElement{
         return
     }
 }
-customElements.define('la-mainmenucontainer', MainMenuContainer);
+customElements.define('la-backhome', BackHome);

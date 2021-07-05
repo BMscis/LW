@@ -11,9 +11,9 @@ la-alumnistore {
   background-repeat: no-repeat;
   // width: clamp(80%,100vw / 3,271px);
   // height: clamp(95%,100vw / 2,381px);
-  width: min(50vw ,333px);
-    height: min(57vh,411px);
-  background-color: #ffffff;
+  width: min(50vw, 233px);
+  height: min(57vh, 411px);
+  background-color: #0f163b;
   display: grid;
   grid-auto-columns: 80%;
   grid-auto-rows: 75% 5%;
@@ -35,13 +35,7 @@ la-alumnistore {
 la-alumnistore:hover{
   a::after{
     content: attr(href);
-    color: black;
-    position: absolute;
     text-align: center;
-    font-stretch: ultra-condensed;
-    font-size: 50%;
-    left: 0;
-    bottom: -50%;
   }
 }
 la-alumnistore h1 {
@@ -81,7 +75,7 @@ la-alumnistore h3 {
   justify-content: center;
   background-size: 50%;
   background-position: top center;
-  background-color: #ffc629;
+  background-color: #A784C6;
 }
 
 .card {
@@ -168,20 +162,14 @@ img.card__img {
 }
 
 .card__text {
-  text-align: left;
+  text-align: center;
 }
 
 .card__title {
-  color: #795548;
-  text-decoration: none;
+  color: #009688;
   font-size: clamp(10px,1vw,16px);
-  -webkit-text-stroke-width: medium;
   letter-spacing: min(0px,2px);
-  font-family: system-ui;
-  font-stretch: extra-condensed;
-  text-align: left;
   line-break: auto;
-  white-space: nowrap;
 }
 
 .notice {
@@ -225,7 +213,7 @@ img.card__img {
 }
 @media only screen and (max-width: 600px){
   la-alumnistore{
-    width: min(50vw ,333px);
-    height: min(30vh,411px);
+    width: min(50vw, 233px);
+    height: min(45vh, 411px);
   }
 }

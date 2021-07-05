@@ -17,6 +17,8 @@ la-carousel{
 }
 la-carousel[store]{
     padding-top: 30px;
+    width:auto;
+    background-color: #3046BA;
 }
 la-carousel[store]{
     ul {
@@ -31,10 +33,11 @@ la-carousel[store]{
     }
     h2 {
         text-align: center;
-        margin: 140px auto auto;
+        margin: calc(100vh * 0.25) auto auto;
         font-weight: 900;
-        font-size: small;
-        color: #eb285d;
+        font-size: inherit;
+        color: white;
+        font-family: monospace;
     }
 }
 .cal-button{

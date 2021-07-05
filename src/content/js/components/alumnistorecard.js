@@ -2,7 +2,7 @@
 export class AlumniStoreCard extends HTMLElement{
     constructor(source,alt,text,href,bg){
         super()
-        console.log(`${this.nodeName} has been constructed`)
+        //console.log(`${this.nodeName} has been constructed`)
         this.source = source
         this.alt = alt
         this.text = text
@@ -26,7 +26,7 @@ export class AlumniStoreCard extends HTMLElement{
         }
     }
     connectedCallback(){
-        console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
+        //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )
         this.render()
         return
     }
@@ -39,7 +39,7 @@ export class AlumniStoreCard extends HTMLElement{
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }
-        console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
+        //console.log(`%c ${this.nodeName} %c has been %c DISCONNECTED`,"color:#cd4cf7","color:black","color:#ef1a1a" )   
         return
     }
 }
