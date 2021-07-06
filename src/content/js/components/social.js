@@ -14,29 +14,6 @@ export class Social extends HTMLElement {
         twitterScript.setAttribute("async", "")
         twitterScript.src = "https://platform.twitter.com/widgets.js"
         //document.body.appendChild(twitterScript)
-
-        //facebook Script
-        let fbSDK = document.createElement("script")
-        fbSDK.innerHTML = `
-            window.fbAsyncInit = function() {
-                FB.init({
-                    appId            : '843006239656820',
-                    autoLogAppEvents : true,
-                    xfbml            : true,
-                    version          : 'v11.0'
-                });
-            };
-        `
-        document.body.appendChild(fbSDK)
-        let facebookScript = document.createElement("script")
-        facebookScript.setAttribute("async","")
-        facebookScript.setAttribute("defer","")
-        facebookScript.setAttribute("crossorigin","anonymous")
-        facebookScript.src = `https://connect.facebook.net/en_US/sdk.js`
-        facebookScript.setAttribute("async","")
-        facebookScript.setAttribute("defer","")
-        facebookScript.setAttribute("crossorigin","anonymous")
-        document.body.appendChild(facebookScript)
         this.components = this.getComponents
         return
     }
@@ -48,24 +25,13 @@ export class Social extends HTMLElement {
         twitterHref.innerHTML = "Tweets by LightAlumni"
 
         //facebookHref
-        let facebookHref = document.createElement("div")
-        facebookHref.classList.add("fb-page")
-        facebookHref.setAttribute("data-href","https://www.facebook.com/LightAcademyAlumniPresident")
-        facebookHref.setAttribute("data-tabs","timeline")
-        facebookHref.setAttribute("data-width","500px")
-        facebookHref.setAttribute("data-height","500px")
-        facebookHref.setAttribute("data-small-header","false")
-        facebookHref.setAttribute("data-adapt-container-width","true")
-        facebookHref.setAttribute("data-hide-cover","false")
-        facebookHref.setAttribute("data-show-facepile","true")
-
-        let facebookRoot = document.createElement("div")
-        facebookRoot.id = "fb-root"
+        //
+        let facebookHref = document.createElement("iframe")
+        
         return {
             "socialpad": new SocialPad(),
             "twitterhref": twitterHref,
-            "facebookhref": facebookHref,
-            "facebookroot":facebookRoot
+            "facebookhref": facebookHref
             }
     }
     connectedCallback() {
@@ -75,8 +41,11 @@ export class Social extends HTMLElement {
     }
     render() {
         this.appendChild(this.components.socialpad)
-        this.appendChild(this.components.facebookroot)
         this.appendChild(this.components.facebookhref)
+        this.components.facebookhref.outerHTML = `
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLightAcademyAlumniPresident&tabs=timeline&width=0&height=0&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&843006239656820" 
+        width="0" height="0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        `
         return
     }
     disconnectedCallback() {
