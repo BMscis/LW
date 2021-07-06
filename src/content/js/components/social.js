@@ -9,22 +9,61 @@ export class Social extends HTMLElement {
         return
     }
     setup() {
+        //Twitter Script
         let twitterScript = document.createElement("script")
-        document.cookie = `path=https://platform.twitter.com/widgets.js; SameSite=None ;Secure`
         twitterScript.setAttribute("async", "")
         twitterScript.src = "https://platform.twitter.com/widgets.js"
-        document.body.appendChild(twitterScript)
+        //document.body.appendChild(twitterScript)
+
+        //facebook Script
+        let fbSDK = document.createElement("script")
+        fbSDK.innerHTML = `
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId            : '843006239656820',
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    version          : 'v11.0'
+                });
+            };
+        `
+        document.body.appendChild(fbSDK)
+        let facebookScript = document.createElement("script")
+        facebookScript.setAttribute("async","")
+        facebookScript.setAttribute("defer","")
+        facebookScript.setAttribute("crossorigin","anonymous")
+        let nonce = "Tnnu9TpS"
+        facebookScript.src = `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="tieMuhCq`
+        document.body.appendChild(facebookScript)
         this.components = this.getComponents
         return
     }
     get getComponents() {
-        let aref = document.createElement("a")
-        aref.classList.add("twitter-timeline")
-        aref.href = "https://twitter.com/LightAlumni?ref_src=twsrc%5Etfw"
-        aref.innerHTML = "Tweets by LightAlumni"
+        //twitterHref
+        let twitterHref = document.createElement("a")
+        twitterHref.classList.add("twitter-timeline")
+        twitterHref.href = "https://twitter.com/LightAlumni?ref_src=twsrc%5Etfw"
+        twitterHref.innerHTML = "Tweets by LightAlumni"
+
+        //facebookHref
+        let facebookHref = document.createElement("div")
+        facebookHref.classList.add("fb-page")
+        facebookHref.setAttribute("data-href","https://www.facebook.com/LightAcademyAlumniPresident")
+        facebookHref.setAttribute("data-tabs","timeline")
+        facebookHref.setAttribute("data-width","500px")
+        facebookHref.setAttribute("data-height","500px")
+        facebookHref.setAttribute("data-small-header","false")
+        facebookHref.setAttribute("data-adapt-container-width","true")
+        facebookHref.setAttribute("data-hide-cover","false")
+        facebookHref.setAttribute("data-show-facepile","true")
+
+        let facebookRoot = document.createElement("div")
+        facebookRoot.id = "fb-root"
         return {
             "socialpad": new SocialPad(),
-            "href": aref
+            "twitterhref": twitterHref,
+            "facebookhref": facebookHref,
+            "facebookroot":facebookRoot
             }
     }
     connectedCallback() {
@@ -34,7 +73,8 @@ export class Social extends HTMLElement {
     }
     render() {
         this.appendChild(this.components.socialpad)
-        this.appendChild(this.components.href)
+        this.appendChild(this.components.facebookroot)
+        this.appendChild(this.components.facebookhref)
         return
     }
     disconnectedCallback() {
