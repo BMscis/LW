@@ -32,8 +32,10 @@ export class Social extends HTMLElement {
         facebookScript.setAttribute("async","")
         facebookScript.setAttribute("defer","")
         facebookScript.setAttribute("crossorigin","anonymous")
-        let nonce = "Tnnu9TpS"
-        facebookScript.src = `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="tieMuhCq`
+        facebookScript.src = `https://connect.facebook.net/en_US/sdk.js`
+        facebookScript.setAttribute("async","")
+        facebookScript.setAttribute("defer","")
+        facebookScript.setAttribute("crossorigin","anonymous")
         document.body.appendChild(facebookScript)
         this.components = this.getComponents
         return
