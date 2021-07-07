@@ -66,6 +66,17 @@ la-socialbutton, la-socialpad label{
   z-index: 0;
   //filter: blur(15px);
 }
+iframe.facebookiframe,
+iframe.instagramiframe
+ {
+    position: absolute;
+    width: calc(100vw / 1.8);
+    margin-top: min(calc(100vh * 0.25 / 2 + 60px), calc(100vw * 0.25 / 2 + 60px));
+}
+iframe#twitter-widget-0 {
+    left: 0;
+    width: calc(100vw / 1.8);
+}
 
 // #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3,
 // #la-socialbutton-input-2:checked ~  #la-socialbutton-label-4,
