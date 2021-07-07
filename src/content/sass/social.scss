@@ -103,7 +103,7 @@ la-socialbutton, la-socialpad label{
 // }
 @media only screen and (max-width: 600px){
     la-social{
-        margin-top: max(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
+        //margin-top: max(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
         width: unset;
     }
 }

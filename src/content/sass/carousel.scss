@@ -96,9 +96,6 @@ la-imageroll[mouse] > div{
 @media only screen and (max-width: 600px){
     .centralcarousel h1{
         font-size: unset;
-        margin: 140px auto auto auto;
-    }
-    la-carousel[store] h2{
     }
     la-imageroll{
         height: calc(100vh / 2.5);
