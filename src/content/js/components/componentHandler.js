@@ -25,8 +25,6 @@ export class ComponentHandler extends HTMLElement{
     setup(){
         this.components = this.getComponents
         this.scrolledger = new ScrollLedger()
-        window.addEventListener("resize", e=>{
-        })
         return
     }
     get getComponents(){

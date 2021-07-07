@@ -31,8 +31,8 @@ export class SocialPad extends HTMLElement{
         this.appendChild(this.components.twitter.components.input)
         this.appendChild(this.components.instagram.components.input)
         this.appendChild(this.components.facebook.components.input)
-        this.appendChild(this.components.twitter.components.label)
         this.appendChild(this.components.instagram.components.label)
+        this.appendChild(this.components.twitter.components.label)
         this.appendChild(this.components.facebook.components.label)
         return
     }

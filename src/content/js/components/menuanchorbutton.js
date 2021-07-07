@@ -46,7 +46,7 @@ export class MenuAnchorButton extends HTMLElement {
                 return
             case 'ALUMNI STORE':
                 document.querySelector('la-carousel').render(this.text.toUpperCase())
-                document.querySelector("la-carousel").scrollIntoView({block: "start"})
+                window.scrollTo(0,0)
                 return
             case 'SOCIAL':
                 document.querySelector('la-social').scrollIntoView({block: "start"})

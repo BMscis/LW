@@ -78,10 +78,9 @@ la-backtotop.material-icons{
     margin: calc(100vh * 0.07) auto;
 }
 la-backhome.material-icons{
-    top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    top: 0;
     left: 4%;
     //margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto;
-    padding-inline-start: 5vw;
 }
 la-backtotop::after,
 la-backhome::after

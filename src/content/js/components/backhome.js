@@ -11,7 +11,7 @@ export class BackHome extends HTMLElement{
         this.classList.add("material-icons")
         this.addEventListener("click", e=>{
             document.querySelector('la-carousel').render("HOME")
-            document.querySelector("la-carousel").scrollIntoView({block: "nearest"})
+            window.scrollTo(0,0)
         })
         return
     }

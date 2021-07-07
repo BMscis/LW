@@ -1,20 +1,29 @@
 la-social{
-    width: calc(100vw  / 1.8);
-    display: grid;
+    //width: calc(100vw  / 1.8);
+    display: flex;
     margin: auto;
     padding: 30px 0;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto auto;
+    scroll-margin-top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    position: relative;
+    width: clamp(calc(100vw / 1.8), 500px, calc(100vw / 1.1));
     //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 
 }
 la-socialpad{
     width: 100%;
-    height: 60px;
+    //height: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: min(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
+    background-color: whitesmoke;
+    margin: auto;
+    border-radius: 10px;
+    //margin-top: min(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
 }
 la-socialpad input{
     display: none;
@@ -22,13 +31,13 @@ la-socialpad input{
 la-socialbutton, la-socialpad label{
     width: 48px;
     height: 48px;
-    margin:20px;
     outline: none;
     border: none;
     margin:auto;
     position: absolute;
     left: 0;
     right: 0;
+    top:0;
     transform-style: preserve-3d;
     perspective: 1800px;
     transform-origin: center;
@@ -40,16 +49,20 @@ la-socialbutton, la-socialpad label{
 #la-socialbutton-input-1:checked ~ #la-socialpad{
         border-bottom: 3px solid #2aa9e0;
     }
-#la-socialbutton-input-1:checked ~  #la-socialbutton-label-1, 
+#la-socialbutton-input-1:checked ~  #la-socialbutton-label-1,
+#la-socialbutton-input-1:checked ~  #twlabel,
 #la-socialbutton-input-2:checked ~  #la-socialbutton-label-2, 
-#la-socialbutton-input-3:checked ~  #la-socialbutton-label-3{
+#la-socialbutton-input-3:checked ~  #la-socialbutton-label-3,
+#la-socialbutton-input-3:checked ~  #fblabel{
   transform: translatex(0) scale(1);
   opacity: 1;
   z-index: 1;
 }
 #la-socialbutton-input-1:checked ~  #la-socialbutton-label-2, 
 #la-socialbutton-input-2:checked ~  #la-socialbutton-label-3, 
-#la-socialbutton-input-3:checked ~  #la-socialbutton-label-1
+#la-socialbutton-input-2:checked ~  #fblabel, 
+#la-socialbutton-input-3:checked ~  #la-socialbutton-label-1,
+#la-socialbutton-input-3:checked ~  #twlabel
  {
   transform: translatex(180%) scale(.8);
   opacity: .4;
@@ -58,7 +71,9 @@ la-socialbutton, la-socialpad label{
 }
 
 #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3, 
-#la-socialbutton-input-2:checked ~  #la-socialbutton-label-1, 
+#la-socialbutton-input-1:checked ~  #fblabel, 
+#la-socialbutton-input-2:checked ~  #la-socialbutton-label-1,
+#la-socialbutton-input-2:checked ~  #twlabel,
 #la-socialbutton-input-3:checked ~  #la-socialbutton-label-2
  {
   transform: translatex(-180%) scale(.8);
@@ -66,18 +81,16 @@ la-socialbutton, la-socialpad label{
   z-index: 0;
   //filter: blur(15px);
 }
-iframe.facebookiframe,
-iframe.instagramiframe
- {
-    position: absolute;
-    width: calc(100vw / 1.8);
-    margin-top: min(calc(100vh * 0.25 / 2 + 60px), calc(100vw * 0.25 / 2 + 60px));
+#twlabel,#fblabel {
+    width: 100%;
+    //height: -webkit-fill-available;
+    //left: calc(50% - 250px);
+    top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    //margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-iframe#twitter-widget-0 {
-    left: 0;
-    width: calc(100vw / 1.8);
-}
-
 // #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3,
 // #la-socialbutton-input-2:checked ~  #la-socialbutton-label-4,
 // #la-socialbutton-input-3:checked ~  #la-socialbutton-label-1,
