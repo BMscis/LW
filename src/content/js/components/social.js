@@ -45,8 +45,8 @@ export class Social extends HTMLElement {
         this.appendChild(this.components.twitterhref)
         this.appendChild(this.components.facebookhref)
         this.components.facebookhref.outerHTML = `
-        <iframe class=facebookiframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLightAcademyAlumni&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=843006239656820" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <iframe class=instagramiframe src="https://www.instagram.com/lightalumni/EAALZBta91S3QBANNBpwZB9gEKbx7jbbZCgf8DZCwu5SfonlQmm46xvtCI4V3wm8yqOSxNzighjQi9vWst5ZCrltZCkCDap5GDy1sY6VNzPmyuManiJdofn8v47Wxd4Ys2mQOXdalqoZB10wrBh7yruumcbPRRZChCjFJLH7dkJZA8bMcw1NBZASqWwss6Etx1ZCfdezoCD478fBbwZDZD"></iframe>
+        <iframe class=facebookiframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLightAcademyAlumni&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=843006239656820" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe class=instagramiframe src="https://www.instagram.com/lightalumni/EAALZBta91S3QBANNBpwZB9gEKbx7jbbZCgf8DZCwu5SfonlQmm46xvtCI4V3wm8yqOSxNzighjQi9vWst5ZCrltZCkCDap5GDy1sY6VNzPmyuManiJdofn8v47Wxd4Ys2mQOXdalqoZB10wrBh7yruumcbPRRZChCjFJLH7dkJZA8bMcw1NBZASqWwss6Etx1ZCfdezoCD478fBbwZDZD" width="100%" height="100%"></iframe>
         `
         return
     }
