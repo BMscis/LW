@@ -26,20 +26,12 @@ export class Social extends HTMLElement {
               version          : 'v11.0'
             });
           };
-        
-        (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
         `
-        // fbSDK.setAttribute("async","")
-        // fbSDK.setAttribute("defer","")
-        // fbSDK.setAttribute("crossorigin","anonymous")
-        // fbSDK.setAttribute("src","https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=843006239656820&autoLogAppEvents=1")
-        // fbSDK.setAttribute("nonce","D7PIPwIt")
+        fbSDK.setAttribute("async","")
+        fbSDK.setAttribute("defer","")
+        fbSDK.setAttribute("crossorigin","anonymous")
+        fbSDK.setAttribute("src","https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=843006239656820&autoLogAppEvents=1")
+        fbSDK.setAttribute("nonce","D7PIPwIt")
         document.body.prepend(fbSDK)
         this.components = this.getComponents
         return
