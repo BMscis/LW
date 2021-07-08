@@ -22,7 +22,8 @@ la-menuanchorbuttondropdown{
     margin: auto calc((100vw - 100vw / 1.16) / 2);
     background-image: linear-gradient(45deg, #00001c, transparent);
     border-radius: 10px;
-    backdrop-filter: brightness(0.5) brightness(0.5) sepia(1) blur(3px); 
+    backdrop-filter: brightness(0.5) brightness(0.5) sepia(1) blur(3px);
+    -webkit-backdrop-filter:brightness(0.5) brightness(0.5) sepia(1) blur(3px);
 
 }
 la-menuanchor[overflow] la-menuanchorbuttondropdown {
@@ -33,6 +34,7 @@ la-menuanchor[overflow] la-menuanchorbuttondropdown {
     background-image: unset;
     border-radius: 10px;
     backdrop-filter: unset;
+    -webkit-backdrop-filter:unset;
     position: relative;
 }
 la-menuanchorbuttondropdown{

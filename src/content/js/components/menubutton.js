@@ -10,13 +10,14 @@ export class MenuButton extends HTMLElement{
         //this.getComponents
         this.classList.add("material-icons")
         this.addEventListener('click', e=>{
+            console.log("MENU: ", this.innerHTML)
             switch(this.innerHTML){
                 case "menu":
-                    e.path[1].toggleAttribute("overflow")
+                    document.querySelector("la-menuanchor").toggleAttribute("overflow")
                     this.innerHTML = "close"
                     return
                 case "close":
-                    e.path[1].toggleAttribute("overflow")
+                    document.querySelector("la-menuanchor").toggleAttribute("overflow")
                     this.innerHTML = "menu"
                     return
             }

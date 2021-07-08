@@ -493,6 +493,7 @@ la-calendar{
   right: 0;
   padding: $tile-size / 6;
   background-clip: content-box;
+  -webkit-background-clip: content-box;
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;

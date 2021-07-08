@@ -4,6 +4,7 @@ la-aboutcontainer{
     padding: 30px 0;
     display: block;
     scroll-margin-top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    scroll-snap-margin-top:clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
     //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 }
 la-aboutus{

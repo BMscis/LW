@@ -16,6 +16,8 @@ $global-typography-accent-font-weight:500;
     transition: 0.5s ease-in-out;
     scroll-behavior: smooth;
     user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 p , text{
     line-height: 30px;

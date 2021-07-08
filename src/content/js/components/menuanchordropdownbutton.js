@@ -8,13 +8,13 @@ export class MenuAnchorDropDownButton extends HTMLElement {
     }
     setup() {
          this.addEventListener("click", e => {
-            if(e.path[8].hasAttribute("overflow")){
+            if(document.querySelector("la-menuanchor").hasAttribute("overflow")){
             document.querySelector("la-menubutton").click()
             }
-            e.path[5].components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
-            e.path[5].components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
-            e.path[5].toggleAttribute("dropdown")
-            e.path[1].buttonAction()
+            this.parentElement.parentElement.parentElement.parentElement.components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
+            this.parentElement.parentElement.parentElement.parentElement.components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
+            this.parentElement.parentElement.parentElement.parentElement.toggleAttribute("dropdown")
+            this.buttonAction()
          },false)
         return
     }
@@ -32,9 +32,9 @@ export class MenuAnchorDropDownButton extends HTMLElement {
                 return
             case "CONSTITUTION":
                 return
-            case "PARTNERSHIP":
-                document.querySelector('la-carousel').render("ALUMNI STORES")
-                document.querySelector('la-carousel').scrollIntoView({block: "start"})
+            case "PARTNERSHIPS":
+                document.querySelector('la-carousel').render("ALUMNI STORE")
+                window.scrollTo(0,0)
                 return
             case "CLUBS":
                 document.querySelector('la-aboutcontainer').render(this.text.toUpperCase())

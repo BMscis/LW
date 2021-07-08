@@ -25,7 +25,7 @@ export class MenuAnchor extends HTMLElement{
     }
     get getComponents(){
         var componentList = []
-        var buttonAbout = new MenuAnchorButton("About Alumni",false,["Mission & Vision","Constitution","Partnership","About Us","Clubs","Contact Us"])
+        var buttonAbout = new MenuAnchorButton("About Alumni",false,["Mission & Vision","Constitution","Partnerships","About Us","Clubs","Contact Us"])
         componentList.push(buttonAbout)
         var buttonActivities = new MenuAnchorButton("Activities",false,["Events", "Projects"])
         componentList.push(buttonActivities)

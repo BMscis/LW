@@ -23,14 +23,14 @@ export class MenuAnchorButton extends HTMLElement {
         this.components.dropdowncontainer.addEventListener("click", e => {
             this.toggleAttribute("dropdown")
             if(!this.setupDropdown){
-                if(e.path[5].hasAttribute("overflow")){
+                if(document.querySelector("la-menuanchor").hasAttribute("overflow")){
                     document.querySelector("la-menubutton").click()
                 }
             }
             if (this.setupDropdown) {
                 this.components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
                 this.components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
-                e.path[2].buttonAction()
+                this.buttonAction()
             }
             else {
                 this.buttonAction()
