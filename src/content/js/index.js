@@ -43,7 +43,7 @@ window.addEventListener("load", e =>{
             // let fbWidth = fbLabel.offsetWidth
             // let fbPageSize = fbPageSet(fbWidth)
             // fbLabel.appendChild(fbPageSize)
-            },3500)
+            },6500)
 })
 // window.addEventListener("resize", e =>{
 //     console.log("RESIZE")

@@ -29,7 +29,7 @@ la-menuanchor[overflow] la-menuanchorbuttondropdown {
     width: auto;
     top:unset;
     left:unset;
-    margin: auto calc((100vw - 100vw / 1.16) / 2);
+    margin: auto;
     background-image: unset;
     border-radius: 10px;
     backdrop-filter: unset;
@@ -38,7 +38,6 @@ la-menuanchor[overflow] la-menuanchorbuttondropdown {
 la-menuanchorbuttondropdown{
     ul{
         margin:20px 0;
-        padding-left: 20px;
         flex-direction: column;
     }
 }

@@ -71,6 +71,7 @@ export class MenuAnchorButton extends HTMLElement {
     get getComponents() {
         var btn = document.createElement("button")
         btn.innerHTML = this.text
+        btn.setAttribute("data-buttonwidth", "red")
         var span = document.createElement("span")
         span.classList.add("material-icons")
         span.id = "expandmore"
