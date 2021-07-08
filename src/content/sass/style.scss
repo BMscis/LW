@@ -15,10 +15,16 @@ $global-typography-accent-font-weight:500;
     box-sizing: border-box;
     transition: 0.5s ease-in-out;
     scroll-behavior: smooth;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    font-size: 16px;
+
 }
+
 p , text{
     line-height: 30px;
     font-family: "Roboto", sans-serif;
@@ -32,7 +38,6 @@ li{
 }
 html,body{
     margin: 0;
-    font-size: 18px;
     letter-spacing: -.3px;
     font-family: "Roboto", sans-serif;
     line-height: 1;
@@ -45,7 +50,7 @@ la-componenthandler {
     margin:0;
     color: black;
     position: relative;
-    background: #f0f2f5;
+    background: white;
     height: -webkit-fill-available;
 }
 h3{

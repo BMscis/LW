@@ -35,7 +35,6 @@ la-carousel[store]{
     h2 {
         text-align: center;
         font-weight: 900;
-        font-size: inherit;
         color: white;
         font-family: monospace;
     }
@@ -62,7 +61,6 @@ caption{
     h1 {
         text-align: center;
         font-weight: 900;
-        font-size: unset;
     }
 }
 .imagecontainer{
@@ -96,7 +94,6 @@ la-imageroll[mouse] > div{
 }
 @media only screen and (max-width: 600px){
     .centralcarousel h1{
-        font-size: unset;
     }
     la-imageroll{
         height: calc(100vh / 2.5);

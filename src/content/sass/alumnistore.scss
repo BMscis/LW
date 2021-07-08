@@ -40,7 +40,6 @@ la-alumnistore:hover{
 }
 la-alumnistore h1 {
   color: #3e3e42;
-  font-size:16px;
   font-weight: 800;
   letter-spacing: -1px;
   transform: translateZ(35px);
@@ -52,7 +51,6 @@ la-alumnistore h1 {
 }
 la-alumnistore h3 {
   color: #eb285d;
-  font-size: 16px;
   margin-bottom: 6px;
   transform: translateZ(25px);
   height: fit-content;
@@ -167,7 +165,6 @@ img.card__img {
 
 .card__title {
   color: #009688;
-  font-size: clamp(10px,1vw,16px);
   letter-spacing: min(0px,2px);
   line-break: auto;
 }
@@ -177,7 +174,6 @@ img.card__img {
   border-top-left-radius: 6px;
   bottom: 0;
   font-family: monospace;
-  font-size: 14px;
   padding: 8px 10px;
   position: absolute;
   right: 0px;
@@ -199,7 +195,6 @@ img.card__img {
   display: flex;
   align-items: center;
   color: #fff;
-  font-size: 14px;
   width: 74px;
   opacity: 0.4;
   

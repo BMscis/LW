@@ -43,7 +43,8 @@ la-backtotop.material-icons
     color: #fff;
     fill: #fff;
     background-color:#A784C6;
-    font-weight: 700;
+    font-weight: 100;
+    font-size: 16px;
     position: relative;
     transition: all .3s ease;
     text-align: center;
@@ -87,12 +88,12 @@ la-backhome::after
 {
     color: white;
     padding: 5px 10px;
-    font-family: "Roboto", sans-serif;
+    font-family: roboto;
+    letter-spacing: 3px;
     -webkit-text-stroke-width: thin;
     animation-name: beforeOpacity;
     animation-duration: .5s; 
     animation-timing-function: forwards;
-    font-size: small;
 }
 la-backtotop:hover::after{
     content: "Back to Top";
@@ -122,11 +123,9 @@ la-carousel[store] la-backhome{
     la-backtotop::after,
     la-backhome::after
     {
-        font-size: xx-small;
         -webkit-text-stroke-width: thin;
     }
     la-backhome.material-icons, la-backtotop.material-icons {
         -webkit-text-stroke-width: thin;
-        font-size: smaller;
     }
 }
