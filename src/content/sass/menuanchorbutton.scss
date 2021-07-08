@@ -17,7 +17,6 @@ la-menuanchorbutton{
     cursor: pointer;
     margin-left: 1vw;
     white-space: nowrap;
-    width: clamp(20vw,115px,30vw);
     //opacity: 0.5;
 }
 la-menuanchorbutton:nth-of-type(3)::before{

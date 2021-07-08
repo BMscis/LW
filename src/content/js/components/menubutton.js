@@ -10,7 +10,7 @@ export class MenuButton extends HTMLElement{
         //this.getComponents
         this.classList.add("material-icons")
         this.addEventListener('click', e=>{
-            console.log("MENU: ", this.innerHTML)
+            //console.log("MENU: ", this.innerHTML)
             switch(this.innerHTML){
                 case "menu":
                     document.querySelector("la-menuanchor").toggleAttribute("overflow")

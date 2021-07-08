@@ -7,4 +7,7 @@ la-menubutton.material-icons{
     la-menubutton.material-icons{
         display: block;
     }
+    la-menuanchor{
+        width: clamp(20vw,115px,30vw);
+    }
 }
