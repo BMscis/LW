@@ -93,6 +93,8 @@ la-socialbutton, la-socialpad label{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: none;
 }
 // #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3,
 // #la-socialbutton-input-2:checked ~  #la-socialbutton-label-4,
