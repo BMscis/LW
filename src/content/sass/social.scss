@@ -21,7 +21,6 @@ la-socialpad{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #ff9494;
     margin: auto;
     border-radius: 10px;
     //margin-top: min(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
@@ -48,6 +47,7 @@ la-socialbutton, la-socialpad label{
     background-position: center;
     border-radius: 9999px;
     box-shadow: 0px 1px 2px 0px #000;
+    background-color: white;
 }
 #la-socialbutton-input-1:checked ~ #la-socialpad{
         border-bottom: 3px solid #2aa9e0;
@@ -108,5 +108,8 @@ la-socialbutton, la-socialpad label{
     la-social{
         //margin-top: max(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
         width: unset;
+    }
+    la-socialpad{
+        background-color: #ff9494;
     }
 }
