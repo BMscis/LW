@@ -4,12 +4,12 @@ la-social{
     justify-content: space-around;
     flex-wrap: wrap;
     margin: auto;
-    scroll-margin-top: min(calc(50vw * 0.0758), calc(50vh * 0.0758));
-    scroll-snap-margin-top:min(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    scroll-margin-top: min(calc(50vw * 0.0271), calc(50vh * 0.0271));
+    scroll-snap-margin-top:min(calc(50vw * 0.0271), calc(50vh * 0.0271));
     position: fixed;
-    top:max(100vh - min(calc(100vw * 0.1), calc(100vh * 0.1)));
+    top:calc(100vh - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)));
     width: min(calc(100vw / 1.1), calc(100vw / 1.8));
-    background-color: #0f163b59;
+    background-color: #0f163bdb;
     backdrop-filter: blur(30px);
     border-radius: 10px;
     left: 0;
@@ -18,12 +18,13 @@ la-social{
     transform-style: preserve-3d;
     perspective: 1800px;
     transform-origin: center;
+    z-index: 1001;
     //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 
 }
 la-socialpad{
     width: 100%;
-    //height: max(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    //height: max(calc(50vw * 0.0271), calc(50vh * 0.0271));
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
@@ -31,7 +32,7 @@ la-socialpad{
     align-items: center;
     margin: auto;
     border-radius: 10px;
-    height: calc(48px + 1vh + 500px + max(calc(100vw * 0.1), calc(100vh * 0.1)));
+    height: max(calc(50vw * 0.0271 + 48px * 12), calc(50vh * 0.0271 + 48px * 12));
     transform-style: preserve-3d;
     perspective: 1800px;
     transform-origin: center;
@@ -60,6 +61,8 @@ la-socialbutton, la-socialpad label{
     border-radius: 9999px;
     box-shadow: 0px 1px 8px 0px #000;
     background-color: #0f163b;
+    z-index: 1000;
+    pointer-events: all;
 }
 la-unfoldmore.material-icons{
     position: absolute;
@@ -68,6 +71,7 @@ la-unfoldmore.material-icons{
     z-index: 10;
     margin-left:0;
     border-radius: 10px 0 5px 5px;
+    width: 24px;
 }
 #la-socialbutton-input-1:checked ~ #la-socialpad{
         border-bottom: 3px solid #2aa9e0;
@@ -78,7 +82,6 @@ la-unfoldmore.material-icons{
 #la-socialbutton-input-3:checked ~  #la-socialbutton-label-3,
 #la-socialbutton-input-3:checked ~  #fblabel{
   transform: translatex(0) scale(1);
-  opacity: 1;
   z-index: 1;
   filter: unset;
 }
@@ -89,7 +92,6 @@ la-unfoldmore.material-icons{
 #la-socialbutton-input-3:checked ~  #twlabel
  {
   transform: translatex(180%) scale(.8);
-  opacity: .4;
   z-index: 0;
   filter: grayscale(1);
   //filter: blur(15px);
@@ -102,7 +104,6 @@ la-unfoldmore.material-icons{
 #la-socialbutton-input-3:checked ~  #la-socialbutton-label-2
  {
   transform: translatex(-180%) scale(.8);
-  opacity: .4;
   z-index: 0;
   filter: grayscale(1);
   //filter: blur(15px);
@@ -111,8 +112,8 @@ la-unfoldmore.material-icons{
     width: 100%;
     //height: -webkit-fill-available;
     //left: calc(50% - 250px);
-    top: max(calc(100vw * 0.1),calc(100vh * 0.1));
-    //margin: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758)) auto;
+    top: max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px));
+    //margin: clamp(calc(50vw * 0.0271),78px, calc(50vh * 0.0271)) auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -120,6 +121,10 @@ la-unfoldmore.material-icons{
     box-shadow: none;
     overflow: auto;
     height: 500px;
+}
+#twlabel iframe,
+#fblabel iframe{
+    pointer-events: all;
 }
 // #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3,
 // #la-socialbutton-input-2:checked ~  #la-socialbutton-label-4,
@@ -131,8 +136,3 @@ la-unfoldmore.material-icons{
 //   z-index: 0;
 //   //filter: blur(15px);
 // }
-@media only screen and (max-width: 600px){
-    la-unfoldmore.material-icons{
-        width: initial;
-    }
-}

@@ -17,14 +17,15 @@ la-menuanchorbuttondropdown{
     position: fixed;      
     width: calc(100vw / 1.16);
     //background-color: #00001c; 
-    top:max(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    top:max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px));
     left:0;
     margin: auto calc((100vw - 100vw / 1.16) / 2);
     background-image: linear-gradient(45deg, #00001c, transparent);
     border-radius: 10px;
     backdrop-filter: brightness(0.5) brightness(0.5) sepia(1) blur(3px);
     -webkit-backdrop-filter:brightness(0.5) brightness(0.5) sepia(1) blur(3px);
-
+    z-index: 1000;
+    pointer-events: none;
 }
 la-menuanchor[overflow] la-menuanchorbuttondropdown {
     width: auto;
@@ -41,6 +42,12 @@ la-menuanchorbuttondropdown{
     ul{
         margin:20px 0;
         flex-direction: column;
+        z-index: 1000;
+        pointer-events: none;
+    }
+    li{
+        z-index: 1000;
+        pointer-events: none;
     }
 }
 la-menuanchorbutton[dropdown]{

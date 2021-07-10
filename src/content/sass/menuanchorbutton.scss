@@ -17,6 +17,8 @@ la-menuanchorbutton{
     cursor: pointer;
     margin-left: 1vw;
     white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
     //opacity: 0.5;
 }
 la-menuanchorbutton:nth-of-type(3)::before{
@@ -35,6 +37,8 @@ la-menuanchorbutton:nth-of-type(3)::before{
     grid-template-areas: "libutton ex";
     width: 100%;
     grid-auto-columns: 80% 1fr;
+    z-index: 1000;
+    pointer-events: all;
 }
 #expandmore,#expandless{
     margin:auto;

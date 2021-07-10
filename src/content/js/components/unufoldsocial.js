@@ -14,10 +14,10 @@ export class UncofldMore extends HTMLElement{
                 case "unfold_more":
                     switch(window.innerWidth > 600){
                         case true:
-                            document.querySelector("la-social").setAttribute("style","top: max(min(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:0")
+                            document.querySelector("la-social").setAttribute("style","top: max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)); bottom:0")
                             break
                         case false:
-                            document.querySelector("la-social").setAttribute("style","top: max(max(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:0")
+                            document.querySelector("la-social").setAttribute("style","top: max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)); bottom:0")
                             break
                     }
                     this.innerText = "unfold_less"
@@ -26,10 +26,10 @@ export class UncofldMore extends HTMLElement{
                 case "unfold_less":
                     switch(window.innerWidth > 600){
                         case true:
-                            document.querySelector("la-social").setAttribute("style","top: max(100vh - min(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:unset")
+                            document.querySelector("la-social").setAttribute("style","top: calc(100vh - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px))); bottom:unset")
                             break
                         case false:
-                            document.querySelector("la-social").setAttribute("style","top: max(100vh - max(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:unset")
+                            document.querySelector("la-social").setAttribute("style","top: calc(100vh - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px))); bottom:unset")
                             break
                     }
                     this.innerText = "unfold_more"

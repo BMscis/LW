@@ -11,11 +11,9 @@
 }
 la-loginregister{
     display: flex;
-    margin: auto;
-    padding-top: 10px;
     position: relative;
-    top: max(calc(50vw * 0.0758), calc(50vh * 0.0758));
     z-index: 1000;
+    align-self: flex-end;
 }
 la-loginregister[hide]{
     opacity: 0;
@@ -58,9 +56,12 @@ la-unfoldmore.material-icons
     height: 48px;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    pointer-events: all;
 }
 la-loginregister button{
     width: unset;
+    border-radius: 5px;
 }
 .login{
     color: #000;
@@ -83,13 +84,16 @@ la-backtotop.material-icons
 la-backtotop.material-icons{
     right: 0;
     position: absolute;
+    width: 24px;
     border-radius: 0 10px 5px 5px;
 }
 la-backhome.material-icons{
     top: 0;
-    left: 4%;
-    position: fixed;
-    //margin: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758)) auto;
+    left: 0;
+    position: absolute;
+    border-radius: 10px 0 10px 0;
+    margin: 0;
+    //margin: clamp(calc(50vw * 0.0271),78px, calc(50vh * 0.0271)) auto;
 }
 la-backtotop::after,
 la-backhome::after
@@ -103,13 +107,6 @@ la-backhome::after
     animation-duration: .5s; 
     animation-timing-function: forwards;
 }
-la-backtotop:hover::after{
-    content: "Top";
-    color:#32273B;
-}
-la-backhome:hover::after{
-    content: "Home";
-}
 la-backtotop[show]{
     opacity:1;
 }
@@ -117,21 +114,10 @@ la-carousel[store] la-backhome{
     opacity:1;
 }
 @media only screen and (max-width: 600px){
-    la-backtotop.material-icons {
-        width: initial;
+    la-loginregister button{
+        height: 24px;
     }
     la-backtotop:hover::after{
         content: none;
-    }
-    la-backhome::after{
-        content: "Home";
-    }
-    la-backtotop::after,
-    la-backhome::after
-    {
-        -webkit-text-stroke-width: thin;
-    }
-    la-backhome.material-icons, la-backtotop.material-icons {
-        -webkit-text-stroke-width: thin;
     }
 }

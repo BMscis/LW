@@ -20,6 +20,8 @@ la-mainmenu{
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
+    z-index: 1000;
+    pointer-events: none;
     //box-shadow: 0px 1px 3px -3px black;
     //width: max(calc(100vw / 1.1), calc(100vw / 1.8));
 
@@ -29,19 +31,21 @@ la-mainmenucontainer{
     background-position: left;
     background-repeat: no-repeat;
     margin: auto;
-    height: max(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    height: max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px));
     display: flex;
     background-color: white;
     position: sticky;
     position: -webkit-sticky;
     width: 100%;
-    top: 0;
+    top: -1px;
+    pointer-events: none;
     z-index: 1000;
+    background-size: min(30vw,30vh);
 
 }
 @media only screen and (max-width: 1024px){
     la-mainmenucontainer{
-        background-position: center;
+        background-position: center top;
     }
     la-mainmenu{
         flex-direction: column;
@@ -55,13 +59,14 @@ la-mainmenucontainer{
             margin: unset;
             align-items: center;
             padding-inline-start: 5vw;
-            z-index: 1000;
+            z-index: 1001;
         }
         la-loginregister{
             margin: unset;
             align-self: flex-end;
             position: unset;
             padding-inline-end: 5vw;
+            z-index: 1001;
             transform: scale(var(--ggs,.7));
             la-backhome.material-icons, 
             la-backtotop.material-icons,
@@ -69,5 +74,10 @@ la-mainmenucontainer{
                 padding: 8px 20px;
             }
         }
+    }
+}
+@media only screen and (max-width: 600px){
+    la-mainmenucontainer{
+        background-size: max(30vw,30vh);
     }
 }

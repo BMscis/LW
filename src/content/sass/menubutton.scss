@@ -1,11 +1,12 @@
 la-menubutton.material-icons{
     display: none;
-    z-index: 1000;
     color: #BA5330;
+    z-index: 1001;
+    pointer-events: all;
 }
 @media only screen and (max-width: 1050px) {
     la-menubutton.material-icons{
-        display: block;
+        display: flex;
     }
     la-menuanchor{
         //width: clamp(20vw,115px,30vw);

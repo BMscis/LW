@@ -24,6 +24,7 @@ export class MainMenuContainer extends HTMLElement{
     }
     render(){
         this.appendChild(this.components.mainmenu)
+        this.appendChild(this.components.mainmenu.components.user)
         return
     }
     disconnectedCallback(){

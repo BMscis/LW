@@ -12,7 +12,7 @@ la-alumnistore {
   // width: clamp(80%,100vw / 3,271px);
   // height: clamp(95%,100vw / 2,381px);
   width: min(50vw, 233px);
-  height: min(57vh, 411px);
+  height: min(calc(50vw * 0.0271 * 30), calc(50vh * 0.0271 * 30));
   background-color: #0f163b;
   display: grid;
   grid-auto-columns: 80%;
@@ -210,5 +210,10 @@ img.card__img {
   la-alumnistore{
     width: min(50vw, 233px);
     height: min(45vh, 411px);
+  }
+}
+@media only screen and (max-width: 900px){
+  la-alumnistore{
+    height: max(calc(50vw * 0.0271 * 30), calc(50vh * 0.0271 * 30));
   }
 }

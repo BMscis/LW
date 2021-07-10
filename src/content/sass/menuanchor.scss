@@ -4,6 +4,8 @@ la-menuanchor{
     margin: auto;
     height: 100%;
     align-items: center;
+    z-index: 1000;
+    pointer-events: none;
 }
 la-menuanchor ul {
     list-style: none;
@@ -12,6 +14,8 @@ la-menuanchor ul {
     padding: 0;
     margin: 0;
     align-items: flex-start;
+    z-index: 1000;
+    pointer-events: none;
 }
 .material-icons{
     cursor: pointer;
@@ -20,6 +24,8 @@ la-menuanchor li {
     position: static;
     padding: 0;
     margin:3vh;
+    z-index: 1000;
+    pointer-events: none;
     //width: calc(100vw / 1.6 / 6);
 }
 la-menuanchor button {
@@ -35,6 +41,7 @@ la-menuanchor button {
     background: none;
     border: none;
     grid-area: libutton;
+    width: -webkit-fit-content;
 }
 @media only screen and (max-width: 1050px) {
     la-menuanchor #anchorbuttons{
@@ -44,11 +51,12 @@ la-menuanchor button {
         backdrop-filter: sepia(1) invert(1);
         -webkit-backdrop-filter: sepia(1) invert(1);
         width: 50%;
-        top: max(calc(50vw * 0.0758), calc(50vh * 0.0758));
+        top: 0;
         flex-direction: column;
         justify-content: flex-start;
         min-height: 40vh;
         border-radius: 0 0 20px 20px;
+        padding-top: 48px;
     }
     la-menuanchor ul{   
         background-color: #00001c;
@@ -83,16 +91,10 @@ la-menuanchor button {
 @media only screen and (max-width: 600px){
     la-menuanchor #anchorbuttons{
         width: 100%;
-        padding-top: 50px;
-
+        top:0;
     }
-    
-    
-    
     la-menuanchorbutton[dropdown]{
-        
         width: 100%;
-        //background-color: transparent;
         button{
             color: #6EC1E4;
         }

@@ -22,6 +22,7 @@ $global-typography-accent-font-weight:500;
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
     font-size: 16px;
+    pointer-events: none;
 
 }
 
@@ -41,7 +42,7 @@ html,body{
     font-family: "Roboto", sans-serif;
     line-height: 1;
     word-wrap: break-word;
-
+    margin-top: 0;
 }
 la-componenthandler {
     display: block;
@@ -61,14 +62,11 @@ h3{
     text-align: center;
 }
 @media only screen and (max-width: 1050px) {
-    la-aboutcontainer, la-social{
+    la-aboutcontainer, la-social,la-carousel{
         width:max(calc(100vw / 1.1), calc(100vw / 1.8))
     }
 }
 @media only screen and (max-width: 600px){
-    la-carousel{
-        width:max(calc(100vw / 1.1), calc(100vw / 1.8))
-    }
     la-social{
         top:max(100vh - max(calc(100vw * 0.1), calc(100vh * 0.1)));
     }
