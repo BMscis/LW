@@ -31,13 +31,15 @@ la-alumnistore {
   transition-delay: 200ms;
   box-shadow: 5px 5px 20px -5px rgb(0 0 0 / 60%);
   cursor: pointer;
+  pointer-events: all;
+  z-index: 1000;
 }
-la-alumnistore:hover{
-  a::after{
-    content: attr(href);
-    text-align: center;
-  }
-}
+// la-alumnistore:hover{
+//   a::after{
+//     content: attr(href);
+//     text-align: center;
+//   }
+// }
 la-alumnistore h1 {
   color: #3e3e42;
   font-weight: 800;
