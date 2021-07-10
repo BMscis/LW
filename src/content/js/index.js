@@ -28,4 +28,5 @@ window.addEventListener("load", e =>{
     //document.body.innerHTML = getBodyStyle()
     document.body.appendChild(componenthandler)
     window.ComponentHandler = componenthandler
+    window.scrollTo(0,0)
 })

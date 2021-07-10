@@ -1,12 +1,13 @@
 la-aboutcontainer{
     width: min(calc(100vw / 1.1), calc(100vw / 1.8));
-    height: max(calc(50vw * 0.0271 + 48px * 15), calc(50vh * 0.0271 + 48px * 15));
-    margin: min(calc(50vw * 0.0271), calc(50vh * 0.0271)) auto auto;
-    padding: 30px 0;
+    height: calc(100vh - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)) - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)));
+    margin: auto;
+    padding:  0 15px;
     display: block;
     border-radius: 10px;
     scroll-margin-top: min(calc(50vw * 0.0271), calc(50vh * 0.0271));
     scroll-snap-margin-top:min(calc(50vw * 0.0271), calc(50vh * 0.0271));
+    position: relative;
     //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 }
 la-aboutus{

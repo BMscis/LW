@@ -34,9 +34,15 @@ p , text{
 li{
     padding: 22px 9px;
 }
-// ::-webkit-scrollbar{
-//     width: 0;
-// }
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0000004d;
+    height: 48px;
+    border-radius: 5px;
+}
 html,body{
     letter-spacing: -.3px;
     font-family: "Roboto", sans-serif;
@@ -64,10 +70,5 @@ h3{
 @media only screen and (max-width: 1050px) {
     la-aboutcontainer, la-social,la-carousel{
         width:max(calc(100vw / 1.1), calc(100vw / 1.8))
-    }
-}
-@media only screen and (max-width: 600px){
-    la-social{
-        top:max(100vh - max(calc(100vw * 0.1), calc(100vh * 0.1)));
     }
 }

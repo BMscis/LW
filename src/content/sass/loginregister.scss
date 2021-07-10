@@ -120,4 +120,7 @@ la-carousel[store] la-backhome{
     la-backtotop:hover::after{
         content: none;
     }
+    la-backhome.material-icons{
+        width: 34px;
+    }
 }

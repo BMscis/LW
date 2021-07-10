@@ -16,11 +16,10 @@ la-carousel{
     scroll-margin-top: min(calc(50vw * 0.0271), calc(50vh * 0.0271));
     scroll-snap-margin-top:min(calc(50vw * 0.0271), calc(50vh * 0.0271));
     position: relative;
-    height: max(calc(50vw * 0.0271 + 48px * 10), calc(50vh * 0.0271 + 48px * 10));
+    height: calc(100vh - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)) - max(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px)));
 }
 la-carousel[store]{
     background-color: #3046BA;
-    height: min(calc(50vw * 0.0271 * 90 + 40px * 3 + 48px ), calc(50vh * 0.0271 * 90 + 40px * 3 + 48px));
     justify-content: flex-start;
 }
 la-carousel[store]{
@@ -107,8 +106,3 @@ la-imageroll[mouse] > div{
         height: calc(100vh / 2.5);
     }
 }
-@media only screen and (max-width: 900px){
-    la-carousel[store]{
-        height: min(calc(50vw * 0.0271 * 90 + 40px * 3 + 48px ), calc(50vh * 0.0271 * 90 + 40px * 3 + 48px));
-    }
-  }
