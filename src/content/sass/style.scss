@@ -60,3 +60,16 @@ h3{
     box-shadow: 0 2px 2px -3px black;
     text-align: center;
 }
+@media only screen and (max-width: 1050px) {
+    la-aboutcontainer, la-social{
+        width:max(calc(100vw / 1.1), calc(100vw / 1.8))
+    }
+}
+@media only screen and (max-width: 600px){
+    la-carousel{
+        width:max(calc(100vw / 1.1), calc(100vw / 1.8))
+    }
+    la-social{
+        top:max(100vh - max(calc(100vw * 0.1), calc(100vh * 0.1)));
+    }
+}

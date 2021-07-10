@@ -12,12 +12,26 @@ export class UncofldMore extends HTMLElement{
         this.addEventListener("click", e =>{
             switch(this.innerText){
                 case "unfold_more":
-                    document.querySelector("la-social").setAttribute("style","top:calc(clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1)));")
+                    switch(window.innerWidth > 600){
+                        case true:
+                            document.querySelector("la-social").setAttribute("style","top: max(min(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:0")
+                            break
+                        case false:
+                            document.querySelector("la-social").setAttribute("style","top: max(max(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:0")
+                            break
+                    }
                     this.innerText = "unfold_less"
                     document.querySelector("la-loginregister").setAttribute("hide","")
                     return
                 case "unfold_less":
-                    document.querySelector("la-social").setAttribute("style","top:calc(100vh - clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1)));")
+                    switch(window.innerWidth > 600){
+                        case true:
+                            document.querySelector("la-social").setAttribute("style","top: max(100vh - min(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:unset")
+                            break
+                        case false:
+                            document.querySelector("la-social").setAttribute("style","top: max(100vh - max(calc(100vw * 0.1), calc(100vh * 0.1))); bottom:unset")
+                            break
+                    }
                     this.innerText = "unfold_more"
                     document.querySelector("la-loginregister").removeAttribute("hide")
 

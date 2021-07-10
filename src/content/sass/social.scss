@@ -4,11 +4,11 @@ la-social{
     justify-content: space-around;
     flex-wrap: wrap;
     margin: auto;
-    scroll-margin-top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
-    scroll-snap-margin-top:clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    scroll-margin-top: min(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    scroll-snap-margin-top:min(calc(50vw * 0.0758), calc(50vh * 0.0758));
     position: fixed;
-    top:calc(100vh - clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1)));
-    width: clamp(calc(100vw / 1.8), 500px, calc(100vw / 1.1));
+    top:max(100vh - min(calc(100vw * 0.1), calc(100vh * 0.1)));
+    width: min(calc(100vw / 1.1), calc(100vw / 1.8));
     background-color: #0f163b59;
     backdrop-filter: blur(30px);
     border-radius: 10px;
@@ -23,7 +23,7 @@ la-social{
 }
 la-socialpad{
     width: 100%;
-    //height: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    //height: max(calc(50vw * 0.0758), calc(50vh * 0.0758));
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
@@ -31,7 +31,7 @@ la-socialpad{
     align-items: center;
     margin: auto;
     border-radius: 10px;
-    height: calc(48px + 1vh + 500px + clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1)));
+    height: calc(48px + 1vh + 500px + max(calc(100vw * 0.1), calc(100vh * 0.1)));
     transform-style: preserve-3d;
     perspective: 1800px;
     transform-origin: center;
@@ -111,7 +111,7 @@ la-unfoldmore.material-icons{
     width: 100%;
     //height: -webkit-fill-available;
     //left: calc(50% - 250px);
-    top: clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1));
+    top: max(calc(100vw * 0.1),calc(100vh * 0.1));
     //margin: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758)) auto;
     display: flex;
     justify-content: center;

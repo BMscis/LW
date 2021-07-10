@@ -1,5 +1,5 @@
 la-carousel{
-    width: clamp(calc(100vw / 1.8), 500px, calc(100vw / 1.1));
+    width: min(calc(100vw / 1.1), calc(100vw / 1.8));
     background: transparent;
     margin: min(calc(100vh * 0.25 / 4), calc(100vw * 0.25 / 4)) auto auto auto;
     border-radius: 10px;
@@ -13,8 +13,8 @@ la-carousel{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    scroll-margin-top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
-    scroll-snap-margin-top:clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    scroll-margin-top: min(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    scroll-snap-margin-top:min(calc(50vw * 0.0758), calc(50vh * 0.0758));
 }
 la-carousel[store]{
     padding-top: 30px;

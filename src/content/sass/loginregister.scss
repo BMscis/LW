@@ -14,7 +14,7 @@ la-loginregister{
     margin: auto;
     padding-top: 10px;
     position: relative;
-    top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    top: max(calc(50vw * 0.0758), calc(50vh * 0.0758));
     z-index: 1000;
 }
 la-loginregister[hide]{

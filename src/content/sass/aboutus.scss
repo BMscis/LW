@@ -1,10 +1,10 @@
 la-aboutcontainer{
-    width: clamp(calc(100vw / 1.8), 500px, calc(100vw / 1.1));
-    margin: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758)) auto auto;
+    width: min(calc(100vw / 1.1), calc(100vw / 1.8));
+    margin: min(calc(50vw * 0.0758), calc(50vh * 0.0758)) auto auto;
     padding: 30px 15px;
     display: block;
-    scroll-margin-top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
-    scroll-snap-margin-top:clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    scroll-margin-top: min(calc(50vw * 0.0758), calc(50vh * 0.0758));
+    scroll-snap-margin-top:min(calc(50vw * 0.0758), calc(50vh * 0.0758));
     //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 }
 la-aboutus{
@@ -32,7 +32,6 @@ la-aboutus h3{
     //     margin: max(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2)) auto auto;
     // }
     la-aboutcontainer {
-        width: calc(100vw / 1.2);
         ol {
             padding: 0;
         }
