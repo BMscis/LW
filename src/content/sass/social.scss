@@ -1,21 +1,29 @@
 la-social{
     //width: calc(100vw  / 1.8);
     display: flex;
-    margin: auto;
-    padding: 30px 0;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto auto;
-    scroll-margin-top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
-    scroll-snap-margin-top:clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
-    position: relative;
+    margin: auto;
+    scroll-margin-top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    scroll-snap-margin-top:clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    position: fixed;
+    top:calc(100vh - clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1)));
     width: clamp(calc(100vw / 1.8), 500px, calc(100vw / 1.1));
+    background-color: #0f163b59;
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    left: 0;
+    right: 0;
+    box-shadow: 2px -1px 12px -4px black;
+    transform-style: preserve-3d;
+    perspective: 1800px;
+    transform-origin: center;
     //scroll-margin-block: max(calc(100vh * 0.25), calc(100vw * 0.25));
 
 }
 la-socialpad{
     width: 100%;
-    //height: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    //height: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
@@ -23,6 +31,10 @@ la-socialpad{
     align-items: center;
     margin: auto;
     border-radius: 10px;
+    height: calc(48px + 1vh + 500px + clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1)));
+    transform-style: preserve-3d;
+    perspective: 1800px;
+    transform-origin: center;
     //margin-top: min(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
 }
 la-socialpad input{
@@ -46,8 +58,16 @@ la-socialbutton, la-socialpad label{
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 9999px;
-    box-shadow: 0px 1px 2px 0px #000;
-    background-color: white;
+    box-shadow: 0px 1px 8px 0px #000;
+    background-color: #0f163b;
+}
+la-unfoldmore.material-icons{
+    position: absolute;
+    left:0;
+    cursor: pointer;
+    z-index: 10;
+    margin-left:0;
+    border-radius: 10px 0 5px 5px;
 }
 #la-socialbutton-input-1:checked ~ #la-socialpad{
         border-bottom: 3px solid #2aa9e0;
@@ -60,6 +80,7 @@ la-socialbutton, la-socialpad label{
   transform: translatex(0) scale(1);
   opacity: 1;
   z-index: 1;
+  filter: unset;
 }
 #la-socialbutton-input-1:checked ~  #la-socialbutton-label-2, 
 #la-socialbutton-input-2:checked ~  #la-socialbutton-label-3, 
@@ -70,6 +91,7 @@ la-socialbutton, la-socialpad label{
   transform: translatex(180%) scale(.8);
   opacity: .4;
   z-index: 0;
+  filter: grayscale(1);
   //filter: blur(15px);
 }
 
@@ -82,6 +104,7 @@ la-socialbutton, la-socialpad label{
   transform: translatex(-180%) scale(.8);
   opacity: .4;
   z-index: 0;
+  filter: grayscale(1);
   //filter: blur(15px);
 }
 #twlabel,#fblabel {
@@ -89,12 +112,14 @@ la-socialbutton, la-socialpad label{
     //height: -webkit-fill-available;
     //left: calc(50% - 250px);
     top: clamp(calc(100vw * 0.1),78px, calc(100vh * 0.1));
-    //margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto;
+    //margin: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758)) auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: none;
+    overflow: auto;
+    height: 500px;
 }
 // #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3,
 // #la-socialbutton-input-2:checked ~  #la-socialbutton-label-4,
@@ -107,11 +132,7 @@ la-socialbutton, la-socialpad label{
 //   //filter: blur(15px);
 // }
 @media only screen and (max-width: 600px){
-    la-social{
-        //margin-top: max(calc(100vh * 0.25 / 2), calc(100vw * 0.25 / 2));
-        width: unset;
-    }
-    la-socialpad{
-        background-color: #ff9494;
+    la-unfoldmore.material-icons{
+        width: initial;
     }
 }

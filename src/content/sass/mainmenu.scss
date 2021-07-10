@@ -15,20 +15,21 @@ la-mainmenu{
     background-position: left center;
     background-size: 20rem;
     display: flex;
-    height: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
-    background-color: white;
+    background-color: transparent;
     margin: auto;
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
-    box-shadow: 0px 1px 3px -3px black;
-    width: calc(100vw / 1.6);
-    padding-top: 1vh;
+    //box-shadow: 0px 1px 3px -3px black;
+    //width: clamp(calc(100vw / 1.8), 500px, calc(100vw / 1.1));
 
 }
 la-mainmenucontainer{
+    background-image: url(../../assets//LAA/LAASVG.svg);
+    background-position: left;
+    background-repeat: no-repeat;
     margin: auto;
-    height: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    height: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
     display: flex;
     background-color: white;
     position: sticky;
@@ -39,9 +40,13 @@ la-mainmenucontainer{
 
 }
 @media only screen and (max-width: 1024px){
+    la-mainmenucontainer{
+        background-position: center;
+    }
     la-mainmenu{
         flex-direction: column;
         width: 100%;
+        box-shadow: none;
         la-logo{
             align-self: center;
             margin: auto;
@@ -57,7 +62,7 @@ la-mainmenucontainer{
             align-self: flex-end;
             position: unset;
             padding-inline-end: 5vw;
-
+            transform: scale(var(--ggs,.7));
             la-backhome.material-icons, 
             la-backtotop.material-icons,
             button{

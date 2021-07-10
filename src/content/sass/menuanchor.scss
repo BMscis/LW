@@ -18,7 +18,7 @@ la-menuanchor ul {
 }
 la-menuanchor li {
     position: static;
-    padding: 22px 9px;
+    padding: 0;
     //width: calc(100vw / 1.6 / 6);
 }
 la-menuanchor button {
@@ -43,13 +43,16 @@ la-menuanchor button {
         backdrop-filter: sepia(1) invert(1);
         -webkit-backdrop-filter: sepia(1) invert(1);
         width: 50%;
-        top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+        top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 40vh;
     }
     la-menuanchor ul{   
         background-color: #00001c;
         }
     la-menuanchor[overflow] #anchorbuttons{
-        display: block;
+        display: flex;
         width: 100%;
         button{
             color: #6EC1E4;

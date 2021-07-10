@@ -1,5 +1,6 @@
 import { SocialPad } from "./socialpad"
-
+import { BackToTop } from "./backtotop"
+import { UncofldMore } from "./unufoldsocial"
 export class Social extends HTMLElement {
     constructor() {
         super()
@@ -100,7 +101,9 @@ export class Social extends HTMLElement {
             "twitterhref": twLabel,
             "fbroot":fbRoot,
             "fbpage":fbLabel,
-            "instagramhref": instagramHref
+            "instagramhref": instagramHref,
+            "backtotop": new BackToTop(),
+            "unfoldmore": new UncofldMore()
             }
     }
     connectedCallback() {
@@ -109,6 +112,8 @@ export class Social extends HTMLElement {
         return
     }
     render() {
+        this.appendChild(this.components.backtotop)
+        this.appendChild(this.components.unfoldmore)
         this.appendChild(this.components.socialpad)
         this.components.socialpad.appendChild(this.components.twitterhref)
         this.components.socialpad.appendChild(this.components.fbpage)

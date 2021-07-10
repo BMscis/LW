@@ -14,7 +14,8 @@ la-loginregister{
     margin: auto;
     padding-top: 10px;
     position: relative;
-    top: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
+    top: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758));
+    z-index: 1000;
 }
 la-loginregister[hide]{
     opacity: 0;
@@ -32,17 +33,18 @@ la-loginregister ul{
 la-loginregister button,
 la-loginregister la-backtotop,
 la-backhome.material-icons, 
-la-backtotop.material-icons
+la-backtotop.material-icons,
+la-unfoldmore.material-icons
 {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     text-decoration: none!important;
     background-blend-mode: overlay,normal;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 0 0 5px 5px;
+    margin-left: 5px;
     color: #fff;
     fill: #fff;
-    background-color:#A784C6;
+    background-color:#2196f3;
     font-weight: 100;
     font-size: 16px;
     position: relative;
@@ -50,9 +52,15 @@ la-backtotop.material-icons
     text-align: center;
     line-height: 1;
     letter-spacing: -.3px;
-    margin-right:5px;
     border:none;
     white-space: nowrap;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+}
+la-loginregister button{
+    width: unset;
 }
 .login{
     color: #000;
@@ -65,23 +73,23 @@ la-backtotop.material-icons
 la-backhome.material-icons,
 la-backtotop.material-icons
 {
-    background-color: transparent;
-    position: fixed;
     opacity:0;
     color:#2A163B;
     display:flex;
     align-items: center;
     -webkit-text-stroke-width: thick;
+    z-index: 10;
 }
 la-backtotop.material-icons{
-    bottom: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758));
-    right: 4%;
-    margin: calc(100vh * 0.07) auto;
+    right: 0;
+    position: absolute;
+    border-radius: 0 10px 5px 5px;
 }
 la-backhome.material-icons{
     top: 0;
     left: 4%;
-    //margin: clamp(calc(100vw * 0.0758),78px, calc(100vh * 0.0758)) auto;
+    position: fixed;
+    //margin: clamp(calc(50vw * 0.0758),78px, calc(50vh * 0.0758)) auto;
 }
 la-backtotop::after,
 la-backhome::after
@@ -96,7 +104,7 @@ la-backhome::after
     animation-timing-function: forwards;
 }
 la-backtotop:hover::after{
-    content: "Back to Top";
+    content: "Top";
     color:#32273B;
 }
 la-backhome:hover::after{
@@ -110,12 +118,10 @@ la-carousel[store] la-backhome{
 }
 @media only screen and (max-width: 600px){
     la-backtotop.material-icons {
-        bottom: 39px;
-        margin: calc(100vh * 0.07 / 2) auto;
+        width: initial;
     }
-    la-backtotop::after{
-        content: "Back to Top";
-        color:#32273B;
+    la-backtotop:hover::after{
+        content: none;
     }
     la-backhome::after{
         content: "Home";

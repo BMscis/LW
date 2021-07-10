@@ -1,5 +1,4 @@
 import { MainMenu } from "./mainmenu"
-import { BackToTop } from "./backtotop"
 
 export class MainMenuContainer extends HTMLElement{
     constructor(){
@@ -16,7 +15,6 @@ export class MainMenuContainer extends HTMLElement{
     get getComponents(){
         return {
             "mainmenu": new MainMenu(),
-            "backtotop": new BackToTop()
         }
     }
     connectedCallback(){
@@ -26,7 +24,6 @@ export class MainMenuContainer extends HTMLElement{
     }
     render(){
         this.appendChild(this.components.mainmenu)
-        this.appendChild(this.components.backtotop)
         return
     }
     disconnectedCallback(){

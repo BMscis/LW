@@ -27,7 +27,7 @@ export class MainMenu extends HTMLElement{
         return
     }
     render(){
-        this.appendChild(this.components.logo)
+        //this.appendChild(this.components.logo)
         this.appendChild(this.components.menuanchor)
         this.appendChild(this.components.user)
         //this.appendChild(holder)

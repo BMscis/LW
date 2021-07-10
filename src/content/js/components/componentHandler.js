@@ -46,7 +46,7 @@ export class ComponentHandler extends HTMLElement{
         this.appendChild(this.components.mainmenu)
         this.appendChild(this.components.carousel)
         this.appendChild(this.components.aboutcontainer)
-        this.appendChild(this.components.social)
+        this.parentElement.appendChild(this.components.social)
         //this.appendChild(this.components.stories)
         //this.appendChild(this.components.calendar)
         return

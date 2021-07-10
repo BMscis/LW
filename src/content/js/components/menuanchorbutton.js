@@ -14,6 +14,7 @@ export class MenuAnchorButton extends HTMLElement {
     }
     setup() {
         this.index = componentIndex
+        this.id = this.buttonId
         componentIndex ++
         if (this.dropdownList.length > 0) {
             this.setupDropdown = true
@@ -28,6 +29,22 @@ export class MenuAnchorButton extends HTMLElement {
                 }
             }
             if (this.setupDropdown) {
+                switch(this.id){
+                    case "aboutalumni":
+                        if(document.querySelector("#activities[dropdown]")){
+                            document.querySelector("#activities[dropdown]").components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
+                            document.querySelector("#activities[dropdown]").components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
+                            document.querySelector("#activities[dropdown]").toggleAttribute("dropdown")
+                        }
+                        break
+                    case "activities":
+                        if(document.querySelector("#aboutalumni[dropdown]")){
+                            document.querySelector("#aboutalumni[dropdown]").components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
+                            document.querySelector("#aboutalumni[dropdown]").components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
+                            document.querySelector("#aboutalumni[dropdown]").toggleAttribute("dropdown")
+                        }
+                        break
+                }
                 this.components.dropdowncontainer.children["expandmore"].toggleAttribute("disabled")
                 this.components.dropdowncontainer.children["expandless"].toggleAttribute("disabled")
                 this.buttonAction()
@@ -66,7 +83,7 @@ export class MenuAnchorButton extends HTMLElement {
     get buttonId(){
         let txt = this.text.replace(/\s+/g, '');
         let txtL = txt.toLowerCase()
-        return '#' + txtL
+        return txtL
     }
     get getComponents() {
         var btn = document.createElement("button")

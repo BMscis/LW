@@ -33,11 +33,10 @@ p , text{
 li{
     padding: 22px 9px;
 }
-::-webkit-scrollbar{
-    width: 0;
-}
+// ::-webkit-scrollbar{
+//     width: 0;
+// }
 html,body{
-    margin: 0;
     letter-spacing: -.3px;
     font-family: "Roboto", sans-serif;
     line-height: 1;
@@ -52,6 +51,9 @@ la-componenthandler {
     position: relative;
     background: white;
     height: -webkit-fill-available;
+}
+la-carousel,la-aboutcontainer{
+    background-color: ghostwhite;
 }
 h3{
     color: #eb285d;

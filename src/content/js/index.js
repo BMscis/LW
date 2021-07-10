@@ -28,48 +28,4 @@ window.addEventListener("load", e =>{
     //document.body.innerHTML = getBodyStyle()
     document.body.appendChild(componenthandler)
     window.ComponentHandler = componenthandler
-
-    setTimeout(function(){
-            let twitterHref = document.querySelector("#twitter-widget-0")
-            twitterHref.style.position = "absolute"
-            twitterHref.style.width = "500px"
-            twitterHref.style.height = "500px"
-            twitterHref.style.overflow = "auto"
-            let offsetHeight = twitterHref.offsetHeight
-            document.querySelector("#twlabel").style.height = offsetHeight + "px"
-            document.querySelector("la-socialpad").style.height = offsetHeight + "px"
-
-            // let fbLabel = document.querySelector("#fblabel")
-            // let fbWidth = fbLabel.offsetWidth
-            // let fbPageSize = fbPageSet(fbWidth)
-            // fbLabel.appendChild(fbPageSize)
-            },6500)
 })
-// window.addEventListener("resize", e =>{
-//     console.log("RESIZE")
-//     let fbLabel = document.querySelector("#fblabel")
-//     fbLabel.removeChild(fbLabel.children[0])
-//     let fbWidth = fbLabel.offsetWidth
-//     let fbPageSize = fbPageSet(fbWidth)
-//     fbLabel.appendChild(fbPageSize)
-// })
-// function fbPageSet(val){
-//     if (val > 500){
-//         val = 500
-//     }
-//     let fbPage = document.createElement("div")
-//         fbPage.classList.add("fb-page")
-//         fbPage.setAttribute("data-href","https://www.facebook.com/LightAcademyAlumni")
-//         fbPage.setAttribute("data-tabs","timeline")
-//         fbPage.setAttribute("data-width",`${val}`)
-//         fbPage.setAttribute("data-height",`500`)
-//         fbPage.setAttribute("data-small-header","true")
-//         fbPage.setAttribute("data-add-container-width","true")
-//         fbPage.setAttribute("data-hide-cover","true")
-//         fbPage.setAttribute("data-hide-cover","true")
-//         fbPage.setAttribute("data-show-facepile","false")
-//         fbPage.style.position = "relative"
-//         fbPage.style.overflow = "auto"
-
-//         return fbPage
-// }
