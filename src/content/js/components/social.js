@@ -30,7 +30,7 @@ export class Social extends HTMLElement {
         `
                 
         // (function(d, s, id){
-        //     var js, fjs = d.getElementsByTagName(s)[0];
+        //     const js, fjs = d.getElementsByTagName(s)[0];
         //     if (d.getElementById(id)) {return;}
         //     js = d.createElement(s); js.id = id;
         //     js.src = "https://connect.facebook.net/en_US/sdk.js";
@@ -128,7 +128,7 @@ export class Social extends HTMLElement {
         return
     }
     disconnectedCallback() {
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

@@ -1,5 +1,5 @@
 import { MenuAnchorButtonDropdown } from "./menuanchorbuttondropdown"
-var componentIndex = 0
+let componentIndex = 0
 export class MenuAnchorButton extends HTMLElement {
     constructor(text, active, dropdownList = []) {
         super()
@@ -86,19 +86,19 @@ export class MenuAnchorButton extends HTMLElement {
         return txtL
     }
     get getComponents() {
-        var btn = document.createElement("button")
+        const btn = document.createElement("button")
         btn.innerHTML = this.text
         btn.setAttribute("data-buttonwidth", "red")
-        var span = document.createElement("span")
+        const span = document.createElement("span")
         span.classList.add("material-icons")
         span.id = "expandmore"
         span.innerHTML = "expand_more"
-        var span2 = document.createElement("span")
+        const span2 = document.createElement("span")
         span2.classList.add("material-icons")
         span2.id = "expandless"
         span2.innerHTML = "expand_less"
         span2.setAttribute("disabled","")
-        var container = document.createElement("div")
+        const container = document.createElement("div")
         container.classList.add("dropdownanchor")
         container.appendChild(btn)
         if(this.setupDropdown){
@@ -108,7 +108,7 @@ export class MenuAnchorButton extends HTMLElement {
         return this.components["dropdowncontainer"] =container
     }
     set setComponents(val) {
-        var dropdown = new MenuAnchorButtonDropdown(this.text,this.dropdownList)
+        const dropdown = new MenuAnchorButtonDropdown(this.text,this.dropdownList)
         this.components["dropdown"] = dropdown
         return
     }
@@ -125,7 +125,7 @@ export class MenuAnchorButton extends HTMLElement {
         return
     }
     disconnectedCallback() {
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

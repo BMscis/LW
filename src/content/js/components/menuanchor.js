@@ -20,20 +20,20 @@ export class MenuAnchor extends HTMLElement{
         return txtL + `-dropdown`
     }
     set toggleDropDown(val) {
-        var value = this.dropdownId(val)
+        const value = this.dropdownId(val)
         return this.setAttribute("dropdown",value)
     }
     get getComponents(){
-        var componentList = []
-        var buttonAbout = new MenuAnchorButton("About Alumni",false,["Mission & Vision","Constitution","Partnerships","About Us","Clubs","Contact Us"])
+        const componentList = []
+        const buttonAbout = new MenuAnchorButton("About Alumni",false,["Mission & Vision","Constitution","Partnerships","About Us","Clubs","Contact Us"])
         componentList.push(buttonAbout)
-        var buttonActivities = new MenuAnchorButton("Activities",false,["Events", "Projects"])
+        const buttonActivities = new MenuAnchorButton("Activities",false,["Events", "Projects"])
         componentList.push(buttonActivities)
-        var buttonAlumniStore = new MenuAnchorButton("Alumni Store",false,[])
+        const buttonAlumniStore = new MenuAnchorButton("Alumni Store",false,[])
         componentList.push(buttonAlumniStore)
-        var buttonSocial = new MenuAnchorButton("Social",false,[])
+        const buttonSocial = new MenuAnchorButton("Social",false,[])
         componentList.push(buttonSocial)
-        var ul = document.createElement('ul')
+        const ul = document.createElement('ul')
         ul.id = "anchorbuttons"
         for(let i = 0; i < 4; i++){
             let li = document.createElement("li")
@@ -61,7 +61,7 @@ export class MenuAnchor extends HTMLElement{
         return
         }
     disconnectedCallback(){
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

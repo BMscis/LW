@@ -18,7 +18,7 @@ export class AlumniStoreCard extends HTMLElement{
         return
     }
     get getComponents(){
-        var card_bg = document.createElement("div")
+        const card_bg = document.createElement("div")
         card_bg.classList.add("card__bg")
         this.style.backgroundImage = this.source
         return {
@@ -35,7 +35,7 @@ export class AlumniStoreCard extends HTMLElement{
         return
     }
     disconnectedCallback(){
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

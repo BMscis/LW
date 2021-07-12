@@ -30,11 +30,11 @@ export class Carousel extends HTMLElement{
         return
     }
     get getComponents(){
-        var toggleright = new ToggleButton("next")
-        var toggleleft = new ToggleButton("prev")
-        var div = document.createElement("div")
+        const toggleright = new ToggleButton("next")
+        const toggleleft = new ToggleButton("prev")
+        const div = document.createElement("div")
         
-        for(var i = 0; i < this.imageSet.length; i++){
+        for(let i = 0; i < this.imageSet.length; i++){
             let img = document.createElement("div")
             img.style.backgroundImage = `url(${this.imageSet[i][0]})`
             let title = document.createElement("caption")
@@ -67,11 +67,11 @@ export class Carousel extends HTMLElement{
                 this.disconnectedCallback()
                 this.setAttribute('store','')
                 this.appendChild(this.components.backhome)
-                var heading = document.createElement("h2")
-                heading.innerHTML = "Get access to discounts if you are a member of the Alumni Association."
-                this.appendChild(heading)
+                const heading1 = document.createElement("h2")
+                heading1.innerHTML = "Get access to discounts if you are a member of the Alumni Association."
+                this.appendChild(heading1)
                 let list = ["one","two","three","four","five"]
-                var ul = document.createElement("ul")
+                const ul = document.createElement("ul")
                 list.forEach(element => {
                     let li = document.createElement("li")
                     li.appendChild(this.components[element])
@@ -82,27 +82,27 @@ export class Carousel extends HTMLElement{
             case "HOME":
                 this.disconnectedCallback()
                 this.removeAttribute('store','')
-                var center = document.createElement("div")
-                center.classList.add("centralcarousel")
-                var heading = document.createElement('h1')
-                heading.innerHTML = "Welcome to the Light Academy Alumni Association."
-                center.appendChild(heading)
-                center.appendChild(this.components.imagecontainer)
-                this.appendChild(center)
+                const center2 = document.createElement("div")
+                center2.classList.add("centralcarousel")
+                const heading2 = document.createElement('h1')
+                heading2.innerHTML = "Welcome to the Light Academy Alumni Association."
+                center2.appendChild(heading2)
+                center2.appendChild(this.components.imagecontainer)
+                this.appendChild(center2)
             return
             default:
-                var center = document.createElement("div")
-                center.classList.add("centralcarousel")
-                var heading = document.createElement('h1')
-                heading.innerHTML = "Welcome to the Light Academy Alumni Association."
-                center.appendChild(heading)
-                center.appendChild(this.components.imagecontainer)
-                this.appendChild(center)
+                const center3 = document.createElement("div")
+                center3.classList.add("centralcarousel")
+                const heading3 = document.createElement('h1')
+                heading3.innerHTML = "Welcome to the Light Academy Alumni Association."
+                center3.appendChild(heading3)
+                center3.appendChild(this.components.imagecontainer)
+                this.appendChild(center3)
                 return
         }
     }
     disconnectedCallback(){
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

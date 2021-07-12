@@ -34,9 +34,9 @@ export class MenuAnchorButtonDropdown extends HTMLElement{
         return
     }
     render(){
-        var ul = document.createElement("ul")
+        const ul = document.createElement("ul")
         for (const [key, value] of Object.entries(this.components)){
-            var li = document.createElement("li")
+            const li = document.createElement("li")
             li.appendChild(value)
             ul.appendChild(li)
         }
@@ -44,7 +44,7 @@ export class MenuAnchorButtonDropdown extends HTMLElement{
         return
     }
     disconnectedCallback(){
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

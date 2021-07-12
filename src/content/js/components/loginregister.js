@@ -49,7 +49,7 @@ export class LoginRegister extends HTMLElement{
         return
     }
     disconnectedCallback(){
-        var childCount = this.childElementCount
+        const childCount = this.childElementCount
         for(let i = childCount; i > 0; i--){
             this.removeChild(this.children[0])
         }

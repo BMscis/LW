@@ -23,17 +23,17 @@ export class AlumniStore extends HTMLElement{
           window.location = this.components.card_text.firstElementChild.href
         })
         this.addEventListener("mouseover", e =>{
-          var thisX = this.getBoundingClientRect().x
-          var thisY = this.getBoundingClientRect().y
-          var thisW = this.getBoundingClientRect().width
-          var thisMinRange = thisW - 20
-          var thisMaxRange = thisW + 20
-          var mouseX = e.pageX
-          var mouseY = e.pageY
-          var transX = mouseX - thisX
-          var transY = mouseY - thisY
-          var atan = this.calcAngleDegrees(transX,transY)
-          var atan2 = calcValue(transX,transY)
+          const thisX = this.getBoundingClientRect().x
+          const thisY = this.getBoundingClientRect().y
+          const thisW = this.getBoundingClientRect().width
+          const thisMinRange = thisW - 20
+          const thisMaxRange = thisW + 20
+          const mouseX = e.pageX
+          const mouseY = e.pageY
+          const transX = mouseX - thisX
+          const transY = mouseY - thisY
+          const atan = this.calcAngleDegrees(transX,transY)
+          const atan2 = calcValue(transX,transY)
           if (timeout) {
             window.cancelAnimationFrame(timeout);
           }
@@ -42,16 +42,16 @@ export class AlumniStore extends HTMLElement{
             case true:
               this.style.transform = `rotateY(${atan}deg) translateZ(-50px)`
               this.components.cardholder.style.transform = `rotateY(${atan/3}deg) translateZ(25px) `
-              var moveLogo = calcValue(this.components.cardholder.getBoundingClientRect().x ,this.components.alumnistorecard.getBoundingClientRect().x)
-              this.components.alumnistorecard.style.transform = `translateZ(${moveLogo}px)`
-              this.components.alumnistorecard.style.filter = `drop-shadow(${moveLogo/2}px ${moveLogo/2}px 1.5px #000000a1`
+              const moveLogo1 = calcValue(this.components.cardholder.getBoundingClientRect().x ,this.components.alumnistorecard.getBoundingClientRect().x)
+              this.components.alumnistorecard.style.transform = `translateZ(${moveLogo1}px)`
+              this.components.alumnistorecard.style.filter = `drop-shadow(${moveLogo1/2}px ${moveLogo1/2}px 1.5px #000000a1`
               break
             case false:
               this.style.transform = `rotateY(${atan2}deg) translateZ(-50px)`
               this.components.cardholder.style.transform = `rotateY(${atan2/3}deg) translateZ(25px)`
-              var moveLogo = calcValue(this.components.cardholder.getBoundingClientRect().x ,this.components.alumnistorecard.getBoundingClientRect().x)
-              this.components.alumnistorecard.style.transform = `translateZ(${moveLogo}px) `
-              this.components.alumnistorecard.style.filter = `drop-shadow(${moveLogo/2}px ${moveLogo/2}px 1.5px #000000a1`
+              const moveLogo2 = calcValue(this.components.cardholder.getBoundingClientRect().x ,this.components.alumnistorecard.getBoundingClientRect().x)
+              this.components.alumnistorecard.style.transform = `translateZ(${moveLogo2}px) `
+              this.components.alumnistorecard.style.filter = `drop-shadow(${moveLogo2/2}px ${moveLogo2/2}px 1.5px #000000a1`
               break
           }
         })
@@ -70,16 +70,16 @@ export class AlumniStore extends HTMLElement{
         return
     }
     get getComponents(){
-      var cardholder = document.createElement('div')
+      const cardholder = document.createElement('div')
       cardholder.classList.add('cards')
       cardholder.id = this.text + "card"
       cardholder.style.backgroundImage = `url(${this.bg})`
       cardholder.style.backgroundRepeat = `no-repeat`
 
-      var card_text = document.createElement("div")
+      const card_text = document.createElement("div")
       card_text.classList.add("card__text") 
 
-      var card_title = document.createElement("a")
+      const card_title = document.createElement("a")
       card_title.innerHTML = this.text
       card_title.href = this.link
       card_title.classList.add("card__title")
@@ -105,7 +105,7 @@ export class AlumniStore extends HTMLElement{
       return
     }
     disconnectedCallback(){
-      var childCount = this.childElementCount
+      const childCount = this.childElementCount
       for(let i = childCount; i > 0; i--){
           this.removeChild(this.children[0])
       }
