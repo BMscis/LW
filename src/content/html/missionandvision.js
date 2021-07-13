@@ -1,6 +1,5 @@
 export function missionAndVision(){
     return `
-    <h3>MISSION AND VISION</h3>
     <ol>
     <p><strong>Mission: </strong>To
         be an indispensable part of the school by engaging alumni and friends in the

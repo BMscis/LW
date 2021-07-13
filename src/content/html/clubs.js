@@ -1,6 +1,5 @@
 export function clubs() {
     return `
-    <h3>CLUBS</h3>
     <p>The clubs aim to help members network among themselves and to enable the association to meet them easily. The
     following clubs exist thus far.</p>
 

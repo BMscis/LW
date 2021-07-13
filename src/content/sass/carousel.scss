@@ -2,7 +2,7 @@ la-carousel{
     width: min(calc(100vw / 1.1), calc(100vw / 1.8));
     background: transparent;
     margin: auto;
-    border-radius: 10px;
+    //border-radius: 10px;
     overflow: hidden;
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
@@ -21,6 +21,7 @@ la-carousel{
 la-carousel[store]{
     background-color: #3046BA;
     justify-content: flex-start;
+    height: unset;
 }
 la-carousel[store]{
     ul {
@@ -75,7 +76,7 @@ caption{
     overflow-y: auto;
     margin: auto;
     background: transparent;
-    border-radius: 5px;
+    //border-radius: 5px;
     display: flex;
 }
 la-imageroll{
@@ -86,6 +87,7 @@ la-imageroll{
     flex-direction: column;
     align-content: center;
     overflow-x: hidden;
+    border-radius: 0;
 }
 la-imageroll > div{
     width: calc(25vw / 1.2 - 30px);
@@ -95,6 +97,7 @@ la-imageroll > div{
     background-size: cover;
     background-position: top;
     outline: none;
+    border-radius: 0;
 }
 la-imageroll[mouse] > div{
     background-position: left;

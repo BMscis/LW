@@ -38,7 +38,7 @@ export class ToggleButton extends HTMLElement {
                 transform: scale(var(--ggs,1)) rotate(45deg);
                 width: calc(78vh * 0.05);
                 height: calc(78vh * 0.05);
-                border-radius: 100px;
+                //border-radius: 100px;
                 cursor: pointer;
                 border-image-width: 2px;
             }
@@ -49,7 +49,7 @@ export class ToggleButton extends HTMLElement {
                 width: calc(78vh * 0.05);
                 height: calc(78vh * 0.05);
 
-                border-radius:25%;
+                //border-radius:25%;
             }
 
             es-toggle[prev]::after{

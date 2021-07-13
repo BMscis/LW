@@ -1,19 +1,22 @@
 export class TextContainer extends HTMLElement{
-    constructor(id, innerhtml){
+    constructor(id, innerhtml, text){
         super()
         //console.log(`${this.nodeName} has been constructed`)
         this.id = id
         this.innerhtml =  innerhtml
+        this.text = text
         this.components = {}
         this.setup()
         return
     }
     setup(){
-        //this.getComponents
+        this.components = this.getComponents
         return
     }
     get getComponents(){
-        return
+        const h3 = document.createElement("h3")
+        h3.innerHTML = this.text
+        return {"h3": h3}
     }
     connectedCallback(){
         //console.log(`%c ${this.nodeName} %c has been %c CONNECTED`,"color:#cd4cf7","color:black","color:#0ee232" )

@@ -24,6 +24,22 @@ $global-typography-accent-font-weight:500;
     font-size: 16px;
     pointer-events: none;
 
+    /* Chrome and Safari */
+	-webkit-border-top-left-radius:40px;
+	-webkit-border-top-right-radius:40px;
+	-webkit-border-bottom-right-radius:40px;
+	-webkit-border-bottom-left-radius:40px;
+	/* Firefox */
+	-moz-border-radius-topleft:40px;
+	-moz-border-radius-topright:40px;
+	-moz-border-radius-bottomright:40px;
+	-moz-border-radius-bottomleft:40px;
+	/* Standard Syntax */
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	border-bottom-right-radius: 40px;
+	border-bottom-left-radius: 40px
+
 }
 
 p , text{
@@ -61,11 +77,25 @@ la-componenthandler {
 }
 la-carousel,la-aboutcontainer{
     background-color: ghostwhite;
+    margin-bottom: min(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px));
 }
 h3{
-    color: #eb285d;
-    box-shadow: 0 2px 2px -3px black;
+    color: #4080ff;
     text-align: center;
+    height: 10%;
+    margin: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+h3::after{
+    content: "";
+    box-shadow: 0 2px 2px -3px black;
+    width: 50%;
+    position: relative;
+    height: 7px;
 }
 @media only screen and (max-width: 1050px) {
     la-aboutcontainer, la-social,la-carousel{

@@ -9,6 +9,14 @@
         width:100%;
         }
 }
+@keyframes selector {
+    from{
+        transform: scale(var(--ggs,1));
+    }
+    to{
+        transform: scale(var(--ggs,.5));
+    }
+}
 la-loginregister{
     display: flex;
     position: relative;
@@ -38,7 +46,7 @@ la-unfoldmore.material-icons
     display: flex;
     text-decoration: none!important;
     background-blend-mode: overlay,normal;
-    border-radius: 0 0 5px 5px;
+    //border-radius: 0 0 5px 5px;
     margin-left: 5px;
     color: #fff;
     fill: #fff;
@@ -63,6 +71,18 @@ la-loginregister button{
     width: unset;
     border-radius: 5px;
 }
+la-loginregister button:active,
+la-loginregister la-backtotop:active,
+la-backhome.material-icons,:active 
+la-backtotop.material-icons:active,
+la-unfoldmore.material-icons:active{
+    animation-name: selector;
+    animation-duration: .1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+
+}
 .login{
     color: #000;
     font-weight: 400;
@@ -78,14 +98,13 @@ la-backtotop.material-icons
     color:#2A163B;
     display:flex;
     align-items: center;
-    -webkit-text-stroke-width: thick;
     z-index: 10;
 }
 la-backtotop.material-icons{
     right: 0;
     position: absolute;
     width: 24px;
-    border-radius: 0 10px 5px 5px;
+    //border-radius: 0 10px 5px 5px;
 }
 la-backhome.material-icons{
     top: 0;
@@ -102,7 +121,6 @@ la-backhome::after
     padding: 5px 10px;
     font-family: roboto;
     letter-spacing: 3px;
-    -webkit-text-stroke-width: thin;
     animation-name: beforeOpacity;
     animation-duration: .5s; 
     animation-timing-function: forwards;

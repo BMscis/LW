@@ -27,6 +27,8 @@
     "webpack-merge": "^5.7.3"
   },
   "devDependencies": {
-    "@vue/preload-webpack-plugin": "^2.0.0"
+    "@vue/preload-webpack-plugin": "^2.0.0",
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2"
   }
 }

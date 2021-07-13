@@ -1,5 +1,5 @@
 export function aboutushtml(){
-    return ` <h3> THE LIGHT ACADEMY ALUMNI ASSOCIATION </h3>
+    return `
     <p>
     The Light Academy Schools consider all current and former students, teachers and staff as a part of the Light Academy family. As such, the bonds that were forged within the school compounds are very key and dear to us. With this in mind, the Light Academy Alumni Association was born in order to strengthen, solidify and even forge new bonds within our family.
     <br>

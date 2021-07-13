@@ -55,7 +55,21 @@ la-menuanchor button {
         flex-direction: column;
         justify-content: flex-start;
         min-height: 40vh;
-        border-radius: 0 0 20px 20px;
+        /* Chrome and Safari */
+        -webkit-border-top-left-radius:0;
+        -webkit-border-top-right-radius:0;
+        -webkit-border-bottom-right-radius:40px;
+        -webkit-border-bottom-left-radius:40px;
+        /* Firefox */
+        -moz-border-radius-topleft:0;
+        -moz-border-radius-topright:0;
+        -moz-border-radius-bottomright:40px;
+        -moz-border-radius-bottomleft:40px;
+        /* Standard Syntax */
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
         padding-top: 48px;
     }
     la-menuanchor ul{   

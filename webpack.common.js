@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Manifest = require('webpack-manifest-plugin');
-const webpack = require('webpack');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const glob = require('glob')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 module.exports = {
     target:"web",
@@ -50,11 +50,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "Home",
+            template:path.resolve(__dirname,"./src/content/html/index.html"),
             filename:"index.html",
             excludeChunks:["store"]
         }),
         new HtmlWebpackPlugin({
             title: "Alumni Store",
+            template:path.resolve(__dirname,"./src/content/html/index.html"),
             filename:"alumnistore.html",
             excludeChunks:["home"]
         }),
@@ -62,7 +64,20 @@ module.exports = {
             rel: 'preload',
             include: ["images"],
             as:"image"
-          })
+          }),
+          new FaviconsWebpackPlugin({
+              logo:path.resolve(__dirname,"./src/assets/LAA/favicon.png"),
+              favicons:{
+                  appName:"Light Academy Alumni Association",
+                  appDescription:"Alumni website for the LAAA Kenya.",
+                  developerName:"BMscis",
+                  developerURL:"https://bmscis.github.io/components/",
+                  background:"transparent",
+                  theme_color:"#56bfee"
+              },
+              inject: true,
+          }),
+          new WebpackManifestPlugin()
     ],
     output: {
         filename: '[name].[contenthash].js',

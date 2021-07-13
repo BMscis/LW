@@ -407,7 +407,7 @@ la-calendar{
       color: gray;
       text-transform: uppercase;
       padding: $type-normal / 4 $type-normal * 2;
-      border-radius: $type-normal;
+      //border-radius: $type-normal;
       background: white;
       transition: all $duration $easing;
       font-weight: 600;
@@ -494,7 +494,7 @@ la-calendar{
   padding: $tile-size / 6;
   background-clip: content-box;
   -webkit-background-clip: content-box;
-  border-radius: 50%;
+  //border-radius: 50%;
   opacity: 0;
   pointer-events: none;
   transition: all $duration $easing;
@@ -537,7 +537,7 @@ la-calendar{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    //border-radius: 50%;
   }
 }
 

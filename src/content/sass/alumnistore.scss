@@ -18,7 +18,7 @@ la-alumnistore {
   grid-auto-columns: 80%;
   grid-auto-rows: 75% 5%;
   perspective: 1800px;
-  border-radius: 15px;
+  //border-radius: 15px;
   background-size: 4vw;
   background-position-y: 2%;
   background-position-x: 90%;
@@ -62,7 +62,7 @@ la-alumnistore h3 {
 }
 .cards {
   box-shadow: 5px 5px 20px -5px rgb(0 0 0 / 97%);
-  border-radius: 15px;
+  //border-radius: 15px;
   perspective: 1800px;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
@@ -79,7 +79,7 @@ la-alumnistore h3 {
 }
 
 .card {
-  /* border-radius: 15px; */
+  /* //border-radius: 15px; */
   //box-shadow: inset 5px 5px 20px -5px rgb(0 0 0 / 60%);
   background-repeat: no-repeat;
   background-size: contain;
@@ -104,7 +104,7 @@ la-alumnistore h3 {
   height: 100%;
   width: 100%;
   background-color: transparent;
-  border-radius: 25px;
+  //border-radius: 25px;
 }
 img.card__img {
   filter: drop-shadow(2px 4px 6px black) opacity(0.3);
@@ -188,7 +188,7 @@ img.card__img {
   top: 12px;
   z-index: -1;
   background: #00aced;
-  border-radius: 20px;
+  //border-radius: 20px;
   height: 30px;
   text-decoration: none;
   padding-right: 10px;

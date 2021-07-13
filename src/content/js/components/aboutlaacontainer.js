@@ -16,9 +16,9 @@ export class AboutContainer extends HTMLElement{
     }
     get getComponents(){
         return {
-            "aboutus": new TextContainer("aboutus",aboutushtml()),
-            "clubs": new TextContainer("clubs",clubs()),
-            "mission": new TextContainer("missionandvision",missionAndVision())
+            "aboutus": new TextContainer("aboutus",aboutushtml(),"THE LIGHT ACADEMY ALUMNI ASSOCIATION"),
+            "clubs": new TextContainer("clubs",clubs(),"CLUBS"),
+            "mission": new TextContainer("missionandvision",missionAndVision(),"MISSION AND VISION")
         }
     }
     connectedCallback(){
@@ -30,10 +30,12 @@ export class AboutContainer extends HTMLElement{
         switch(val){
             case "CLUBS":
                 this.disconnectedCallback()
+                this.appendChild(this.components.clubs.components.h3)
                 this.appendChild(this.components.clubs)
                 return
             case "MISSION & VISION":
                 this.disconnectedCallback()
+                this.appendChild(this.components.mission.components.h3)
                 this.appendChild(this.components.mission)
                 return
             case "CONTITUTION":
@@ -42,10 +44,12 @@ export class AboutContainer extends HTMLElement{
                 return
             case "ABOUTUS":
                 this.disconnectedCallback()
+                this.appendChild(this.components.aboutus.components.h3)
                 this.appendChild(this.components.aboutus)
                 return
             default:
                 this.disconnectedCallback()
+                this.appendChild(this.components.aboutus.components.h3)
                 this.appendChild(this.components.aboutus)
                 return
         }
