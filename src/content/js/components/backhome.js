@@ -9,6 +9,17 @@ export class BackHome extends HTMLElement{
     setup(){
         //this.components = this.getComponents
         this.classList.add("material-icons")
+        this.setAttribute("tabindex","0")
+        this.setAttribute("focusable","")
+        this.addEventListener("keydown", e =>{
+            if(e.code === "Enter"){
+              this.click()
+              return
+            }
+            else{
+              return
+            }
+          })
         this.addEventListener("click", e=>{
             document.querySelector('la-carousel').render("HOME")
             window.scrollTo(0,0)

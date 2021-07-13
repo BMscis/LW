@@ -72,6 +72,7 @@ la-unfoldmore.material-icons{
     margin-left:0;
     //border-radius: 10px 0 5px 5px;
     width: 24px;
+    background-color: #FF3000;
 }
 #la-socialbutton-input-1:checked ~ #la-socialpad{
         border-bottom: 3px solid #2aa9e0;
@@ -96,7 +97,6 @@ la-unfoldmore.material-icons{
   filter: grayscale(1);
   //filter: blur(15px);
 }
-
 #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3, 
 #la-socialbutton-input-1:checked ~  #fblabel, 
 #la-socialbutton-input-2:checked ~  #la-socialbutton-label-1,
@@ -128,7 +128,7 @@ la-unfoldmore.material-icons{
 }
 #twlabel iframe,
 #fblabel iframe{
-    pointer-events: all;
+    //pointer-events: all;
 }
 // #la-socialbutton-input-1:checked ~  #la-socialbutton-label-3,
 // #la-socialbutton-input-2:checked ~  #la-socialbutton-label-4,

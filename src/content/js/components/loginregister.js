@@ -30,9 +30,13 @@ export class LoginRegister extends HTMLElement{
         let btn1 = document.createElement("button")
         btn1.innerHTML = "Log In"
         btn1.classList.add("login")
+        btn1.setAttribute("tabindex","0")
+        btn1.setAttribute("focusable","")
         let btn2 = document.createElement("button")
         btn2.innerHTML = "Register"
         btn2.classList.add("register")
+        btn2.setAttribute("tabindex","0")
+        btn2.setAttribute("focusable","")
         return {
             "login":btn1,
             "register":btn2

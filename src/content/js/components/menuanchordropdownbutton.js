@@ -7,6 +7,17 @@ export class MenuAnchorDropDownButton extends HTMLElement {
         return
     }
     setup() {
+        this.setAttribute("tabindex","0")
+        this.setAttribute("focusable","")
+        this.addEventListener("keydown", e =>{
+            if(e.code === "Enter"){
+              this.click()
+              return
+            }
+            else{
+              return
+            }
+          })
          this.addEventListener("click", e => {
             if(document.querySelector("la-menuanchor").hasAttribute("overflow")){
             document.querySelector("la-menubutton").click()

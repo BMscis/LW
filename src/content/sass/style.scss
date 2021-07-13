@@ -11,6 +11,15 @@ $global-typography-text-font-family: "Roboto";
 $global-typography-text-font-weight: 400;
 $global-typography-accent-font-family: "Roboto";
 $global-typography-accent-font-weight:500;
+@keyframes focusopacity {
+    from{
+        opacity: .2;
+    }
+    to{
+        opacity: .1;
+    }
+    
+}
 *{
     box-sizing: border-box;
     transition: 0.5s ease-in-out;
@@ -41,7 +50,17 @@ $global-typography-accent-font-weight:500;
 	border-bottom-left-radius: 40px
 
 }
+[focusable]:active{
+    animation-name: focusopacity;
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+[focusable]:focus{
+    outline:solid orangered 2px;
 
+}
 p , text{
     line-height: 30px;
     font-family: "Roboto", sans-serif;
@@ -80,7 +99,7 @@ la-carousel,la-aboutcontainer{
     margin-bottom: min(calc(50vw * 0.0271 + 48px), calc(50vh * 0.0271 + 48px));
 }
 h3{
-    color: #4080ff;
+    color: #8052e6;
     text-align: center;
     height: 10%;
     margin: 0;

@@ -8,7 +8,18 @@ export class UncofldMore extends HTMLElement{
     }
     setup(){
         //this.components = this.getComponents
+        this.setAttribute("tabindex","0")
+        this.setAttribute("focusable","")
         this.classList.add("material-icons")
+        this.addEventListener("keydown", e =>{
+            if(e.code === "Enter"){
+              this.click()
+              return
+            }
+            else{
+              return
+            }
+          })
         this.addEventListener("click", e =>{
             switch(this.innerText){
                 case "unfold_more":

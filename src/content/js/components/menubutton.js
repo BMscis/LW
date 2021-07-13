@@ -8,7 +8,18 @@ export class MenuButton extends HTMLElement{
     }
     setup(){
         //this.getComponents
+        this.setAttribute("tabindex","0")
+        this.setAttribute("focusable","")
         this.classList.add("material-icons")
+        this.addEventListener("keydown", e =>{
+            if(e.code === "Enter"){
+              this.click()
+              return
+            }
+            else{
+              return
+            }
+          })
         this.addEventListener('click', e=>{
             //console.log("MENU: ", this.innerHTML)
             switch(this.innerHTML){

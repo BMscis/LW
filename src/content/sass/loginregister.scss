@@ -75,9 +75,11 @@ la-loginregister button:active,
 la-loginregister la-backtotop:active,
 la-backhome.material-icons,:active 
 la-backtotop.material-icons:active,
-la-unfoldmore.material-icons:active{
+la-unfoldmore.material-icons:active,
+la-menubutton:active
+{
     animation-name: selector;
-    animation-duration: .1s;
+    animation-duration: .2s;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-fill-mode: backwards;
@@ -95,10 +97,10 @@ la-backhome.material-icons,
 la-backtotop.material-icons
 {
     opacity:0;
-    color:#2A163B;
     display:flex;
     align-items: center;
     z-index: 10;
+    background-color: #FF3000;
 }
 la-backtotop.material-icons{
     right: 0;
@@ -122,7 +124,7 @@ la-backhome::after
     font-family: roboto;
     letter-spacing: 3px;
     animation-name: beforeOpacity;
-    animation-duration: .5s; 
+    animation-duration: .2s; 
     animation-timing-function: forwards;
 }
 la-backtotop[show]{

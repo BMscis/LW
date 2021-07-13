@@ -19,7 +19,9 @@ la-menuanchordropdownbutton{
     pointer-events: all;
     //opacity: 0.5;
 }
-
+la-menuanchordropdownbutton button{
+    color: #56eeee;
+}
 la-menuanchordropdownbutton[active]{
 opacity: 1;
 }

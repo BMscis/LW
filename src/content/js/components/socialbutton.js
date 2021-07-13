@@ -27,6 +27,8 @@ export class SocialButton extends HTMLElement{
         background-image:url(${this.logo});
         `)
         lbl.setAttribute("for",`${this.nodeName.toLowerCase()}-input-${this.componentIndex}`)
+        lbl.setAttribute("tabindex","0")
+        lbl.setAttribute("focusable","")
         lbl.id = `${this.nodeName.toLowerCase()}-label-${this.componentIndex}`
         return {"label": lbl,"input": inpt}
     }

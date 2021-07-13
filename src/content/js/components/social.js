@@ -55,6 +55,8 @@ export class Social extends HTMLElement {
             //twitterLabel
         let twLabel = document.createElement("label")
         twLabel.id = "twlabel"
+        twLabel.setAttribute("tabindex","0")
+        twLabel.setAttribute("focusable","")
         twLabel.setAttribute("for", "la-socialbutton-input-1")
         twLabel.appendChild(twitterHref)
 
@@ -79,6 +81,8 @@ export class Social extends HTMLElement {
             //fbLabel
         let fbLabel = document.createElement("label")
         fbLabel.id = "fblabel"
+        fbLabel.setAttribute("tabindex","0")
+        fbLabel.setAttribute("focusable","")
         fbLabel.setAttribute("for", "la-socialbutton-input-3")
         fbLabel.appendChild(fbPage)
 

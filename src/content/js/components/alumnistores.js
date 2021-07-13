@@ -19,6 +19,17 @@ export class AlumniStore extends HTMLElement{
         const range = 40
         function calcValue(a, b) {return (a/b*range-range/2).toFixed(1)} // thanks @alice-mx
         let timeout;
+        this.setAttribute("tabindex","0")
+        this.setAttribute("focusable","")
+        this.addEventListener("keydown", e =>{
+          if(e.code === "Enter"){
+            this.click()
+            return
+          }
+          else{
+            return
+          }
+        })
         this.addEventListener("click",e =>{
           window.location = this.components.card_text.firstElementChild.href
         })
